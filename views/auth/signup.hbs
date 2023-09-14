@@ -1,0 +1,30 @@
+<div id="sign-up-form">
+  <h2>SIGN UP</h2>
+  <form action="/auth/signup" method="POST">
+  <div class="account-exists">
+    <p >Already got an account? <a class = "login-link" href="/auth/login">Log In</a></p>
+  </div>
+  
+  <a class="popup-close" href="/">&times;</a>
+    <label>
+      Username
+      <input type="text" name="username" placeholder="Your username" />
+    </label>
+
+    <label>
+      Email
+      <input type="email" name="email" placeholder="Your email" />
+    </label>
+
+    <label>
+      Password
+      <input type="password" name="password" placeholder="Your password" />
+    </label>
+
+    <button type="submit">Sign Up</button>
+
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>

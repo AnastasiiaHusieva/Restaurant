@@ -1,0 +1,23 @@
+<div class="account-popup">
+    <div class="popup-content">
+        <span class="popup-close" id="closePopup">&times;</span>
+        <h2>My Account</h2>
+
+        <!-- Links for "My Orders," "My Favorites," "My Bonuses," and "Log Out" -->
+        <div class="account-links">
+            <a href="/my-orders">My Orders</a>
+            <a href="/my-favorites">My Favorites</a>
+            <a href="/my-bonuses">My Bonuses</a>
+            
+        </div>
+        <div>
+            <a href="/auth/logout">Log Out</a>
+        </div>
+    </div>
+</div>
+
+
+{{!-- this file is only shown whenever there is an error during log out --}}
+{{#if errorMessage}}
+    {{errorMessage}}
+{{/if}}

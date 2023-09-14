@@ -1,0 +1,59 @@
+<div id="add-meals-form">
+  <h2>Add Meal</h2>
+  <form action="/admin/add-meals-form" method="POST">
+
+    <label>
+      Meal
+      <input type="text" name="itemName" placeholder="Enter the meal" />
+    </label>
+
+    <label>
+      Description
+      <input
+        type="text"
+        name="itemDescription"
+        placeholder="Enter the description"
+      />
+    </label>
+
+    <label>
+      Category
+      <input
+        type="text"
+        name="itemCategory"
+        placeholder="choose your catagory"
+      />
+    </label>
+    <label>
+      Price
+      <input type="number" name="itemPrice" placeholder="Price" />
+    </label>
+    <label>
+      ImageURL:
+      <input type="url" name="itemImageURL" />
+    </label>
+
+    <button type="submit">add</button>
+
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+
+</div>
+<div id="data-display">
+  should be here
+  {{#each dataFood}}
+    <ul>
+      <li class="list-created-meal">
+
+        <p><strong>Name: </strong>{{this.itemName}}</p>
+        <p class="description"><strong>Description:
+          </strong>{{this.itemDescription}}</p>
+        <p><strong>Category: </strong>{{this.itemCategory}}</p>
+        <p><strong>Price $ </strong> {{this.itemPrice}}</p>
+        <img class="meal-img" src="{{this.itemImageURL}}" />
+      </li>
+    </ul>
+  {{/each}}
+</div>
