@@ -620,3 +620,63 @@ footer a {
 footer .logo {
   margin-left: 160px;
 }
+#order-tracking-container {
+  margin-top: 12rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+#order-tracking-container h1 {
+  font-size: 4rem;
+}
+.img-tracking {
+  display: flex;
+  justify-content: space-between;
+}
+.img-tracking img {
+  width: 20rem;
+  height: 20rem;
+}
+.progress-bar {
+  width: 100%;
+  background-color: #e9f7f5;
+  height: 5px;
+  position: relative;
+  margin-top: 10px;
+}
+.progress-round {
+  width: 25px;
+  height: 25px;
+  background-color: #29b298;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  animation: moveRound 4s linear infinite;
+}
+@keyframes moveRound {
+  0% {
+    left: 0;
+  }
+  25% {
+    left: 25%;
+  }
+  50% {
+    left: 50%;
+  }
+  75% {
+    left: 75%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.text-tracking {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 5rem;
+}
+.text-tracking p {
+  color: #646464;
+  font-size: 2rem;
+}
