@@ -351,6 +351,7 @@ header {
   overflow: hidden;
   border-radius: 10px;
   z-index: 1000;
+  transition: all 0.5s;
 }
 
 #category-menu:hover {
@@ -384,7 +385,7 @@ header {
 }
 
 #category-menu span.category-name {
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
   transition: all 0.3s ease;
   opacity: 0;
   color: #646464;
@@ -401,7 +402,6 @@ header {
   padding: 5px 5px;
   margin-right: 16px;
 }
-
 
 #top-choice {
   text-align: center;
@@ -430,8 +430,6 @@ header {
   transition: transform 0.5s ease-in-out;
   margin-left: 100px;
   margin-right: 100px;
- 
-
 }
 
 .carousel-item {
@@ -446,7 +444,6 @@ header {
 
 .carousel-item:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
- 
 }
 
 .carousel-item img {
@@ -508,7 +505,7 @@ footer {
   color: #ffffff;
 }
 .footer-container ul {
-  list-style-type: none; 
+  list-style-type: none;
 }
 footer li {
   color: #ffffff;
@@ -522,7 +519,7 @@ footer li {
   vertical-align: middle;
 }
 .footer-icons {
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 .footer-container {
