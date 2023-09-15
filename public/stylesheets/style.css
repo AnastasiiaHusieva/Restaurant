@@ -2,14 +2,13 @@
 layout colors 
 Orange layout shades:
 #ffa31a;!
+
+
 #fd7e14
 #190d02
 #fed8b9
 
 Buttons' color:
-#36c8ad;
-
-Logo's green color:
 #29B298
 
 Labels' color:
@@ -56,7 +55,7 @@ body {
   font: 14px "Ubuntu", sans-serif;
   background-color: #ffffff;
   padding: 0;
-  margin-left: 110px;
+  margin: 0;
 }
 
 h1,
@@ -150,6 +149,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
 }
 
 .navbar {
@@ -165,10 +165,9 @@ header {
 }
 
 .icons img {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   padding: 5px 5px;
-  border-radius: 20px;
 }
 
 .icons a {
@@ -178,10 +177,7 @@ header {
 .icon {
   display: inline-block;
   align-items: center;
-  background-color: #29b298;
   padding: 10px 15px;
-  border-radius: 2.8rem;
-  margin-right: 20px;
 }
 
 /* LOGIN FORM */
@@ -299,11 +295,12 @@ header {
 /*Section 1*/
 
 #banner {
-  background-color: white;
+  background: linear-gradient(to bottom, #ffa31a, white);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 70vh;
+  margin-top: 120px;
 }
 
 #banner h1 {
@@ -312,17 +309,31 @@ header {
   text-align: center;
 }
 
+.banner {
+  display: flex;
+}
+.banner img {
+  height: 60vh;
+}
+
+#get-started-btn {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-left: 50px;
+}
+
 .get-started-btn {
   margin: auto;
   background-color: #29b298;
   display: inline-block;
   align-items: center;
+  margin-top: 0;
   padding: 1.5rem 3rem;
   border-radius: 3rem;
-  margin: auto;
 }
 
-.get-started {
+.get-started-btn a {
   text-decoration: none;
   color: #ffffff;
   font-size: 1.5rem;
@@ -335,37 +346,66 @@ header {
   left: 0;
   background: #fff;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  width: 100px;
+  width: 8rem;
+  height: 50rem;
   overflow: hidden;
   border-radius: 10px;
+  z-index: 1000;
+}
+
+#category-menu:hover {
+  width: 16rem;
 }
 
 #category-menu ul {
   align-items: center;
-  padding: 15px;
+  padding: 10px;
 }
 
 #category-menu li {
   align-items: center;
+  padding: 10px;
+  height: 55px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+#category-menu li:hover {
+  background-color: #e9f7f5;
+  height: 75px;
+}
+
+#category-menu a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+#category-menu span.category-name {
+  font-size: 1.2rem; 
+  transition: all 0.3s ease;
+  opacity: 0;
+  color: #646464;
+}
+
+#category-menu:hover span.category-name {
+  opacity: 1;
+  font-size: 1.3rem;
 }
 
 .food-icons img {
   width: 50px;
   height: 50px;
   padding: 5px 5px;
-  transition: all 0.5s;
+  margin-right: 16px;
 }
 
-.food-icons img:hover {
-  height: 70px;
-  padding-bottom: 5px;
-
-  flex-direction: row;
-  transition: all 0.5s;
-}
 
 #top-choice {
   text-align: center;
+  margin-left: 100px;
 }
 
 .carousel-title {
@@ -383,18 +423,30 @@ header {
 
 .carousel {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
   width: 90%;
   transition: transform 0.5s ease-in-out;
+  margin-left: 100px;
+  margin-right: 100px;
+ 
+
 }
 
 .carousel-item {
-  flex: 0 0 25%;
+  flex-basis: calc(25% - 20px);
   padding: 20px;
   text-align: center;
   border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  margin: 3px;
+  margin-bottom: 2rem;
+}
+
+.carousel-item:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+ 
 }
 
 .carousel-item img {
@@ -453,24 +505,36 @@ svg {
 footer {
   background-color: #1d1d1d;
   padding: 20px;
-}
-
-footer h3 {
   color: #ffffff;
 }
-
+.footer-container ul {
+  list-style-type: none; 
+}
 footer li {
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .footer-icons img {
-  width: 35px;
+  max-width: 35px;
   height: 35px;
   margin: 5px;
+  vertical-align: middle;
+}
+.footer-icons {
+  margin-top: 10px; 
 }
 
 .footer-container {
   display: flex;
   justify-content: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer .logo {
+  margin-left: 160px;
 }
