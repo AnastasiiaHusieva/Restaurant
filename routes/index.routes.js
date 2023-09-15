@@ -9,3 +9,8 @@ router.get("/order", (req, res) => {
 });
 // this is a test comment to see if I can push to github
 module.exports = router;
+
+// cart routes
+router.get("/cart", (req, res, next) => {
+  res.render("cart");
+});
