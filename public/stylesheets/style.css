@@ -98,40 +98,124 @@ ul {
   My fancy feature
 }
 */
+/* //////////////////////ADMIN PAGE//////////////// */
+.addfood-title {
+  font-size: 3rem;
+  margin-bottom: 120px;
+}
 
+#admin-page {
+  padding: 5%;
+}
+.form-style {
+  background-color: #ffa31a;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 8px;
+}
+td {
+  height: 100px;
+}
+.admin-btn {
+  background-color: #29b298;
+  color: #d0f1e7;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s;
+  font-weight: 800;
+}
+.admin-btn:hover {
+  background-color: white;
+  color: #29b298;
+}
+.form-fields {
+  font-size: 1.5rem;
+  padding-right: 1px;
+  border-radius: 8px;
+
+  position: sticky;
+  top: 80px;
+
+  z-index: 100;
+}
+
+.sticky {
+  position: fixed;
+  margin: 0 auto;
+  top: 120px;
+}
+/* .edit-column {
+} */
+.edit-delete-btn {
+  display: flex;
+  flex-direction: column;
+}
+.edit-delete-btn button {
+  flex-grow: 1;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 800;
+  transition: all 0.4s;
+}
+.edit-delete-btn button:nth-child(odd) {
+  background-color: #29b298;
+}
+.edit-delete-btn button:nth-child(even) {
+  background-color: rgb(203, 24, 24);
+}
+.edit-delete-btn button:nth-child(odd):hover {
+  background-color: #23574e;
+  color: #fd7e14;
+}
+.edit-delete-btn button:nth-child(even):hover {
+  background-color: rgb(156, 18, 18);
+  color: white;
+}
 /*/////////// MEAL-IMAGES */
 #add-meals-form {
-  margin-top: 15%;
+  margin-top: 5%;
 }
 #add-meals-form form {
-  width: 100%;
+  margin: 0 auto;
+
+  border: solid 6px #29b298;
+  box-shadow: 4px 4px 7px 0px;
+  margin-bottom: 40px;
 }
 
 #data-display {
   display: flex;
   flex-direction: column;
+  font-size: 2rem;
 }
-
+.strong-style {
+  font-size: 2.2rem;
+  color: #646464;
+  margin-right: 8px;
+}
 .meal-img {
-  display: flex;
-  flex-direction: row;
-  width: 220px;
-  height: 140px;
+  width: 190px;
+  height: 100px;
   border-radius: 10px;
 }
 
 .list-created-meal {
-  padding-bottom: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 10px;
+  padding: 10px;
+  text-align: center;
   border-bottom: solid 2px black;
+  border-radius: 8px;
 }
-
+.list-created-meal:nth-child(odd) {
+  background-color: #bebebeaa;
+}
 .description {
   width: 45%;
 }
+/* ////////////////////////////// */
 
 /*
 background-color: #ffa31a;
@@ -157,6 +241,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  box-shadow: 6px 6px 9px 0;
 }
 
 .icons {
@@ -351,7 +436,7 @@ header {
   overflow: hidden;
   border-radius: 10px;
   z-index: 1000;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 
 #category-menu:hover {

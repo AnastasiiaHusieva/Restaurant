@@ -1,59 +1,87 @@
-<div id="add-meals-form">
-  <h2>Add Meal</h2>
-  <form action="/admin/add-meals-form" method="POST">
+<div id="admin-page">
 
-    <label>
-      Meal
-      <input type="text" name="itemName" placeholder="Enter the meal" />
-    </label>
+  <div>
+    <div id="add-meals-form">
+      <h2 class="addfood-title">Add Meal</h2>
 
-    <label>
-      Description
-      <input
-        type="text"
-        name="itemDescription"
-        placeholder="Enter the description"
-      />
-    </label>
+      <form action="/admin/add-meals-form" method="POST" class="form-style">
 
-    <label>
-      Category
-      <input
-        type="text"
-        name="itemCategory"
-        placeholder="choose your catagory"
-      />
-    </label>
-    <label>
-      Price
-      <input type="number" name="itemPrice" placeholder="Price" />
-    </label>
-    <label>
-      ImageURL:
-      <input type="url" name="itemImageURL" />
-    </label>
+        <label class="form-fields">
+          Meal
+          <input
+            class="form-fields"
+            type="text"
+            name="itemName"
+            placeholder="Enter the meal"
+          />
+        </label>
 
-    <button type="submit">add</button>
+        <label class="form-fields">
+          Description
+          <input
+            class="form-fields"
+            type="text"
+            name="itemDescription"
+            placeholder="Enter the description"
+          />
+        </label>
 
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+        <label class="form-fields">
+          Category
+          <input
+            class="form-fields"
+            type="text"
+            name="itemCategory"
+            placeholder="choose your catagory"
+          />
+        </label>
+        <label class="form-fields">
+          Price
+          <input
+            class="form-fields"
+            type="number"
+            name="itemPrice"
+            placeholder="Price"
+          />
+        </label>
+        <label class="form-fields">
+          ImageURL:
+          <input class="form-fields" type="url" name="itemImageURL" />
+        </label>
 
-</div>
-<div id="data-display">
-  should be here
-  {{#each dataFood}}
-    <ul>
-      <li class="list-created-meal">
+        <button class="admin-btn" type="submit">add</button>
 
-        <p><strong>Name: </strong>{{this.itemName}}</p>
-        <p class="description"><strong>Description:
-          </strong>{{this.itemDescription}}</p>
-        <p><strong>Category: </strong>{{this.itemCategory}}</p>
-        <p><strong>Price $ </strong> {{this.itemPrice}}</p>
-        <img class="meal-img" src="{{this.itemImageURL}}" />
-      </li>
-    </ul>
-  {{/each}}
+        {{#if errorMessage}}
+          <p class="error">{{errorMessage}}</p>
+        {{/if}}
+      </form>
+
+    </div>
+  </div>
+  <div id="data-display">
+    <table border="1">
+      <tr>
+        <th class="strong-style">NAME:</th>
+        <th class="strong-style">DESCRIPTION:</th>
+        <th class="strong-style">CATEGORY:</th>
+        <th class="strong-style">PRICE $ </th>
+        <th class="strong-style">Image: </th>
+        <th class="strong-style edit-column">Edit/Delete</th>
+      </tr>
+      {{#each dataFood}}
+        <tr class="list-created-meal">
+          <td>{{this.itemName}}</td>
+          <td>{{this.itemDescription}}</td>
+          <td>{{this.itemCategory}}</td>
+          <td>{{this.itemPrice}}</td>
+          <td>
+            <img class="meal-img" src="{{this.itemImageURL}}" /></td>
+          <td class="edit-delete-btn"><button type="button">Edit</button>
+            <button type="submit">Delete</button></td>
+        </tr>
+      {{/each}}
+    </table>
+
+  </div>
+  <script src="script.js"></script>
 </div>
