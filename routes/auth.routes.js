@@ -62,7 +62,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
         errorMessage: "Email must contain a dot (.)"
     });
     return;
-  }
+  }   
 
   // Create a new user - start by hashing the password
   bcrypt
