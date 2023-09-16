@@ -43,7 +43,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
   }
 
   //   ! This regular expression checks password for special characters and minimum length
-  /*
+ 
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
     res
@@ -53,7 +53,18 @@ router.post("/signup", isLoggedOut, (req, res) => {
     });
     return;
   }
-  */
+
+  const emailRegex = /\./;
+
+  if (!emailRegex.test(email)) {
+    res
+      .status(400)
+      .render("auth/signup", {
+        errorMessage: "Email should contain a period"
+    });
+    return;
+  };
+
 
   // Create a new user - start by hashing the password
   bcrypt
