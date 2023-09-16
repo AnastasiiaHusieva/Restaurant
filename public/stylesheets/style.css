@@ -34,6 +34,7 @@ blablah
 1rem/12.00px	A Visual Type Scale
 */
 
+/* IMPORT FONT-FAMILY */
 @font-face {
   font-family: "Ubuntu";
   src: url("/fonts/Ubuntu/Ubuntu-Bold.ttf") format("truetype"),
@@ -64,10 +65,7 @@ h2 {
   text-align: center;
 }
 
-.logo {
-  width: 100px;
-  height: 100px;
-}
+
 
 .login {
   width: 100px;
@@ -79,25 +77,16 @@ ul {
 }
 
 /*LOGO box*/
+.logo {
+  width: 100px;
+  height: 100px;
+}
 
 .logo img {
   width: 24em;
   height: 7em;
 }
 
-/*.link-box {
-  display: inline-block;
-  background-color: #ffa31a;
-  padding: 5px;
-  border: 1px solid #29B298;
-}
-
-.link-box a {
-  text-decoration: none; 
-  
-  My fancy feature
-}
-*/
 /* //////////////////////ADMIN PAGE//////////////// */
 .addfood-title {
   font-size: 3rem;
@@ -295,11 +284,6 @@ ul {
 }
 /* ////////////////////////////// */
 
-/*
-background-color: #ffa31a;
-}
-
-*/
 /* Nav bar */
 
 header {
@@ -506,7 +490,8 @@ header {
   background-color: #fff;
 }
 
-/*Section 1*/
+
+/* Section 1 */
 
 #banner {
   background: linear-gradient(to bottom, #ffa31a, white);
@@ -552,7 +537,7 @@ header {
   color: #ffffff;
   font-size: 1.5rem;
 }
-
+/* ////////MENU SIDE BAR ///////*/
 #category-menu {
   position: fixed;
   top: 128px;
@@ -617,37 +602,38 @@ header {
   margin-right: 16px;
 }
 
-#top-choice {
+/* HOME PAGE */
+main {
+  margin-left: 9rem;
   text-align: center;
-  margin-left: 100px;
 }
 
-.carousel-title {
+.category-title {
   font-size: 3rem;
   margin-bottom: 3rem;
 }
 
-.carousel-container {
+/*.carousel-container {
   position: relative;
   display: flex;
   justify-content: center;
   text-align: center;
   overflow: hidden;
 }
+*/
 
-.carousel {
+.category-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-  width: 90%;
+  width: 100%;
   transition: transform 0.5s ease-in-out;
-  margin-left: 100px;
   margin-right: 100px;
 }
 
-.carousel-item {
+.item {
   flex-basis: calc(25% - 20px);
+  width: calc(25% - 20px);
   padding: 20px;
   text-align: center;
   border: none;
@@ -656,24 +642,38 @@ header {
   margin-bottom: 2rem;
 }
 
-.carousel-item:hover {
+.item:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+.item:hover h3{
+  color: #ffa31a;
+}
 
-.carousel-item img {
-  max-width: 100%;
+.item img {
+  max-width: 25%;
   height: auto;
+}
+
+.item h3 {
+  color: #646464;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.item p {
+  color: #646464;
+  font-size: 1.5rem;
 }
 
 .add-to-cart-button {
   background-color: #29b298;
   color: #fff;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 15px;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 20px;
 }
-
+/*  For the carousel buttons
 .arrow-btn img {
   width: 40px;
   height: 40px;
@@ -695,32 +695,29 @@ header {
 .next-btn {
   right: 0;
 }
+*/
 
 svg {
   margin-top: 14rem;
   width: 100%;
 }
 
-#pizza {
-  margin-top: 0;
-  background-color: #e9f7f5;
-  text-align: center;
-  border-image-slice: 80 0 0;
-}
-
 .menu-title {
-  margin-top: 0;
   font-size: 4rem;
 }
+
+/* ////FOOTER /// */
 
 footer {
   background-color: #1d1d1d;
   padding: 20px;
   color: #ffffff;
 }
+
 .footer-container ul {
   list-style-type: none;
 }
+
 footer li {
   color: #ffffff;
   font-size: 1.3rem;
@@ -732,6 +729,7 @@ footer li {
   margin: 5px;
   vertical-align: middle;
 }
+
 .footer-icons {
   margin-top: 10px;
 }
@@ -749,6 +747,9 @@ footer a {
 footer .logo {
   margin-left: 160px;
 }
+
+/* ///// ORDER PAGE ////*/
+
 #order-tracking-container {
   margin-top: 12rem;
   margin-left: 3rem;
