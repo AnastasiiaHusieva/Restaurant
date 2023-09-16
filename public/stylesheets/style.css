@@ -241,7 +241,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  box-shadow: 6px 6px 9px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .icons {
@@ -376,6 +376,59 @@ header {
 .account-exists p {
   color: #646464;
 }
+
+/*    PROFILE SIDE BAR   */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 2rem;
+  width: 15rem;
+  height: 20rem;
+  background-color: #ffffff;
+  margin-top: 120px;
+  display: none;
+  border-radius: 20px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 2.5rem;
+}
+
+.logout-link {
+  position: absolute;
+  bottom: 0.5rem;
+}
+
+.links a {
+  color: #646464;
+  font-size: 1.2rem;
+  text-decoration: none;
+  
+}
+
+.links img {
+  vertical-align: middle;
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+#closeBtn {
+  border: none;
+  border-radius: 1.2rem;
+  font-size: 2rem;
+  padding: 0;
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  cursor: pointer;
+  color: #36c8ad;
+  text-decoration: none;
+  background-color: #fff;
+}
+
 
 /*Section 1*/
 
