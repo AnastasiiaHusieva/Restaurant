@@ -1,9 +1,11 @@
 <div id="admin-page">
+
   <div>
     <div id="add-meals-form">
       <h2 class="addfood-title">Meals Database</h2>
 
       <form action="/admin/add-meals-form" method="POST" class="form-style">
+
         <label class="form-fields">
           Meal
           <input
@@ -26,18 +28,13 @@
 
         <label class="form-fields">
           Category
-          <select class="form-fields" name="itemCategory">
-            <option value="Top Choice">Top Choice</option>
-            <option value="Pizza">Pizza</option>
-            <option value="Salads">Salads</option>
+          <select class="form-fields" type="text" name="itemCategory">
+            <option value="sushi">Sushi</option>
+            <option value="pizza">Pizza</option>
             <option value="Burgers">Burgers</option>
-            <option value="Sushi">Sushi</option>
-            <option value="Soups">Soups</option>
-            <option value="Desserts">Desserts</option>
-            <option value="Cocktails">Cocktails</option>
+            <option value="Burgers">Dessert</option>
           </select>
         </label>
-
         <label class="form-fields">
           Price
           <input
@@ -48,7 +45,6 @@
             placeholder="Price"
           />
         </label>
-
         <label class="form-fields">
           Meal#
           <input class="form-fields" type="number" name="itemNumber" />
@@ -69,6 +65,7 @@
           <p class="error">{{errorMessage}}</p>
         {{/if}}
       </form>
+
     </div>
   </div>
   <div id="data-display">
@@ -100,6 +97,7 @@
         </tr>
       {{/each}}
     </table>
+
   </div>
   <script src="script.js"></script>
 </div>
