@@ -12,3 +12,28 @@ window.onscroll = function () {
     formFields.classList.remove("sticky");
   }
 };
+
+
+
+// To display account pop-up
+ const open = document.getElementById('open');
+ const closeBtn = document.getElementById('closeBtn');
+ const profileBar = document.getElementById('profileBar');
+ 
+ open.addEventListener('click', (event) => {
+    event.preventDefault()
+    profileBar.style.display = 'block';
+     console.log("display block")
+ });
+ 
+ closeBtn.addEventListener('click', () => {
+  profileBar.style.display = 'none';
+      console.log("display none added ")
+  });
+
+  // document.addEventListener('click', (event) => {
+  //   if (!profileBar.contains(event.target) && event.target !== open) {
+  //       profileBar.style.display = 'none';
+  //       console.log("display none")
+  //   }
+  // });

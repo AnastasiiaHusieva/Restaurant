@@ -2,8 +2,14 @@ const express = require("express");
 const router = express.Router();
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  let isLoggedIn = req.session.currentUser;
+  if (isLoggedIn) {
+    res.render("index", { isLoggedIn: true });
+  } else if (!isLoggedIn) {
+    res.render("index", { isLoggedIn: false });
+  }
 });
+
 router.get("/order", (req, res) => {
   res.render("track-order");
 });
