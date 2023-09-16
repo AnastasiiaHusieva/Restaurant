@@ -1,11 +1,9 @@
 <div id="admin-page">
-
   <div>
     <div id="add-meals-form">
       <h2 class="addfood-title">Add Meal</h2>
 
       <form action="/admin/add-meals-form" method="POST" class="form-style">
-
         <label class="form-fields">
           Meal
           <input
@@ -28,13 +26,18 @@
 
         <label class="form-fields">
           Category
-          <input
-            class="form-fields"
-            type="text"
-            name="itemCategory"
-            placeholder="choose your catagory"
-          />
+          <select class="form-fields" name="itemCategory">
+            <option value="Top Choice">Top Choice</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Salads">Salads</option>
+            <option value="Burgers">Burgers</option>
+            <option value="Sushi">Sushi</option>
+            <option value="Soups">Soups</option>
+            <option value="Desserts">Desserts</option>
+            <option value="Cocktails">Cocktails</option>
+          </select>
         </label>
+
         <label class="form-fields">
           Price
           <input
@@ -44,6 +47,7 @@
             placeholder="Price"
           />
         </label>
+
         <label class="form-fields">
           ImageURL:
           <input class="form-fields" type="url" name="itemImageURL" />
@@ -55,7 +59,6 @@
           <p class="error">{{errorMessage}}</p>
         {{/if}}
       </form>
-
     </div>
   </div>
   <div id="data-display">
@@ -75,13 +78,15 @@
           <td>{{this.itemCategory}}</td>
           <td>{{this.itemPrice}}</td>
           <td>
-            <img class="meal-img" src="{{this.itemImageURL}}" /></td>
-          <td class="edit-delete-btn"><button type="button">Edit</button>
-            <button type="submit">Delete</button></td>
+            <img class="meal-img" src="{{this.itemImageURL}}" />
+          </td>
+          <td class="edit-delete-btn">
+            <button type="button">Edit</button>
+            <button type="submit">Delete</button>
+          </td>
         </tr>
       {{/each}}
     </table>
-
   </div>
-    <script src="/js/script.js"></script>
+  <script src="/js/script.js"></script>
 </div>
