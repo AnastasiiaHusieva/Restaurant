@@ -1,404 +1,441 @@
 <main>
-    <section id="banner">
-        <div class="banner">
-           <div><img src="/images/Floating-burger-transparent-background-PNG.png" alt="Floating-burger"></div>
-           <div id="get-started-btn">
-               <h1>Where Bytes Meet Bites</h1>
-               <div class="get-started-btn"><a  href="/auth/signup">GET STARTED</a></div>
-           </div>
+  <section id="banner">
+    <div class="banner">
+      <div><img
+          src="/images/Floating-burger-transparent-background-PNG.png"
+          alt="Floating-burger"
+        /></div>
+      <div id="get-started-btn">
+        <h1>Where Bytes Meet Bites</h1>
+        <div class="get-started-btn"><a href="/auth/signup">GET STARTED</a></div>
+      </div>
+    </div>
+    <div id="category-menu">
+      <ul>
+        <li>
+          <a class="food-icons" href="#pizza">
+            <img src="/images/food-icons/pizza.png" alt="pizza-icon" />
+            <span class="category-name">Pizza</span>
+          </a>
+        </li>
+        <li>
+          <a class="food-icons" href="#salads">
+            <img src="/images/food-icons/salad.png" alt="salad-icon" />
+            <span class="category-name">Salads</span>
+          </a>
+        </li>
+        <li>
+          <a class="food-icons" href="#burgers">
+            <img src="/images/food-icons/burger.png" alt="burger-icon" />
+            <span class="category-name">Burgers</span>
+          </a>
+        </li>
+        <li>
+          <a class="food-icons" href="#sushi">
+            <img src="/images/food-icons/nigiri.png" alt="sushi-icon" />
+            <span class="category-name">Sushi</span>
+          </a>
+        </li>
+        <li>
+          <a class="food-icons" href="#soups">
+            <img src="/images/food-icons/hot-soup.png" alt="soup-icon" />
+            <span class="category-name">Soups</span>
+          </a>
+        </li>
+        <li>
+          <a class="food-icons" href="#desserts">
+            <img src="/images/food-icons/cupcake.png" alt="dessert-icon" />
+            <span class="category-name">Desserts</span>
+          </a>
+        </li>
+        <li>
+          <a class="food-icons" href="#cocktails">
+            <img src="/images/food-icons/cocktail.png" alt="cocktail-icon" />
+            <span class="category-name">Cocktails</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="top-choice">
+    <h2 class="carousel-title">Top Choice</h2>
+    <div class="carousel-container">
+      <button class="arrow-btn prev-btn" class="carousel-button"><img
+          src="/images/icons/previous.png"
+          alt="prev-btn"
+        /></button>
+      <div class="carousel">
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.name}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
         </div>
-        <div id="category-menu">
-            <ul>
-                <li>
-                    <a class="food-icons" href="#pizza">
-                    <img src="/images/food-icons/pizza.png" alt="pizza-icon">
-                    <span class="category-name">Pizza</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="food-icons" href="#salads">
-                    <img src="/images/food-icons/salad.png" alt="salad-icon">
-                    <span class="category-name">Salads</span>
-                    </a>
-                    </li>
-                <li>
-                    <a class="food-icons" href="#burgers">
-                    <img src="/images/food-icons/burger.png" alt="burger-icon">
-                    <span class="category-name">Burgers</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="food-icons" href="#sushi">
-                    <img src="/images/food-icons/nigiri.png" alt="sushi-icon">
-                    <span class="category-name">Sushi</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="food-icons" href="#soups">
-                    <img src="/images/food-icons/hot-soup.png" alt="soup-icon">
-                    <span class="category-name">Soups</span>
-                    </a>
-                    </li>
-                <li>
-                    <a class="food-icons" href="#desserts">
-                    <img src="/images/food-icons/cupcake.png" alt="dessert-icon">
-                    <span class="category-name">Desserts</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="food-icons" href="#cocktails">
-                        <img src="/images/food-icons/cocktail.png" alt="cocktail-icon">
-                        <span class="category-name">Cocktails</span>
-                    </a>
-                </li>
-            </ul>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.name}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
         </div>
-    </section>
-  
-    <section id="top-choice">
-        <h2 class="carousel-title">Top Choice</h2>
-           <div class="carousel-container">
-        <button class="arrow-btn prev-btn" class="carousel-button"><img src="/images/icons/previous.png" alt="prev-btn"></button>
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.name}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.name}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.name}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.name}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.name}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
         </div>
-        <button class="arrow-btn next-btn" class="carousel-button"><img src="/images/icons/next.png" alt="next-btn"></button>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.name}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+      <button class="arrow-btn next-btn" class="carousel-button"><img
+          src="/images/icons/next.png"
+          alt="next-btn"
+        /></button>
 
     </div>
-    
-    </section>
 
-  
-         <svg xmlns="http://www.w3.org/2000/svg"  height="80" width="1380">
-         <path fill="#e9f8f5" d="M597 33c246 77 683 0 683 0v47H0V33S130 5 286 0h92c75 3 151 12 219 33z" vector-effect="non-scaling-stroke"/>
-        </svg>
+  </section>
 
-      <section id="pizza">
-       
-        <h2 class="menu-title">MENU</h2>
-        <h2 class="carousel-title">Pizza</h2>
-           <div class="carousel-container">
-        
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemitemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
+  <svg xmlns="http://www.w3.org/2000/svg" height="80" width="1380">
+    <path
+      fill="#e9f8f5"
+      d="M597 33c246 77 683 0 683 0v47H0V33S130 5 286 0h92c75 3 151 12 219 33z"
+      vector-effect="non-scaling-stroke"
+    />
+  </svg>
+
+  <section id="pizza">
+
+    <h2 class="menu-title">MENU</h2>
+    <h2 class="carousel-title">Pizza</h2>
+    <div class="carousel-container">
+
+      <div class="carousel">
+
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
         </div>
-        
- 
-    </div>
-    
-    </section>
-
-    <section id="salads">
-        <h2 class="carousel-title">Salads</h2>
-           <div class="carousel-container">
-        
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemitemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
         </div>
-       
-    </div>
-    
-    </section>
-
-    <section id="burgers">
-        <h2 class="carousel-title">Burgers</h2>
-           <div class="carousel-container">
-        
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
         </div>
-       
-    </div>
-    
-    </section>
-
-    <section id="sushi">
-        <h2 class="carousel-title">Sushi</h2>
-           <div class="carousel-container">
-        
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
         </div>
-       
-    </div>
-    
-    </section>
-
-    <section id="soups">
-        <h2 class="carousel-title">Soups</h2>
-           <div class="carousel-container">
-        
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
         </div>
-       
-    </div>
-    
-    </section>
-
-    <section id="desserts">
-        <h2 class="carousel-title">Desserts</h2>
-           <div class="carousel-container">
-        
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
         </div>
-       
-    </div>
-    
-    </section>
-
-
-     <section id="cocktails">
-        <h2 class="carousel-title">Cocktails</h2>
-           <div class="carousel-container">
-        
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-             <div class="carousel-item">
-                <img src="{{this.itemImageURL}}" alt="Food">
-                <h3>{{this.itemName}}</h3>
-                <p>{{this.ingredients}}</p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
         </div>
-        
-    </div>
-    
-    </section>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
 
-    
+    </div>
+
+  </section>
+
+  <section id="salads">
+    <h2 class="carousel-title">Salads</h2>
+    <div class="carousel-container">
+
+      <div class="carousel">
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="burgers">
+    <h2 class="carousel-title">Burgers</h2>
+    <div class="carousel-container">
+
+      <div class="carousel">
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="sushi">
+    <h2 class="carousel-title">Sushi</h2>
+    <div class="carousel-container">
+
+      <div class="carousel">
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="soups">
+    <h2 class="carousel-title">Soups</h2>
+    <div class="carousel-container">
+
+      <div class="carousel">
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="desserts">
+    <h2 class="carousel-title">Desserts</h2>
+    <div class="carousel-container">
+
+      <div class="carousel">
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="cocktails">
+    <h2 class="carousel-title">Cocktails</h2>
+    <div class="carousel-container">
+
+      {{!-- <div class="carousel">
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div class="carousel-item">
+          <img src="{{this.itemImageURL}}" alt="Food" />
+          <h3>{{this.itemName}}</h3>
+          <p>{{this.ingredients}}</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div> --}}
+
+    </div>
+
+  </section>
+
 </main>
 
-    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1280" height="68">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xml:space="preserve"
+  width="1280"
+  height="68"
+>
   <path fill="#1d1d1d" d="M1280 68H0V42c432-61 866-54 1280 26Z" />
 </svg>
 
 <footer>
 
-    <div class="logo"><img src="/images/LOGOfooter.png" alt="LOGO"></div>
-    <div class="footer-container">
+  <div class="logo"><img src="/images/LOGOfooter.png" alt="LOGO" /></div>
+  <div class="footer-container">
     <ul>
-        <h3>FOLLOW US</h3>
-        <li class="footer-icons ">
-           <a href="https://www.instagram.com/" target="_blank"><img src="/images/icons/instagram.png" alt="Instagram-icon">Instagram</a></li>
-        <li class="footer-icons "><a href="https://www.facebook.com/" target="_blank"><img src="/images/icons/facebook.png" alt="Facebook-icon">Facebook</a></li>
+      <h3>FOLLOW US</h3>
+      <li class="footer-icons">
+        <a href="https://www.instagram.com/" target="_blank"><img
+            src="/images/icons/instagram.png"
+            alt="Instagram-icon"
+          />Instagram</a></li>
+      <li class="footer-icons"><a
+          href="https://www.facebook.com/"
+          target="_blank"
+        ><img
+            src="/images/icons/facebook.png"
+            alt="Facebook-icon"
+          />Facebook</a></li>
     </ul>
     <ul>
-        <h3>CONTACT US</h3>
-        <li class="footer-icons"><a href="" target="_blank"><img src="/images/icons/phone.png" alt="phone">+3925207546707</a></li>
-        <li class="footer-icons"><a href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtXJTLZJsWZKNlDcJHLfgRFGMDGmWkGdGlMrJLwLfMHNHTJSfwLvrmLnZvDrfqsQrHbsnB" target="_blank"><img src="/images/icons/gmail.png" alt="email">datadine@gmail.com</a></li>
+      <h3>CONTACT US</h3>
+      <li class="footer-icons"><a href="" target="_blank"><img
+            src="/images/icons/phone.png"
+            alt="phone"
+          />+3925207546707</a></li>
+      <li class="footer-icons"><a
+          href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtXJTLZJsWZKNlDcJHLfgRFGMDGmWkGdGlMrJLwLfMHNHTJSfwLvrmLnZvDrfqsQrHbsnB"
+          target="_blank"
+        ><img
+            src="/images/icons/gmail.png"
+            alt="email"
+          />datadine@gmail.com</a></li>
     </ul>
-     <ul>
-        <h3>GET OUR APP ON</h3>
-        <li class="footer-icons"><a href="https://www.apple.com/app-store/" target="_blank"><img src="/images/icons/app-store.png" alt="appStore">App Store</a></li>
-        <li class="footer-icons"><a href="https://play.google.com/" target="_blank"><img src="/images/icons/google-play.png" alt="GooglePlay">Google Play</a></li>
+    <ul>
+      <h3>GET OUR APP ON</h3>
+      <li class="footer-icons"><a
+          href="https://www.apple.com/app-store/"
+          target="_blank"
+        ><img src="/images/icons/app-store.png" alt="appStore" />App Store</a></li>
+      <li class="footer-icons"><a
+          href="https://play.google.com/"
+          target="_blank"
+        ><img src="/images/icons/google-play.png" alt="GooglePlay" />Google Play</a></li>
     </ul>
-    </div>
-
-
+  </div>
 
 </footer>
-<script src="script.js"></script>
+<script src="/js/home.js"></script>

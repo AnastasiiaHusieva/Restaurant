@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const Item = require("../models/ItemsAdmin.model");
+
 /* GET home page */
 router.get("/", (req, res, next) => {
   res.render("index");
@@ -11,6 +13,13 @@ router.get("/order", (req, res) => {
 
 // cart routes
 router.get("/cart", (req, res, next) => {
-  res.render("cart");
+  res.render("cart", { data });
 });
+
+router.get("/products", (req, res, next) => {
+  Item.find().then((items) => {
+    res.json(items);
+  });
+});
+
 module.exports = router;

@@ -2,13 +2,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DataDine JS imported successfully!");
 });
-window.onscroll = function () {
-  const formFields = document.querySelector(".form-style");
-  const scrollPosition = window.scrollY || window.pageYOffset;
+document.addEventListener("DOMContentLoaded", function () {
+  window.onscroll = function () {
+    const formFields = document.querySelector(".form-style");
+    const scrollPosition = window.scrollY || window.pageYOffset;
 
-  if (scrollPosition > 208) {
-    formFields.classList.add("sticky");
-  } else {
-    formFields.classList.remove("sticky");
-  }
-};
+    if (formFields && scrollPosition > 208) {
+      formFields.classList.add("sticky");
+    } else if (formFields) {
+      formFields.classList.remove("sticky");
+    }
+  };
+});
+
