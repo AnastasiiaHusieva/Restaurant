@@ -29,15 +29,15 @@ const refreshCarouselTopChoice = () => {
             <h3>${item.itemName}</h3>
             <p>${item.itemDescription}</p>
             <p>${item.itemPrice}</p>
-            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+            <button class="add-to-cart-button" data-item="${item.itemId}">Add to Cart</button>
         </div>
         `;
   });
 };
 //
 const getCarouselItemsTopChoice = () => {
-  const category = "TopChoice"; // Replace with the actual category value
-  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+  const category = "TopChoice"; 
+  fetch(`/items/${category}`) 
       .then((response) => response.json())
       .then((data) => {
           carouselItemsTopChoice = data;
@@ -52,7 +52,7 @@ const getCarouselItemsTopChoice = () => {
 let carouselItemsPizza = [];
 
 const refreshCarouselPizza = () => {
-  const carousel = document.querySelector(".Pizza");
+  const carousel = document.querySelector(".pizza");
   carousel.innerHTML = "";
   carouselItemsPizza.forEach((item) => {
     carousel.innerHTML += `
@@ -61,15 +61,15 @@ const refreshCarouselPizza = () => {
             <h3>${item.itemName}</h3>
             <p>${item.itemDescription}</p>
             <p>${item.itemPrice}</p>
-            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+            <button class="add-to-cart-button" data-item="${item.itemId}">Add to Cart</button>
         </div>
         `;
   });
 };
 //
 const getCarouselItemsPizza = () => {
-  const category = "Pizza"; // Replace with the actual category value
-  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+  const category = "Pizza"; 
+  fetch(`/items/${category}`) 
       .then((response) => response.json())
       .then((data) => {
           carouselItemsPizza = data;
@@ -84,7 +84,7 @@ const getCarouselItemsPizza = () => {
 let carouselItemsSalads = [];
 
 const refreshCarouselSalads = () => {
-  const carousel = document.querySelector(".Salads");
+  const carousel = document.querySelector(".salads");
   carousel.innerHTML = "";
   carouselItemsSalads.forEach((item) => {
     carousel.innerHTML += `
@@ -93,15 +93,15 @@ const refreshCarouselSalads = () => {
             <h3>${item.itemName}</h3>
             <p>${item.itemDescription}</p>
             <p>${item.itemPrice}</p>
-            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+            <button class="add-to-cart-button" data-item="${item.itemId}">Add to Cart</button>
         </div>
         `;
   });
 };
 //
 const getCarouselItemsSalads = () => {
-  const category = "Salads"; // Replace with the actual category value
-  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+  const category = "Salads"; 
+  fetch(`/items/${category}`) 
       .then((response) => response.json())
       .then((data) => {
           carouselItemsSalads = data;
@@ -116,7 +116,7 @@ const getCarouselItemsSalads = () => {
 let carouselItemsBurgers = [];
 
 const refreshCarouselBurgers = () => {
-  const carousel = document.querySelector(".Burgers");
+  const carousel = document.querySelector(".burgers");
   carousel.innerHTML = "";
   carouselItemsBurgers.forEach((item) => {
     carousel.innerHTML += `
@@ -125,15 +125,15 @@ const refreshCarouselBurgers = () => {
             <h3>${item.itemName}</h3>
             <p>${item.itemDescription}</p>
             <p>${item.itemPrice}</p>
-            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+            <button class="add-to-cart-button" data-item="${item.itemId}">Add to Cart</button>
         </div>
         `;
   });
 };
 //
 const getCarouselItemsBurgers = () => {
-  const category = "Burgers"; // Replace with the actual category value
-  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+  const category = "Burgers"; 
+  fetch(`/items/${category}`) 
       .then((response) => response.json())
       .then((data) => {
           carouselItemsBurgers = data;
@@ -157,15 +157,15 @@ const refreshCarouselSushi = () => {
             <h3>${item.itemName}</h3>
             <p>${item.itemDescription}</p>
             <p>${item.itemPrice}</p>
-            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+            <button class="add-to-cart-button" data-item="${item.itemId}">Add to Cart</button>
         </div>
         `;
   });
 };
 //
 const getCarouselItemsSushi = () => {
-  const category = "sushi"; // Replace with the actual category value
-  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+  const category = "sushi"; 
+  fetch(`/items/${category}`)
       .then((response) => response.json())
       .then((data) => {
           carouselItemsSushi = data;
@@ -180,7 +180,7 @@ const getCarouselItemsSushi = () => {
 let carouselItemsSoups = [];
 
 const refreshCarouselSoups = () => {
-  const carousel = document.querySelector(".Soups");
+  const carousel = document.querySelector(".soups");
   carousel.innerHTML = "";
   carouselItemsSoups.forEach((item) => {
     carousel.innerHTML += `
@@ -189,15 +189,15 @@ const refreshCarouselSoups = () => {
             <h3>${item.itemName}</h3>
             <p>${item.itemDescription}</p>
             <p>${item.itemPrice}</p>
-            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+            <button class="add-to-cart-button" data-item="${item.itemId}">Add to Cart</button>
         </div>
         `;
   });
 };
 //
 const getCarouselItemsSoups = () => {
-  const category = "Soups"; // Replace with the actual category value
-  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+  const category = "Soups"; 
+  fetch(`/items/${category}`) 
       .then((response) => response.json())
       .then((data) => {
           carouselItemsSoups = data;
@@ -212,7 +212,7 @@ const getCarouselItemsSoups = () => {
 let carouselItemsDesserts = [];
 
 const refreshCarouselDesserts = () => {
-  const carousel = document.querySelector(".Desserts");
+  const carousel = document.querySelector(".desserts");
   carousel.innerHTML = "";
   carouselItemsDesserts.forEach((item) => {
     carousel.innerHTML += `
@@ -221,15 +221,15 @@ const refreshCarouselDesserts = () => {
             <h3>${item.itemName}</h3>
             <p>${item.itemDescription}</p>
             <p>${item.itemPrice}</p>
-            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+            <button class="add-to-cart-button" data-item="${item.itemId}">Add to Cart</button>
         </div>
         `;
   });
 };
 //
 const getCarouselItemsDesserts = () => {
-  const category = "Desserts"; // Replace with the actual category value
-  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+  const category = "Desserts"; 
+  fetch(`/items/${category}`) 
       .then((response) => response.json())
       .then((data) => {
           carouselItemsDesserts = data;
@@ -244,7 +244,7 @@ const getCarouselItemsDesserts = () => {
 let carouselItemsCocktails = [];
 
 const refreshCarouselCocktails = () => {
-  const carousel = document.querySelector(".Cocktails");
+  const carousel = document.querySelector(".cocktails");
   carousel.innerHTML = "";
   carouselItemsCocktails.forEach((item) => {
     carousel.innerHTML += `
@@ -253,15 +253,15 @@ const refreshCarouselCocktails = () => {
             <h3>${item.itemName}</h3>
             <p>${item.itemDescription}</p>
             <p>${item.itemPrice}</p>
-            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+            <button class="add-to-cart-button" data-item="${item.itemId}">Add to Cart</button>
         </div>
         `;
   });
 };
 //
 const getCarouselItemsCocktails = () => {
-  const category = "Cocktails"; // Replace with the actual category value
-  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+  const category = "Cocktails"; 
+  fetch(`/items/${category}`) 
       .then((response) => response.json())
       .then((data) => {
           carouselItemsCocktails = data;
