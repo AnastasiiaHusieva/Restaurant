@@ -2,7 +2,7 @@
 
   <div>
     <div id="add-meals-form">
-      <h2 class="addfood-title">Add Meal</h2>
+      <h2 class="addfood-title">Meals Database</h2>
 
       <form action="/admin/add-meals-form" method="POST" class="form-style">
 
@@ -28,12 +28,12 @@
 
         <label class="form-fields">
           Category
-          <input
-            class="form-fields"
-            type="text"
-            name="itemCategory"
-            placeholder="choose your catagory"
-          />
+          <select class="form-fields" type="text" name="itemCategory">
+            <option value="sushi">Sushi</option>
+            <option value="pizza">Pizza</option>
+            <option value="Burgers">Burgers</option>
+            <option value="Burgers">Dessert</option>
+          </select>
         </label>
         <label class="form-fields">
           Price
@@ -41,12 +41,22 @@
             class="form-fields"
             type="number"
             name="itemPrice"
+            step="0.01"
             placeholder="Price"
           />
         </label>
         <label class="form-fields">
-          ImageURL:
-          <input class="form-fields" type="url" name="itemImageURL" />
+          Meal#
+          <input class="form-fields" type="number" name="itemNumber" />
+        </label>
+        <label class="form-fields">
+          ImageUrl
+          <input
+            class="form-fields"
+            type="text"
+            name="itemImageURL"
+            placeholder="Enter the description"
+          />
         </label>
 
         <button class="admin-btn" type="submit">add</button>
@@ -59,25 +69,31 @@
     </div>
   </div>
   <div id="data-display">
-    <table border="1">
-      <tr>
-        <th class="strong-style">NAME:</th>
-        <th class="strong-style">DESCRIPTION:</th>
+    <table border="3">
+      <tr class="table-header">
+        <th class="strong-style stickyName">NAME:</th>
+        <th class="strong-style stickyDescription">DESCRIPTION:</th>
         <th class="strong-style">CATEGORY:</th>
-        <th class="strong-style">PRICE $ </th>
-        <th class="strong-style">Image: </th>
-        <th class="strong-style edit-column">Edit/Delete</th>
+        <th class="strong-style stickyPrice">PRICE:</th>
+        <th class="strong-style">ID: </th>
+        <th class="strong-style edit-column">UPDATE</th>
       </tr>
       {{#each dataFood}}
         <tr class="list-created-meal">
           <td>{{this.itemName}}</td>
-          <td>{{this.itemDescription}}</td>
+          <td><p class="description-text">{{this.itemDescription}}</p></td>
           <td>{{this.itemCategory}}</td>
-          <td>{{this.itemPrice}}</td>
+          <td>${{this.itemPrice}}</td>
           <td>
-            <img class="meal-img" src="{{this.itemImageURL}}" /></td>
-          <td class="edit-delete-btn"><button type="button">Edit</button>
-            <button type="submit">Delete</button></td>
+            #{{this.itemNumber}}</td>
+          <td class="crud-btn"><a
+              class="edit"
+              href="/admin/add-meals-form/edit/{{this.id}}"
+            >Edit</a>
+            <a
+              class="delete"
+              href="/admin/add-meals-form/{{this.id}}"
+            >Delete</a></td>
         </tr>
       {{/each}}
     </table>
@@ -85,3 +101,10 @@
   </div>
   <script src="script.js"></script>
 </div>
+
+{{! 
+
+.light-text {
+    font-family: "Ubuntu-Light", sans-serif;
+    font-weight: light; /* You can also use '300' as the font-weight value */
+} }}

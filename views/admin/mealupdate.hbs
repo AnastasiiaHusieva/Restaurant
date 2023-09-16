@@ -1,0 +1,63 @@
+<div id="admin-page">
+
+  <div>
+    <div id="add-meals-form">
+      <h2 class="addfood-title">Edit</h2>
+
+      <form action="/admin/add-meals-form/edit/{{datatoUpdate.id}}" method="POST" class="form-style">
+
+        <label class="form-fields">
+          Meal
+          <input
+            class="form-fields"
+            type="text"
+            name="itemName"
+            placeholder="Enter the meal"
+            value="{{datatoUpdate.itemName}}"
+          />
+        </label>
+
+        <label class="form-fields">
+          Description
+          <input
+            class="form-fields"
+            type="text"
+            name="itemDescription"
+            placeholder="Enter the description"
+            value="{{datatoUpdate.itemDescription}}"
+          />
+        </label>
+
+        <label class="form-fields">
+          Category
+          <input
+            class="form-fields"
+            type="text"
+            name="itemCategory"
+            placeholder="choose your catagory"
+            value="{{datatoUpdate.itemCategory}}"
+          />
+        </label>
+        <label class="form-fields">
+          Price
+          <input
+            class="form-fields"
+            type="number"
+            name="itemPrice"
+            placeholder="Price"
+            step="0.01"
+            value="{{datatoUpdate.itemPrice}}"
+          />
+        </label>
+        <label class="form-fields">
+          ImageURL:
+          <input class="form-fields" type="url" name="itemImageURL" value="{{datatoUpdate.itemImageURL}}" />
+        </label>
+
+        <button class="admin-btn" type="submit">Edit</button>
+
+        {{#if errorMessage}}
+          <p class="error">{{errorMessage}}</p>
+        {{/if}}
+      </form>
+      

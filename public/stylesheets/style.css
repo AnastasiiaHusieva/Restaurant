@@ -114,25 +114,27 @@ ul {
   justify-content: space-around;
   border-radius: 8px;
 }
-td {
-  height: 100px;
-}
+
 .admin-btn {
   background-color: #29b298;
   color: #d0f1e7;
   border: none;
-  padding: 6px 20px;
+  font-size: 1.4rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 24px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.4s;
   font-weight: 800;
+  display: flex;
 }
 .admin-btn:hover {
   background-color: white;
   color: #29b298;
 }
 .form-fields {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding-right: 1px;
   border-radius: 8px;
 
@@ -141,40 +143,106 @@ td {
 
   z-index: 100;
 }
-
+.titlestick {
+  position: sticky;
+  /* margin: 0 auto; */
+  top: 100px;
+  z-index: -1;
+}
+.sticky-header {
+  margin: 0 auto;
+  padding: 2px;
+  position: fixed;
+  top: 215px;
+  width: 89%;
+  display: flex;
+  border: solid 2px #29b298;
+  justify-content: stretch;
+}
 .sticky {
   position: fixed;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   top: 120px;
+  padding: 32px;
+  padding-right: 72px;
 }
-/* .edit-column {
-} */
-.edit-delete-btn {
+.spacebetween {
+  top: 230px;
+  width: 63%;
+  font-size: 1rem;
+}
+.nameSpacebetween {
+  display: flex;
+  width: 9%;
+  font-size: 1rem;
+  justify-content: center;
+}
+.betweenPrice {
+  display: flex;
+  width: 2%;
+  justify-content: center;
+}
+.table-header {
+  background-color: #646464;
+}
+.crud-btn {
   display: flex;
   flex-direction: column;
+  gap: 1px;
 }
-.edit-delete-btn button {
-  flex-grow: 1;
-  padding: 10px;
+.delete,
+.edit {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: 4px;
+  border: solid 2px #1d1d1d;
+}
+.edit {
+  display: flex;
+  /* flex-grow: 1;
+  padding: 10px; */
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 800;
   transition: all 0.4s;
 }
-.edit-delete-btn button:nth-child(odd) {
+.delete {
+  display: flex;
+
+  /* flex-grow: 1;
+  padding: 10px; */
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 800;
+  transition: all 0.4s;
+  background-color: #23574e;
+}
+.crud-btn a:nth-child(odd) {
   background-color: #29b298;
 }
-.edit-delete-btn button:nth-child(even) {
+.crud-btn a:nth-child(even) {
   background-color: rgb(203, 24, 24);
 }
-.edit-delete-btn button:nth-child(odd):hover {
+.crud-btn a:nth-child(odd):hover {
   background-color: #23574e;
-  color: #fd7e14;
-}
-.edit-delete-btn button:nth-child(even):hover {
-  background-color: rgb(156, 18, 18);
   color: white;
 }
+.crud-btn a:nth-child(even):hover {
+  background-color: rgb(126, 15, 15);
+  color: white;
+}
+.delete:link,
+.edit:link {
+  text-decoration: none;
+  color: white;
+}
+.delete:visited,
+.edit:visited {
+  text-decoration: none;
+  color: white;
+}
+
 /*/////////// MEAL-IMAGES */
 #add-meals-form {
   margin-top: 5%;
@@ -182,9 +250,7 @@ td {
 #add-meals-form form {
   margin: 0 auto;
 
-  border: solid 6px #29b298;
-  box-shadow: 4px 4px 7px 0px;
-  margin-bottom: 40px;
+  border: solid 3px #29b298;
 }
 
 #data-display {
@@ -193,8 +259,9 @@ td {
   font-size: 2rem;
 }
 .strong-style {
-  font-size: 2.2rem;
-  color: #646464;
+  font-size: 1.1rem;
+  padding: 15px;
+  color: white;
   margin-right: 8px;
 }
 .meal-img {
@@ -208,9 +275,20 @@ td {
   text-align: center;
   border-bottom: solid 2px black;
   border-radius: 8px;
+  font-size: 1rem;
 }
 .list-created-meal:nth-child(odd) {
-  background-color: #bebebeaa;
+  background-color: #d0f1e7;
+  padding-bottom: 2px;
+}
+.list-created-meal:nth-child(even) {
+  background-color: #fed8b9;
+  padding-bottom: 2px;
+}
+
+.description-text {
+  font-family: "Ubuntu-Light", sans-serif;
+  font-weight: light; /* You can also use '300' as the font-weight value */
 }
 .description {
   width: 45%;
@@ -241,7 +319,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  box-shadow: 6px 6px 9px 0;
+  /* box-shadow: 1px 1px 4px 0; */
 }
 
 .icons {

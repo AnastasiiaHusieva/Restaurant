@@ -12,8 +12,14 @@ router.get("/add-meals-form", (req, res, next) => {
 });
 
 router.post("/add-meals-form", (req, res, next) => {
-  const { itemName, itemDescription, itemCategory, itemPrice, itemImageURL } =
-    req.body;
+  const {
+    itemName,
+    itemDescription,
+    itemCategory,
+    itemPrice,
+    itemNumber,
+    itemImageURL,
+  } = req.body;
   console.log("*********");
 
   ItemsAdmin.create({
@@ -21,6 +27,7 @@ router.post("/add-meals-form", (req, res, next) => {
     itemDescription,
     itemCategory,
     itemPrice,
+    itemNumber,
     itemImageURL,
   })
     .then((createdProduct) => {
@@ -32,4 +39,52 @@ router.post("/add-meals-form", (req, res, next) => {
     });
 });
 
+router.get("/add-meals-form/:id", (req, res, next) => {
+  const id = req.params.id;
+  ItemsAdmin.findByIdAndDelete(id)
+    .then((data) => {
+      console.log(data);
+      res.redirect(`/admin/add-meals-form`);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+router.get("/add-meals-form/edit/:id", (req, res, next) => {
+  const id = req.params.id;
+
+  ItemsAdmin.findById(id).then((datatoUpdate) => {
+    console.log("you selected id####:", datatoUpdate);
+    res.render("admin/mealupdate", { datatoUpdate });
+  });
+});
+router.post("/add-meals-form/edit/:id", (req, res, next) => {
+  const {
+    itemName,
+    itemDescription,
+    itemCategory,
+    itemPrice,
+    itemNumber,
+    itemImageURL,
+  } = req.body;
+  const id = req.params.id;
+  const update = {
+    itemName,
+    itemDescription,
+    itemCategory,
+    itemPrice,
+    itemNumber,
+    itemImageURL,
+  };
+  // const filter = { _id: id };
+
+  ItemsAdmin.findByIdAndUpdate(id, update, { new: true })
+    .then((item) => {
+      console.log("this is the updated item :", item);
+      res.redirect("/admin/add-meals-form");
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 module.exports = router;

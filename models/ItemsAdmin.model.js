@@ -10,6 +10,8 @@ const itemSchema = new mongoose.Schema(
     itemPrice: Number,
 
     itemImageURL: String,
+
+    itemNumber: Number,
   }
   //   ,
 
