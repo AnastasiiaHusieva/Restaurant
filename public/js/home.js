@@ -1,15 +1,9 @@
-
 const addToCartButton = document.querySelectorAll(".add-to-cart-button");
 addToCartButton.forEach((button) => {
   button.addEventListener("click", (event) => {
-
-
-
     console.log("button clicked");
   });
 });
-
-
 
 // Carousel Item
 
@@ -23,17 +17,14 @@ addToCartButton.forEach((button) => {
   </div>
 
 */
+let carouselItemsTopChoice = [];
 
-
-
-let carouselItems = [];
-
-const refreshCarousel = () => {
-    const carousel = document.querySelector(".carousel-container");
-    carousel.innerHTML = "";
-    carouselItems.forEach((item) => {
-        carousel.innerHTML += `
-        <div class="carousel-item">
+const refreshCarouselTopChoice = () => {
+  const carousel = document.querySelector(".TopChoice");
+  carousel.innerHTML = "";
+  carouselItemsTopChoice.forEach((item) => {
+    carousel.innerHTML += `
+        <div class="item">
             <img src="${item.itemImageURL}" alt="Food">
             <h3>${item.itemName}</h3>
             <p>${item.itemDescription}</p>
@@ -41,40 +32,271 @@ const refreshCarousel = () => {
             <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
         </div>
         `;
-    });
-}
+  });
+};
+//
+const getCarouselItemsTopChoice = () => {
+  const category = "TopChoice"; // Replace with the actual category value
+  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+      .then((response) => response.json())
+      .then((data) => {
+          carouselItemsTopChoice = data;
+          refreshCarouselTopChoice();
+          console.log(data);
+      })
+      .catch((error) => {
+          console.error("Error fetching items:", error);
+      });
+};
 
-const getCarouselItems = () => {
+let carouselItemsPizza = [];
 
-    fetch("/products")
-    .then((response) => response.json())
-    .then((data) => {
-        carouselItems = data;
-        refreshCarousel();
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+const refreshCarouselPizza = () => {
+  const carousel = document.querySelector(".Pizza");
+  carousel.innerHTML = "";
+  carouselItemsPizza.forEach((item) => {
+    carousel.innerHTML += `
+        <div class="item">
+            <img src="${item.itemImageURL}" alt="Food">
+            <h3>${item.itemName}</h3>
+            <p>${item.itemDescription}</p>
+            <p>${item.itemPrice}</p>
+            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+        </div>
+        `;
+  });
+};
+//
+const getCarouselItemsPizza = () => {
+  const category = "Pizza"; // Replace with the actual category value
+  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+      .then((response) => response.json())
+      .then((data) => {
+          carouselItemsPizza = data;
+          refreshCarouselPizza();
+          console.log(data);
+      })
+      .catch((error) => {
+          console.error("Error fetching items:", error);
+      });
+};
 
-}
+let carouselItemsSalads = [];
 
-const addToCart = (id) => { 
+const refreshCarouselSalads = () => {
+  const carousel = document.querySelector(".Salads");
+  carousel.innerHTML = "";
+  carouselItemsSalads.forEach((item) => {
+    carousel.innerHTML += `
+        <div class="item">
+            <img src="${item.itemImageURL}" alt="Food">
+            <h3>${item.itemName}</h3>
+            <p>${item.itemDescription}</p>
+            <p>${item.itemPrice}</p>
+            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+        </div>
+        `;
+  });
+};
+//
+const getCarouselItemsSalads = () => {
+  const category = "Salads"; // Replace with the actual category value
+  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+      .then((response) => response.json())
+      .then((data) => {
+          carouselItemsSalads = data;
+          refreshCarouselSalads();
+          console.log(data);
+      })
+      .catch((error) => {
+          console.error("Error fetching items:", error);
+      });
+};
 
-    // do animations here
+let carouselItemsBurgers = [];
 
-    const item = carouselItems.find((item) => item._id === id);
+const refreshCarouselBurgers = () => {
+  const carousel = document.querySelector(".Burgers");
+  carousel.innerHTML = "";
+  carouselItemsBurgers.forEach((item) => {
+    carousel.innerHTML += `
+        <div class="item">
+            <img src="${item.itemImageURL}" alt="Food">
+            <h3>${item.itemName}</h3>
+            <p>${item.itemDescription}</p>
+            <p>${item.itemPrice}</p>
+            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+        </div>
+        `;
+  });
+};
+//
+const getCarouselItemsBurgers = () => {
+  const category = "Burgers"; // Replace with the actual category value
+  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+      .then((response) => response.json())
+      .then((data) => {
+          carouselItemsBurgers = data;
+          refreshCarouselBurgers();
+          console.log(data);
+      })
+      .catch((error) => {
+          console.error("Error fetching items:", error);
+      });
+};
 
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+let carouselItemsSushi = [];
 
-    // see if the item exists in ther cart, if so, add 1
-    // if not, add the item to the cart with a quantity of 1
+const refreshCarouselSushi = () => {
+  const carousel = document.querySelector(".sushi");
+  carousel.innerHTML = "";
+  carouselItemsSushi.forEach((item) => {
+    carousel.innerHTML += `
+        <div class="item">
+            <img src="${item.itemImageURL}" alt="Food">
+            <h3>${item.itemName}</h3>
+            <p>${item.itemDescription}</p>
+            <p>${item.itemPrice}</p>
+            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+        </div>
+        `;
+  });
+};
+//
+const getCarouselItemsSushi = () => {
+  const category = "sushi"; // Replace with the actual category value
+  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+      .then((response) => response.json())
+      .then((data) => {
+          carouselItemsSushi = data;
+          refreshCarouselSushi();
+          console.log(data);
+      })
+      .catch((error) => {
+          console.error("Error fetching items:", error);
+      });
+};
+
+let carouselItemsSoups = [];
+
+const refreshCarouselSoups = () => {
+  const carousel = document.querySelector(".Soups");
+  carousel.innerHTML = "";
+  carouselItemsSoups.forEach((item) => {
+    carousel.innerHTML += `
+        <div class="item">
+            <img src="${item.itemImageURL}" alt="Food">
+            <h3>${item.itemName}</h3>
+            <p>${item.itemDescription}</p>
+            <p>${item.itemPrice}</p>
+            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+        </div>
+        `;
+  });
+};
+//
+const getCarouselItemsSoups = () => {
+  const category = "Soups"; // Replace with the actual category value
+  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+      .then((response) => response.json())
+      .then((data) => {
+          carouselItemsSoups = data;
+          refreshCarouselSoups();
+          console.log(data);
+      })
+      .catch((error) => {
+          console.error("Error fetching items:", error);
+      });
+};
+
+let carouselItemsDesserts = [];
+
+const refreshCarouselDesserts = () => {
+  const carousel = document.querySelector(".Desserts");
+  carousel.innerHTML = "";
+  carouselItemsDesserts.forEach((item) => {
+    carousel.innerHTML += `
+        <div class="item">
+            <img src="${item.itemImageURL}" alt="Food">
+            <h3>${item.itemName}</h3>
+            <p>${item.itemDescription}</p>
+            <p>${item.itemPrice}</p>
+            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+        </div>
+        `;
+  });
+};
+//
+const getCarouselItemsDesserts = () => {
+  const category = "Desserts"; // Replace with the actual category value
+  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+      .then((response) => response.json())
+      .then((data) => {
+          carouselItemsDesserts = data;
+          refreshCarouselDesserts();
+          console.log(data);
+      })
+      .catch((error) => {
+          console.error("Error fetching items:", error);
+      });
+};
+
+let carouselItemsCocktails = [];
+
+const refreshCarouselCocktails = () => {
+  const carousel = document.querySelector(".Cocktails");
+  carousel.innerHTML = "";
+  carouselItemsCocktails.forEach((item) => {
+    carousel.innerHTML += `
+        <div class="item">
+            <img src="${item.itemImageURL}" alt="Food">
+            <h3>${item.itemName}</h3>
+            <p>${item.itemDescription}</p>
+            <p>${item.itemPrice}</p>
+            <button onclick="addToCart(${item._id})" class="add-to-cart-button">Add to Cart</button>
+        </div>
+        `;
+  });
+};
+//
+const getCarouselItemsCocktails = () => {
+  const category = "Cocktails"; // Replace with the actual category value
+  fetch(`/items/${category}`) // Use backticks (``) for string interpolation
+      .then((response) => response.json())
+      .then((data) => {
+          carouselItemsCocktails = data;
+          refreshCarouselCocktails();
+          console.log(data);
+      })
+      .catch((error) => {
+          console.error("Error fetching items:", error);
+      });
+};
 
 
-    console.log(id);
-}
+
+
+const addToCart = (id) => {
+  // do animations here
+
+  const item = carouselItems.find((item) => item._id === id);
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // see if the item exists in ther cart, if so, add 1
+  // if not, add the item to the cart with a quantity of 1
+
+  console.log(id);
+};
 
 window.onload = () => {
+  getCarouselItemsTopChoice();
+  getCarouselItemsPizza();
+  getCarouselItemsSalads();
+  getCarouselItemsBurgers();
+  getCarouselItemsSushi();
+  getCarouselItemsSoups();
+  getCarouselItemsDesserts();
+  getCarouselItemsCocktails();
 
-    getCarouselItems();
-  
-}
+};
