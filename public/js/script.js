@@ -1,41 +1,21 @@
-// https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
+// DOMContentLoaded event listener to ensure the code runs when the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DataDine JS imported successfully!");
-});
-document.addEventListener("DOMContentLoaded", function () {
-  window.onscroll = function () {
-    const formFields = document.querySelector(".form-style");
-    const scrollPosition = window.scrollY || window.pageYOffset;
+  
+  // Account Pop-up
+  const open = document.getElementById('open');
+  const closeBtn = document.getElementById('closeBtn');
+  const profileBar = document.getElementById('profileBar');
 
-  if (scrollPosition > 208) {
-    formFields.classList.add("sticky");
-  } else {
-    formFields.classList.remove("sticky");
-  }
-};
-})
-
-
-
-// To display account pop-up
- const open = document.getElementById('open');
- const closeBtn = document.getElementById('closeBtn');
- const profileBar = document.getElementById('profileBar');
- 
- open.addEventListener('click', (event) => {
-    event.preventDefault()
+  open.addEventListener('click', (event) => {
+    event.preventDefault();
     profileBar.style.display = 'block';
-     console.log("display block")
- });
- 
- closeBtn.addEventListener('click', () => {
-  profileBar.style.display = 'none';
-      console.log("display none added ")
+    console.log("Display block");
   });
 
-  // document.addEventListener('click', (event) => {
-  //   if (!profileBar.contains(event.target) && event.target !== open) {
-  //       profileBar.style.display = 'none';
-  //       console.log("display none")
-  //   }
-  // });
+  closeBtn.addEventListener('click', () => {
+    profileBar.style.display = 'none';
+    console.log("Display none");
+  });
+});
+

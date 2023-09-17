@@ -18,9 +18,17 @@ router.get("/order", (req, res) => {
 // this is a test comment to see if I can push to github
 
 // cart routes
-router.get("/cart", (req, res, next) => {
-  res.render("cart", { data });
+router.get("/cart", (req, res, ) => {
+  res.render("cart");
 });
+
+router.post("/cart", (req, res) => {
+  const { itemName, itemPrice, itemImageURL, itemQuantity } = req.body;
+  const item = { itemName, itemPrice, itemImageURL, itemQuantity };
+  req.session.cart.push(item);
+  res.redirect("/cart");
+});
+
 
 router.get("/items/:itemCategory", (req, res, next) => {
   Item.find({ itemCategory: req.params.itemCategory })
