@@ -258,6 +258,9 @@ const refreshCarouselCocktails = () => {
         `;
   });
 };
+
+// Assuming carouselItemsCocktails is an array of items with unique item IDs
+
 //
 const getCarouselItemsCocktails = () => {
   const category = "Cocktails"; 
@@ -276,18 +279,7 @@ const getCarouselItemsCocktails = () => {
 
 
 
-const addToCart = (id) => {
-  // do animations here
 
-  const item = carouselItems.find((item) => item._id === id);
-
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  // see if the item exists in ther cart, if so, add 1
-  // if not, add the item to the cart with a quantity of 1
-
-  console.log(id);
-};
 
 window.onload = () => {
   getCarouselItemsTopChoice();
@@ -300,3 +292,30 @@ window.onload = () => {
   getCarouselItemsCocktails();
 
 };
+/*
+const addToCart = (id) => {
+  // do animations here
+  
+
+  const item = carouselItems.find((item) => item._id === id);
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // see if the item exists in ther cart, if so, add 1
+  // if not, add the item to the cart with a quantity of 1
+
+  console.log(id);
+};
+*/
+let cart = JSON.parse(localStorage.getItem("cart")) || ["hello"];
+const addToCart = (_id) => {
+  const item = carouselItems.find((item) => item._id === _id);
+  const cartItem = cart.find((item) => item._id === _id);
+  if (cartItem) {
+    cartItem.quantity++;
+  } else {
+    cart.push({ ...item, quantity: 1 });
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
