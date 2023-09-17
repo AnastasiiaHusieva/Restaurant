@@ -1,68 +1,45 @@
-const handleScroll = () => {
-  const formFields = document.querySelector(".form-style");
-  const scrollPosition = window.scrollY || window.pageYOffset;
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 
-  // Check if the elements exist before accessing their classList
-  const tableheader = document.querySelector(".tableheader");
-  const description = document.querySelector(".description");
-  const name = document.querySelector(".name");
-  const price = document.querySelector(".price");
-  const title = document.querySelector(".title");
-
-  if (scrollPosition > 220) {
-    // Check if the elements exist before adding classes
-    if (tableheader) tableheader.classList.add("sticky-header");
-    if (description) description.classList.add("spacebetween");
-    if (name) name.classList.add("nameSpacebetween");
-    if (price) price.classList.add("betweenPrice");
-    if (title) title.classList.add("titlestick");
-  } else {
-    // Check if the elements exist before removing classes
-    if (tableheader) tableheader.classList.remove("sticky-header");
-    if (description) description.classList.remove("spacebetween");
-    if (name) name.classList.remove("nameSpacebetween");
-    if (price) price.classList.remove("betweenPrice");
-    if (title) title.classList.remove("titlestick");
-  }
-};
-
-// Event listener for the DOMContentLoaded event
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DataDine JS imported successfully!");
+});
+document.addEventListener("DOMContentLoaded", function () {
+  window.onscroll = function () {
+    const formFields = document.querySelector(".form-style");
+    const scrollPosition = window.scrollY || window.pageYOffset;
 
-  // Set up the scrolling behavior when the DOM is loaded
-  window.onscroll = handleScroll;
+    if (scrollPosition > 220) {
+      formFields.classList.add("sticky");
+      // tableheader.classList.add("sticky-header");
+      // description.classList.add("spacebetween");
+      // name.classList.add("nameSpacebetween");
+      // price.classList.add("betweenPrice");
+      // title.classList.add("titlestick");
+    } else {
+      formFields.classList.remove("sticky");
+    }
+  };
 });
 
-// To display the account pop-up
+// To display account pop-up
 const open = document.getElementById("open");
 const closeBtn = document.getElementById("closeBtn");
 const profileBar = document.getElementById("profileBar");
 
-// Event listener for opening the profile bar
 open.addEventListener("click", (event) => {
   event.preventDefault();
   profileBar.style.display = "block";
-  console.log("Display block");
+  console.log("display block");
 });
 
-// Event listener for closing the profile bar
 closeBtn.addEventListener("click", () => {
   profileBar.style.display = "none";
-  console.log("Display none");
+  console.log("display none added ");
 });
 
-// Event listener to close the profile bar when clicking outside of it (uncomment if needed)
-/*
-document.addEventListener('click', (event) => {
-  if (!profileBar.contains(event.target) && event.target !== open) {
-    profileBar.style.display = 'none';
-    console.log("Display none");
-  }
-});
-*/
-
-
-
-
-
+// document.addEventListener('click', (event) => {
+//   if (!profileBar.contains(event.target) && event.target !== open) {
+//       profileBar.style.display = 'none';
+//       console.log("display none")
+//   }
+// });
