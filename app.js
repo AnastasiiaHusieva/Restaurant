@@ -23,7 +23,32 @@ const projectName = "DataDine";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
-// 👇 Start handling routes here
+// Add the missing dependencies here
+const session = require("express-session"); // For managing sessions
+const mongoose = require("mongoose"); // For MongoDB connection
+
+// Define your Mongoose connection here (replace with your MongoDB URI)
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// Session configuration (make sure to set your own secret)
+app.use(
+  session({
+    secret: "your-secret-key",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+// Set EJS as the view engine
+app.set("view engine", "hbs");
+
+// Serve static files from the 'public' directory
+app.use(express.static(__dirname + "/public"));
+
+// Define your routes and route handlers here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
@@ -39,7 +64,7 @@ app.use("/profile", usersRoutes);
 const adminRoutes = require("./routes/admin.routes");
 app.use("/admin", adminRoutes);
 
-// ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
+// To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
 module.exports = app;
