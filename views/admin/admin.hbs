@@ -2,7 +2,7 @@
 
   <div>
     <div id="add-meals-form">
-      <h2 class="addfood-title">Meals Database</h2>
+      <h2 class="addfood-title">Menu Database</h2>
 
       <form action="/admin/add-meals-form" method="POST" class="form-style">
 
@@ -13,6 +13,7 @@
             type="text"
             name="itemName"
             placeholder="Enter the meal"
+            required
           />
         </label>
 
@@ -23,6 +24,7 @@
             type="text"
             name="itemDescription"
             placeholder="Enter the description"
+            required
           />
         </label>
 
@@ -43,11 +45,12 @@
             name="itemPrice"
             step="0.01"
             placeholder="Price"
+            required
           />
         </label>
         <label class="form-fields">
           Meal#
-          <input class="form-fields" type="number" name="itemNumber" />
+          <input class="form-fields" type="number" name="itemNumber" required />
         </label>
         <label class="form-fields">
           ImageUrl
@@ -56,6 +59,7 @@
             type="text"
             name="itemImageURL"
             placeholder="Enter the description"
+            required
           />
         </label>
 

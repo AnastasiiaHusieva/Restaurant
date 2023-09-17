@@ -100,12 +100,13 @@ ul {
 */
 /* //////////////////////ADMIN PAGE//////////////// */
 .addfood-title {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 120px;
 }
 
 #admin-page {
   padding: 5%;
+  background-color: #d0f1e7;
 }
 .form-style {
   background-color: #ffa31a;
@@ -114,14 +115,20 @@ ul {
   justify-content: space-around;
   border-radius: 8px;
 }
+.sticky {
+  width: 86%;
+  position: fixed;
+  box-shadow: 13px 4px 10px 6px black;
+  top: 120px;
+}
 
 .admin-btn {
   background-color: #29b298;
   color: #d0f1e7;
-  border: none;
+  border: #1d1d1d solid 1px;
   font-size: 1.4rem;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
   margin-left: 24px;
   border-radius: 8px;
   cursor: pointer;
@@ -159,13 +166,7 @@ ul {
   border: solid 2px #29b298;
   justify-content: stretch;
 }
-.sticky {
-  position: fixed;
-  /* margin: 0 auto; */
-  top: 120px;
-  padding: 32px;
-  padding-right: 72px;
-}
+
 .spacebetween {
   top: 230px;
   width: 63%;
@@ -250,13 +251,15 @@ ul {
 #add-meals-form form {
   margin: 0 auto;
 
-  border: solid 3px #29b298;
+  border: solid 5px #29b298;
 }
 
 #data-display {
   display: flex;
   flex-direction: column;
   font-size: 2rem;
+  margin: 0 auto;
+  width: 100%;
 }
 .strong-style {
   font-size: 1.1rem;
