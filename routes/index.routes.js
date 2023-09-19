@@ -47,4 +47,36 @@ router.get("/items/:itemCategory", (req, res, next) => {
     });
 });
 
+router.get ('/checkout',  (req,res) => {
+  let isLoggedIn = req.session.currentUser;
+  if (isLoggedIn) {
+    res.render("checkout", { isLoggedIn: true });
+  } else if (!isLoggedIn) {
+    res.render("checkout", { isLoggedIn: false });
+  }
+})
+
+
+// router.post ('/checkout', async (req, res) => {
+//   const userId = req.user.id;
+//   const totalPrice = req.body.totalPrice;
+// 
+//   const bonusesToAdd = Math.floor(purchaseAmount / 10);
+// 
+//   try { 
+//     const user = await User.findById(userId);
+//     if (!user) {
+//     return res.status(404).json({ message: "User not found" });
+//   }
+// 
+//   user.bonuses += bonusesToAdd;
+//     await user.save();
+// 
+//   return res.status(200).json({ message: "Bonuses updated successfully" });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ message: "Internal server error" });
+//   }
+// });
+
 module.exports = router;

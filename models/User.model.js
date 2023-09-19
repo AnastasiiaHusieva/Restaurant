@@ -21,6 +21,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    bonuses: {
+      type: Number,
+      default: 0,
+    },
     cart : {
       type: [mongoose.Schema.Types.ObjectId],
       ref: "Item",
