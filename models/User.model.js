@@ -20,6 +20,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    bonuses: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

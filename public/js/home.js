@@ -17,6 +17,9 @@ addToCartButton.forEach((button) => {
   </div>
 
 */
+
+// TO CONNECT DB TO THE MAIN PAGE
+
 let carouselItemsTopChoice = [];
 
 const refreshCarouselTopChoice = () => {
@@ -274,7 +277,7 @@ const getCarouselItemsCocktails = () => {
 };
 
 
-
+// CART LOGIC
 
 const addToCart = (id) => {
   // do animations here
@@ -300,3 +303,5 @@ window.onload = () => {
   getCarouselItemsCocktails();
 
 };
+
+
