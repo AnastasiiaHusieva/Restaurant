@@ -1,0 +1,63 @@
+<div>
+  <div id="add-meals-form">
+    <h2 class="addfood-title">Users Database</h2>
+
+    <form
+      action="/adminusers/edit/{{dataUpdate.id}}"
+      method="POST"
+      class="form-style"
+    >
+      <label class="form-fields">
+        Username:
+        <input
+          class="form-fields"
+          type="text"
+          name="username"
+          placeholder="Enter the meal"
+          value="{{dataUpdate.username}}"
+          required
+        />
+      </label>
+
+      <label class="form-fields">
+        Email:
+        <input
+          class="form-fields"
+          type="text"
+          name="email"
+          placeholder="Enter the description"
+          value="{{dataUpdate.email}}"
+          required
+        />
+      </label>
+      <label class="form-fields">
+        Password:
+        <input
+          class="form-fields"
+          type="password"
+          name="password"
+          placeholder="Enter a password"
+          value="{{dataUpdate.password}}"
+          required
+        />
+      </label>
+
+      <label class="form-fields">
+        Acount type:
+        <select class="form-fields" type="text" name="acountType">
+          <option value="sushi">end-user</option>
+          <option value="pizza">admin</option>
+
+        </select>
+      </label>
+
+      <button class="admin-btn" type="submit">update</button>
+
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
+
+  </div>
+
+</div>

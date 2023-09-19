@@ -25,12 +25,10 @@ const userSchema = new Schema(
       type: Number,
       default: 0,
     },
-    cart : {
+    cart: {
       type: [mongoose.Schema.Types.ObjectId],
       ref: "Item",
-    }
-      
-
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

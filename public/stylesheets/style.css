@@ -65,8 +65,6 @@ h2 {
   text-align: center;
 }
 
-
-
 .login {
   width: 100px;
   height: 100px;
@@ -468,7 +466,8 @@ header {
   bottom: 0.5rem;
 }
 
-.links a, h3 {
+.links a,
+h3 {
   color: #646464;
   font-size: 1.2rem;
   text-decoration: none;
@@ -493,7 +492,6 @@ header {
   text-decoration: none;
   background-color: #fff;
 }
-
 
 /* Section 1 */
 
@@ -649,7 +647,7 @@ main {
 .item:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.item:hover h3{
+.item:hover h3 {
   color: #ffa31a;
 }
 
@@ -815,6 +813,7 @@ footer .logo {
   font-size: 2rem;
 }
 
+.my-cart-h1 {
 /* /////  CHECKOUT PAGE//// */
 #checkout {
   margin-top: 12rem;
