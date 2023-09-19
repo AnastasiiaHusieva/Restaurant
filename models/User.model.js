@@ -20,6 +20,14 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    // accountUser: {
+    //   type: String,
+    //   required: true,
+    // },
+    // accountDdmin: {
+    //   type: String,
+    //   required: true,
+    // },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

@@ -65,8 +65,6 @@ h2 {
   text-align: center;
 }
 
-
-
 .login {
   width: 100px;
   height: 100px;
@@ -493,7 +491,6 @@ header {
   background-color: #fff;
 }
 
-
 /* Section 1 */
 
 #banner {
@@ -648,7 +645,7 @@ main {
 .item:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.item:hover h3{
+.item:hover h3 {
   color: #ffa31a;
 }
 
@@ -814,8 +811,7 @@ footer .logo {
   font-size: 2rem;
 }
 
-
-.my-cart-h1{
+.my-cart-h1 {
   font-size: 3rem;
   margin-top: 120px;
   margin-bottom: 50px;
