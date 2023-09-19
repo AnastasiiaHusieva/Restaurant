@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb");
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
@@ -20,6 +21,12 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    cart : {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "Item",
+    }
+      
+
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

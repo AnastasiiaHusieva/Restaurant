@@ -66,7 +66,14 @@ const addToCart = (itemId) => {
   } else {
     // If the item is not in the cart, add it with a quantity of 1
     cart.push({ itemId, quantity: 1 });
-  }
+  }    
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log(JSON.parse(localStorage.getItem("cart")));
+
+
+
+
+
 
   // Update the cart display (replace this with your cart display logic)
   updateCartDisplay();
@@ -115,3 +122,19 @@ window.onload = () => {
   // Add event listeners to "Add to Cart" buttons
   addAddToCartListeners();
 };
+
+
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
