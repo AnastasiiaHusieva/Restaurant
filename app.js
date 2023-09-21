@@ -17,7 +17,7 @@ const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
-
+app.use(express.json());
 const capitalize = require("./utils/capitalize");
 const projectName = "DataDine";
 
@@ -31,7 +31,7 @@ const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
 const orderRoutes = require("./routes/orders.routes");
-app.use("/cart", orderRoutes);
+app.use("/order", orderRoutes);
 
 const usersRoutes = require("./routes/users.routes");
 app.use("/profile", usersRoutes);
@@ -41,6 +41,9 @@ app.use("/admin", adminRoutes);
 
 const userAdminRoutes = require("./routes/useradmin.routes");
 app.use("/adminusers", userAdminRoutes);
+
+const cartRoutes = require("./routes/cart.routes.js");
+app.use("/cart", cartRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

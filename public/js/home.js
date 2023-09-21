@@ -1,4 +1,5 @@
 // Define a global cart object to store selected items
+
 const cart = [];
 
 // Function to fetch items and refresh the carousel
@@ -14,40 +15,42 @@ const fetchAndRefreshCarousel = (category, carouselSelector) => {
 };
 
 // Function to refresh the carousel with items
-const refreshCarousel = (carouselSelector, items) => {
-  const carousel = document.querySelector(carouselSelector);
-  carousel.innerHTML = "";
-  items.forEach((item) => {
-    const itemContainer = document.createElement("div");
-    itemContainer.className = "item";
-    itemContainer.innerHTML = `
-      <img src="${item.itemImageURL}" alt="${item.itemName}">
-      <h3>${item.itemName}</h3>
-      <p>${item.itemDescription}</p>
-      <p>${item.itemPrice !== null ? `${item.itemPrice} €` : "Price not available"}</p>
-    `;
+// const refreshCarousel = (carouselSelector, items) => {
+//   const carousel = document.querySelector(carouselSelector);
+//   carousel.innerHTML = "";
+//   items.forEach((item) => {
+//     const itemContainer = document.createElement("div");
+//     itemContainer.className = "item";
+//     itemContainer.innerHTML = `
+//       <img src="${item.itemImageURL}" alt="${item.itemName}">
+//       <h3>${item.itemName}</h3>
+//       <p>${item.itemDescription}</p>
+//       <p>${
+//         item.itemPrice !== null ? `${item.itemPrice} €` : "Price not available"
+//       }</p>
+//     `;
 
-    // Create an "Add to Cart" button dynamically
-    const addToCartButton = document.createElement("button");
-    addToCartButton.className = "add-to-cart-button";
-    addToCartButton.textContent = "Add to Cart";
+//     // Create an "Add to Cart" button dynamically
+//     const addToCartButton = document.createElement("button");
+//     addToCartButton.className = "add-to-cart-button";
+//     addToCartButton.textContent = "Add to Cart";
 
-    // Set the data-item attribute with the item's ID
-    addToCartButton.setAttribute("data-item", item._id.toString());
+//     // Set the data-item attribute with the item's ID
+//     addToCartButton.setAttribute("data-item", item._id.toString());
 
-    // Add a click event listener to the button
-    addToCartButton.addEventListener("click", handleAddToCartClick);
+//     // Add a click event listener to the button
+//     addToCartButton.addEventListener("click", handleAddToCartClick);
 
-    // Append the button to the item container
-    itemContainer.appendChild(addToCartButton);
+//     // Append the button to the item container
+//     itemContainer.appendChild(addToCartButton);
 
-    // Append the item container to the carousel
-    carousel.appendChild(itemContainer);
-  });
+//     // Append the item container to the carousel
+//     carousel.appendChild(itemContainer);
+//   });
 
-  // Add event listeners to "Add to Cart" buttons within the refreshed carousel
-  addAddToCartListeners();
-};
+//   // Add event listeners to "Add to Cart" buttons within the refreshed carousel
+//   addAddToCartListeners();
+// };
 
 // Function to add an item to the cart
 const addToCart = (itemId) => {
@@ -66,14 +69,9 @@ const addToCart = (itemId) => {
   } else {
     // If the item is not in the cart, add it with a quantity of 1
     cart.push({ itemId, quantity: 1 });
-  }    
-  localStorage.setItem("cart", JSON.stringify(cart));
-  console.log(JSON.parse(localStorage.getItem("cart")));
-
-
-
-
-
+  }
+  // localStorage.setItem("cart", JSON.stringify(cart));
+  // console.log(JSON.parse(localStorage.getItem("cart")));
 
   // Update the cart display (replace this with your cart display logic)
   updateCartDisplay();
@@ -122,24 +120,3 @@ window.onload = () => {
   // Add event listeners to "Add to Cart" buttons
   addAddToCartListeners();
 };
-
-
-
-//
-
-
-// CART LOGIC
-
-// CART LOGIC
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,9 @@
 const express = require("express");
 const router = express.Router();
+
+router.get("/", (req, res) => {
+  res.render("track-order");
+});
 module.exports = router;
 //const progressRound = window.querySelector(‘.progress-round’);
 // Function to update the progress indicator position
