@@ -454,6 +454,18 @@ header {
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+.cartSideBar {
+  position: fixed;
+  top: 0;
+  right: 20rem;
+  width: 18rem;
+  height: 20rem;
+  background-color: #ffffff;
+  margin-top: 120px;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 .links {
   display: flex;
@@ -612,6 +624,11 @@ main {
 .category-title {
   font-size: 3rem;
   margin-bottom: 3rem;
+}
+
+.card-img-top {
+  height: 120px;
+  width: 180px;
 }
 
 /*.carousel-container {
@@ -812,7 +829,8 @@ footer .logo {
   font-size: 2rem;
 }
 
-.my-cart-h1 {}
+.my-cart-h1 {
+}
 /* /////  CHECKOUT PAGE//// */
 #checkout {
   margin-top: 12rem;
@@ -823,14 +841,15 @@ footer .logo {
 }
 
 .payment-box {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
 }
 
-.payment-paypal, .payment-card {
+.payment-paypal,
+.payment-card {
   text-align: center;
   margin: 20px;
   padding: 20px;
@@ -839,11 +858,12 @@ footer .logo {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   transition: transform 0.2s;
-  position: relative; 
+  position: relative;
   width: 300px;
 }
 
-.payment-paypal:hover, .payment-card:hover {
+.payment-paypal:hover,
+.payment-card:hover {
   transform: scale(1.05);
 }
 
@@ -852,21 +872,24 @@ footer .logo {
   bottom: 0.5rem;
 }
 
-.paypal-header, .card-header {
+.paypal-header,
+.card-header {
   font-size: 24px;
   margin-bottom: 10px;
-  cursor: pointer; 
+  cursor: pointer;
   margin: 0;
   padding: 0;
 }
 
-.card, .paypal {
-  transition: max-height 0.2s, padding 0.2s; 
+.card,
+.paypal {
+  transition: max-height 0.2s, padding 0.2s;
   height: 200px;
-  display: none; 
+  display: none;
 }
-
-.card input, .paypal input {
+/* // set it back ///////////////// ////// */
+/* .card input, */
+.paypal input {
   width: 100%;
   padding: 8px;
   margin: 5px 0;
@@ -874,8 +897,23 @@ footer .logo {
   border-radius: 5px;
 }
 
-.my-cart-h1{
+.my-cart-h1 {
   font-size: 3rem;
   margin-top: 120px;
   margin-bottom: 50px;
+}
+
+.food-cat {
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.food-card {
+  display: flex;
+  flex-direction: column;
+}
+.row-item {
+  display: flex;
 }

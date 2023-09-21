@@ -68,13 +68,17 @@
       <button class="arrow-btn prev-btn" class="carousel-button"><img src="/images/icons/previous.png" alt="prev-btn"/></button>-->
       <div class="category-box">
         <div class="TopChoice category-box">
+        <form method="post" action="/">
+        <input type="hidden" name="itemId" value="{{this._id}}" >
+        <button>Add to cart</button></form>
        
         </div>
+
       </div>
       <!--<button class="arrow-btn next-btn" class="carousel-button"><img
           src="/images/icons/next.png"
           alt="next-btn" /> -->
-       </button>
+       {{!-- </button> --}}
 
     </div>
 
@@ -84,73 +88,60 @@
 
 
 
-  <section id="pizza">
-
-    
-    <h2 class="category-title">Pizza</h2>
-    <div class="pizza category-box">
-
-
-
-    </div>
-
-  </section>
-
-  <section id="salads">
-    <h2 class="category-title">Salads</h2>
-    <div class="salads category-box">
-
-    </div>
-
-  </section>
-
-  <section id="burgers">
-    <h2 class="category-title">Burgers</h2>
-    <div class="burgers category-box">
-
-
-    </div>
-
-  </section>
-
-  <section id="sushi">
-    <h2 class="category-title">Sushi</h2>
-    <div class="sushi category-box">
-
-
-    </div>
-
-  </section>
-
-  <section id="soups">
-    <h2 class="category-title">Soups</h2>
-    <div class="soups category-box">
-
-
-    </div>
-
-  </section>
-
-  <section id="desserts">
-    <h2 class="category-title">Desserts</h2>
-    <div class="desserts category-box">
-
   
-
+{{!-- {{#each itemsByCategory}}
+<section  id='{{@key}} ' >
+    <h2 class='category-title'>{{@key}}</h2>
+    {{#each this}}
+    <div class='category-box'>
+      <img src='{{itemImageURL}}' alt='food image'>
+      <h3>{{itemName}}</h3>
+      <p>{{itemDescription}}</p>
+      <p><strong>{{itemPrice}}</strong></p>
+      <form method='post' action='/'>
+        <input type='hidden' name='itemId' value='{{_id}}' >
+        <button>Add to cart</button>
+      </form>
     </div>
+    {{/each}}
+</section>
+{{/each}} --}}
 
-  </section>
 
-  <section id="cocktails">
-    <h2 class="category-title">Cocktails</h2>
-    <div class="cocktails category-box">
 
+  {{!-- <div class="card-group"> --}}
+{{#each itemsByCategory}}
+  <h2 class='category-title'>{{@key}}</h2>
+<section class="{{@key}}  food-cat">
+  
+  <div class = "row-item">
+  {{#each this}}
+  <div class="food-card">
+    <img src="{{itemImageURL}}" class="card-img-top" alt="pic">
+    <div class="card-body">
+      <h5 class="card-title">{{itemName}}</h5>
+      <p class="card-text">{{itemDescription}}</p>
+      <p class="card-text">{{itemPrice}}</p>
+     
     </div>
+      <form method='post' action='/'>
+        <input type='hidden' name='itemId' value='{{_id}}' >
+        <button>Add to cart</button>
+      </form>  
+  </div>
+  </div>
+  {{!-- </div> --}}
+  {{/each}}
+</section>
+{{/each}}
 
-  </section>
+
+
 
 </main>
+{{!--  --}}
 
+{{!--  --}}
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xml:space="preserve"
