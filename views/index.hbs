@@ -64,21 +64,19 @@
 <main>
   <section id="top-choice">
     <h2 class="category-title">Top Choice</h2>
-    <!--<div class="container-container">
-      <button class="arrow-btn prev-btn" class="carousel-button"><img src="/images/icons/previous.png" alt="prev-btn"/></button>-->
+    <div class="container-container">
+     
       <div class="category-box">
         <div class="TopChoice category-box">
         <form method="post" action="/">
         <input type="hidden" name="itemId" value="{{this._id}}" >
-        <button>Add to cart</button></form>
+        {{!-- <button>Add to cart</button> --}}
+        </form>
        
         </div>
 
       </div>
-      <!--<button class="arrow-btn next-btn" class="carousel-button"><img
-          src="/images/icons/next.png"
-          alt="next-btn" /> -->
-       {{!-- </button> --}}
+     
 
     </div>
 
@@ -124,7 +122,7 @@
       <p class="card-text">{{itemPrice}}</p>
      
     </div>
-      <form method='post' action='/cart'>
+      <form method='post' action='/cart' class="addToCartbtn">
         <input type='hidden' name='itemId' value='{{_id}}' >
         <button>Add to cart</button>
       </form>  
@@ -199,3 +197,4 @@
 
 </footer>
 <script src="/js/home.js"></script>
+<script src="/js/script.js"></script>

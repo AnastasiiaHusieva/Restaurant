@@ -2,12 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Item = require("../models/ItemsAdmin.model");
 const User = require("../models/User.model");
-router.get("/", (req, res) => {
-  console.log("hola!!");
-  res.render("cart").then((data) => {
-    console.log("ahahahah", data);
-  });
-});
+
 router.post("/", async (req, res) => {
   const userId = req.session.currentUser._id;
   const { itemId } = req.body; // Assuming you have an itemId from the form
@@ -24,10 +19,21 @@ router.post("/", async (req, res) => {
     }
     // Optionally, you can send a response back to the client to indicate success
     console.log("Updated user:", updatedUser);
-    res.render("cart", { cartItem: itemId });
+    res.redirect("/cart");
   } catch (error) {
     console.error("Error updating user's cart:", error);
     return res.status(500).json({ message: "Internal Server Error" });
   }
 });
+router.get("/", (req, res) => {
+  const userId = req.session.currentUser._id;
+  console.log("************* ", userId);
+  User.findById(userId)
+    .populate("cart")
+    .then((userObject) => {
+      console.log(`@@@@@@`, userObject);
+      res.render("cart", { userObject });
+    });
+});
+
 module.exports = router;

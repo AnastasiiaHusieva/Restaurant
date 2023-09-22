@@ -37,7 +37,7 @@ router.get("/", (req, res, next) => {
 // router.get("/cart", (req, res) => {
 //   res.render("cart");
 // });
-// 
+//
 // router.post("/cart", (req, res) => {
 //   const { itemName, itemPrice, itemImageURL, itemQuantity } = req.body;
 //   const item = { itemName, itemPrice, itemImageURL, itemQuantity };
@@ -61,15 +61,6 @@ router.get("/", (req, res, next) => {
 //       res.status(500).json({ message: "Internal server error." });
 //     });
 // });
-
-router.get("/checkout", (req, res) => {
-  let isLoggedIn = req.session.currentUser;
-  if (isLoggedIn) {
-    res.render("checkout", { isLoggedIn: true });
-  } else if (!isLoggedIn) {
-    res.render("checkout", { isLoggedIn: false });
-  }
-});
 
 // router.post ('/checkout', async (req, res) => {
 //   const userId = req.user.id;

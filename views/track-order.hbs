@@ -24,4 +24,8 @@
     <p>On the way</p>
     <p>Delivered</p>
   </div>
+  {{#each order.items}}
+    <p>{{this.itemName}}</p>
+    <p>{{this.itemPrice}}</p>
+  {{/each}}
 </section>

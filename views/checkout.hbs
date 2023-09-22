@@ -1,29 +1,51 @@
 <section id="checkout">
-    <h2 class="checkout-title">Your Choice:</h2>
-    <div class="checkout-box">
+  <h2 class="checkout-title">Your Choice:</h2>
+  <div class="checkout-box">
 
-    </div>
+  </div>
 
   <div class="payment-box">
-     <div class="payment-card">
-           <h2>Credit Card</h2>
-           <div class="card">
-               <input type="text" placeholder="Credit Card Number" class="credit-card-input">
-               <input type="text" placeholder="Expiration Date" class="expiration-input">
-               <a href="/order">Pay</a> 
-          </div>
+    <div class="payment-card">
+      <h2>Credit Card</h2>
+      <div class="card">
+        <input
+          type="text"
+          placeholder="Credit Card Number"
+          class="credit-card-input"
+        />
+        <input
+          type="text"
+          placeholder="Expiration Date"
+          class="expiration-input"
+        />
+        <a href="/order">Pay</a>
+      </div>
+    </div>
+
+    <div class="payment-paypal">
+      <h2>PayPal</h2>
+      <div class="paypal">
+        <input type="text" placeholder="PayPal Email" class="paypal-input" />
+        <a href="/order">Pay</a>
       </div>
 
-      <div class="payment-paypal">
-          <h2>PayPal</h2>
-          <div class="paypal">
-              <input type="text" placeholder="PayPal Email" class="paypal-input">
-              <a href="/order">Pay</a>
-          </div>
-          
-      </div>
- </div>    
-    
+    </div>
+  </div>
+
 </section>
 
-  <script src="/js/checkout.js"></script>
+<div>
+
+  {{#each userObject.cart}}
+    <p><img
+        src="{{this.itemImageURL}}"
+        alt="food img"
+        class="card-img-top"
+      /></p>
+    <p> {{this.itemPrice}}</p>
+
+  {{/each}}
+  <a href="/order">Pay</a>
+</div>
+
+<script src="/js/checkout.js"></script>
