@@ -4,6 +4,14 @@ const Item = require("../models/ItemsAdmin.model");
 const User = require("../models/User.model");
 
 router.post("/", async (req, res) => {
+  if (!req.session.currentUser){
+    res.redirect("/auth/signup");
+    return ;
+  }
+
+
+
+
   const userId = req.session.currentUser._id;
   const { itemId } = req.body; // Assuming you have an itemId from the form
   try {

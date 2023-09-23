@@ -34,9 +34,9 @@ router.post("/signup", isLoggedOut, (req, res) => {
     return;
   }
 
-  if (password.length < 6) {
+  if (password.length < 8) {
     res.status(400).render("auth/signup", {
-      errorMessage: "Your password needs to be at least 6 characters long.",
+      errorMessage: "Your password needs to be at least 8 characters long.",
     });
 
     return;
@@ -67,6 +67,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
 
 
   // Create a new user - start by hashing the password
+  console.log("hello form signup")
   bcrypt
     .genSalt(saltRounds)
     .then((salt) => bcrypt.hash(password, salt))
@@ -75,7 +76,9 @@ router.post("/signup", isLoggedOut, (req, res) => {
       return User.create({ username, email, password: hashedPassword });
     })
     .then((user) => {
-      res.redirect("/auth/login");
+      loginFunction(req,user);
+      console.log(user)// when the user is created, fill the login form with the username and password and redirect to index page
+      res.redirect("/");
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -86,7 +89,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
             "Username and email need to be unique. Provide a valid username or email.",
         });
       } else {
-        next(error);
+        res.status(500).render("auth/signup", { errorMessage: "something went wrong" });
       }
     });
 });
@@ -139,11 +142,10 @@ router.post("/login", isLoggedOut, (req, res, next) => {
               .render("auth/login", { errorMessage: "Wrong credentials." });
             return;
           }
+          loginFunction(req,user);
 
-          // Add the user object to the session object
-          req.session.currentUser = user.toObject();
-          // Remove the password field
-          delete req.session.currentUser.password;
+
+
 
           res.redirect("/");
         })
@@ -151,6 +153,13 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     })
     .catch((err) => next(err));
 });
+const loginFunction = (req,user)=> {
+  
+  // Add the user object to the session object
+  req.session.currentUser = user.toObject();
+  // Remove the password field
+  delete req.session.currentUser.password;
+  };
 
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {

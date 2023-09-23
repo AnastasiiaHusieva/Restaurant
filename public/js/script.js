@@ -28,11 +28,12 @@ const closeBtn = document.getElementById("closeBtn");
 const profileBar = document.getElementById("profileBar");
 
 document.addEventListener("click", (event) => {
+  if (open) {
   if (open.contains(event.target)) {
     profileBar.style.display = "block";
   } else if (!profileBar.contains(event.target)) {
     profileBar.style.display = "none";
-  }
+  }}
 });
 
 closeBtn.addEventListener("click", () => {
