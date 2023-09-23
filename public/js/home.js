@@ -1,18 +1,18 @@
 // Define a global cart object to store selected items
 
-const cart = [];
+// const cart = [];
 
-// Function to fetch items and refresh the carousel
-const fetchAndRefreshCarousel = (category, carouselSelector) => {
-  fetch(`/items/${category}`)
-    .then((response) => response.json())
-    .then((data) => {
-      refreshCarousel(carouselSelector, data);
-    })
-    .catch((error) => {
-      console.error(`Error fetching items for ${category}:`, error);
-    });
-};
+// // Function to fetch items and refresh the carousel
+// const fetchAndRefreshCarousel = (category, carouselSelector) => {
+//   fetch(`/items/${category}`)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       refreshCarousel(carouselSelector, data);
+//     })
+//     .catch((error) => {
+//       console.error(`Error fetching items for ${category}:`, error);
+//     });
+// };
 
 // Function to refresh the carousel with items
 // const refreshCarousel = (carouselSelector, items) => {
@@ -107,16 +107,16 @@ const addAddToCartListeners = () => {
 };
 
 // Fetch items and populate carousels on window load
-window.onload = () => {
-  fetchAndRefreshCarousel("TopChoice", ".TopChoice");
-  fetchAndRefreshCarousel("Pizza", ".pizza");
-  fetchAndRefreshCarousel("Salads", ".salads");
-  fetchAndRefreshCarousel("Burgers", ".burgers");
-  fetchAndRefreshCarousel("Sushi", ".sushi");
-  fetchAndRefreshCarousel("Soups", ".soups");
-  fetchAndRefreshCarousel("Desserts", ".desserts");
-  fetchAndRefreshCarousel("Cocktails", ".cocktails");
+// window.onload = () => {
+//   fetchAndRefreshCarousel("TopChoice", ".TopChoice");
+//   fetchAndRefreshCarousel("Pizza", ".pizza");
+//   fetchAndRefreshCarousel("Salads", ".salads");
+//   fetchAndRefreshCarousel("Burgers", ".burgers");
+//   fetchAndRefreshCarousel("Sushi", ".sushi");
+//   fetchAndRefreshCarousel("Soups", ".soups");
+//   fetchAndRefreshCarousel("Desserts", ".desserts");
+//   fetchAndRefreshCarousel("Cocktails", ".cocktails");
 
-  // Add event listeners to "Add to Cart" buttons
-  addAddToCartListeners();
-};
+//   // Add event listeners to "Add to Cart" buttons
+//   addAddToCartListeners();
+// };

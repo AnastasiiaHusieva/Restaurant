@@ -16,43 +16,43 @@
     <div id="category-menu">
       <ul>
         <li>
-          <a class="food-icons" href="#pizza">
+          <a class="food-icons" href="#Pizza">
             <img src="/images/food-icons/pizza.png" alt="pizza-icon" />
             <span class="category-name">Pizza</span>
           </a>
         </li>
         <li>
-          <a class="food-icons" href="#salads">
+          <a class="food-icons" href="#Salads">
             <img src="/images/food-icons/salad.png" alt="salad-icon" />
             <span class="category-name">Salads</span>
           </a>
         </li>
         <li>
-          <a class="food-icons" href="#burgers">
+          <a class="food-icons" href="#Burgers">
             <img src="/images/food-icons/burger.png" alt="burger-icon" />
             <span class="category-name">Burgers</span>
           </a>
         </li>
         <li>
-          <a class="food-icons" href="#sushi">
+          <a class="food-icons" href="#Sushi">
             <img src="/images/food-icons/nigiri.png" alt="sushi-icon" />
             <span class="category-name">Sushi</span>
           </a>
         </li>
         <li>
-          <a class="food-icons" href="#soups">
+          <a class="food-icons" href="#Soups">
             <img src="/images/food-icons/hot-soup.png" alt="soup-icon" />
             <span class="category-name">Soups</span>
           </a>
         </li>
         <li>
-          <a class="food-icons" href="#desserts">
+          <a class="food-icons" href="#Desserts">
             <img src="/images/food-icons/cupcake.png" alt="dessert-icon" />
             <span class="category-name">Desserts</span>
           </a>
         </li>
         <li>
-          <a class="food-icons" href="#cocktails">
+          <a class="food-icons" href="#Cocktails">
             <img src="/images/food-icons/cocktail.png" alt="cocktail-icon" />
             <span class="category-name">Cocktails</span>
           </a>
@@ -108,9 +108,9 @@
 
 
   {{!-- <div class="card-group"> --}}
-{{#each itemsByCategory}}
+{{#each itemsByCategory as |categoryValue categoryKey|}}
   <h2 class='category-title'>{{@key}}</h2>
-<section class="{{@key}}  food-cat">
+<section id="{{categoryKey}}"  class="{{categoryKey}}  food-cat">
   
   <div class = "row-item">
   {{#each this}}
@@ -124,6 +124,7 @@
     </div>
       <form method='post' action='/cart' class="addToCartbtn">
         <input type='hidden' name='itemId' value='{{_id}}' >
+        <input type='hidden' name='target' value='{{itemCategory}}' >
         <button>Add to cart</button>
       </form>  
   </div>

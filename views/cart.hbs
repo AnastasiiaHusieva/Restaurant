@@ -23,6 +23,11 @@
         <td>{{quantity}}</td>
         <td>${{totalPrice}}</td>
       </tr>
+      {{!-- <form action="/cart" method="post">
+        <input type="hidden" name="itemId" value="{{_id}}" />
+        <button>Delete</button>
+      </form> --}}
+      <a href="/cart/{{this._id}}">Delete</a>
     {{/each}}
   </tbody>
 </table>
