@@ -64,74 +64,63 @@
 <main>
   <section id="top-choice">
     <h2 class="category-title">Top Choice</h2>
-    <!--<div class="container-container">
-      <button class="arrow-btn prev-btn" class="carousel-button"><img src="/images/icons/previous.png" alt="prev-btn"/></button>-->
       <div class="category-box">
         <div class="TopChoice category-box">
-        <form method="post" action="/">
-        <input type="hidden" name="itemId" value="{{this._id}}" >
-        <button>Add to cart</button></form>
-       
+          <form method="post" action="/">
+          <input type="hidden" name="itemId" value="{{this._id}}" >
         </div>
-
       </div>
-      <!--<button class="arrow-btn next-btn" class="carousel-button"><img
-          src="/images/icons/next.png"
-          alt="next-btn" /> -->
-       {{!-- </button> --}}
-
-    </div>
 
   </section>
     
-  <h2 class="menu-title">MENU</h2>
+
+    {{!/////// MENU //////}}
 
 
-
-  
-{{!-- {{#each itemsByCategory}}
-<section  id='{{@key}} ' >
-    <h2 class='category-title'>{{@key}}</h2>
-    {{#each this}}
-    <div class='category-box'>
-      <img src='{{itemImageURL}}' alt='food image'>
-      <h3>{{itemName}}</h3>
-      <p>{{itemDescription}}</p>
-      <p><strong>{{itemPrice}}</strong></p>
-      <form method='post' action='/'>
-        <input type='hidden' name='itemId' value='{{_id}}' >
-        <button>Add to cart</button>
-      </form>
-    </div>
-    {{/each}}
-</section>
-{{/each}} --}}
-
-
-
-  {{!-- <div class="card-group"> --}}
+  {{!--<h2 class="menu-title">MENU</h2>
 {{#each itemsByCategory}}
-  <h2 class='category-title'>{{@key}}</h2>
-<section class="{{@key}}  food-cat">
   
-  <div class = "row-item">
+<section class="{{@key}}  food-section">
+  <h2 class='category-title'>{{@key}}</h2>
+  <div class = "cards">
+    {{#each this}}
+        <div class="food-card">
+          <img src="{{itemImageURL}}" class="card-img-top" alt="pic">
+          <h5 class="card-title">{{itemName}}</h5>
+          <p class="card-text">{{itemDescription}}</p>
+          <p class="card-text"> {{itemPrice}}</p>
+        </div>
+          <form method='post' action='/cart'>
+            <input type='hidden' name='itemId' value='{{_id}}' >
+            <button class="add-to-cart-btn">Add to cart</button>
+      </div>
+    {{/each}}
+  </div>
+</section>
+{{/each}}
+
+--}}
+
+{{#each itemsByCategory as |categoryValue categoryKey|}}
+  <h2 class='category-title'>{{@key}}</h2>
+  <section  id="{{categoryKey}}"  class="{{categoryKey}} food-section row d-flex flex-wrap justify-content-center">
   {{#each this}}
-  <div class="food-card">
-    <img src="{{itemImageURL}}" class="card-img-top" alt="pic">
-    <div class="card-body">
-      <h5 class="card-title">{{itemName}}</h5>
-      <p class="card-text">{{itemDescription}}</p>
-      <p class="card-text">{{itemPrice}}</p>
-     
-    </div>
-      <form method='post' action='/cart'>
-        <input type='hidden' name='itemId' value='{{_id}}' >
-        <button>Add to cart</button>
-      </form>  
-  </div>
-  </div>
-  {{!-- </div> --}}
+     <div class="food-card col-lg-2 col-md-4 col-sm-6">
+       <img src="{{itemImageURL}}" class="card-img-top" alt="pic">
+       <div class="card-body">
+         <h5 class="card-title">{{itemName}}</h5>
+         <p class="card-text">{{itemDescription}}</p>
+         <p class="card-title">{{itemPrice}}</p>
+       </div>
+         <form method='post' action='/cart' class="addToCartbtn">
+           <input type='hidden' name='itemId' value='{{_id}}' >
+           <input type='hidden' name='target' value='{{itemCategory}}' >
+           <button class ="add-to-cart-btn">Add to cart</button>
+         </form>
+       
+      </div>
   {{/each}}
+  </div>
 </section>
 {{/each}}
 
@@ -139,9 +128,7 @@
 
 
 </main>
-{{!--  --}}
-
-{{!--  --}}
+{{!///////FOOTER//////}}
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xml:space="preserve"
