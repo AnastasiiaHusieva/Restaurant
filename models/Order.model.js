@@ -13,7 +13,6 @@ const orderSchema = new mongoose.Schema(
         itemPrice: Number,
       },
     ],
-    totalPrice: Number,
   },
   {
     timestamps: true,

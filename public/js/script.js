@@ -1,5 +1,4 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
-const addtoCartBtn = document.querySelectorAll(".addToCartbtn");
 
 document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function () {
@@ -17,10 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   };
-
-  addtoCartBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-  });
 });
 
 const open = document.getElementById("open");
@@ -41,8 +36,8 @@ closeBtn.addEventListener("click", () => {
 
 // To display bonuses
 
-const bonuses = document.getElementById("bonuses");
+// const bonuses = document.getElementById("bonuses");
 
-profileButton.addEventListener("click", () => {
-  bonuses.textContent = userData.bonuses;
-});
+// profileButton.addEventListener("click", () => {
+//   bonuses.textContent = userData.bonuses;
+// });

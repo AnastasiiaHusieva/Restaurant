@@ -15,10 +15,20 @@ router.get("/", (req, res) => {
         items: userObject.cart,
       };
 
-      return Order.create(orderData)
+      Order.create(orderData)
         .then((order) => {
-          console.log("!!!!!!!!!", order);
-          res.render("track-order", { order });
+          if (order) {
+            console.log("!!!!!!!!!", order);
+            User.findOneAndUpdate(
+              { _id: userId },
+              { $set: { cart: [] } },
+              { new: true }
+            ).then((updatedCart) => {
+              if (updatedCart) {
+                res.render("track-order", { order });
+              }
+            });
+          } else console.log("the order was not created");
         })
         .catch((error) => {
           console.error("Error creating order:", error);

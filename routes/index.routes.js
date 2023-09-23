@@ -18,6 +18,7 @@ router.get("/", (req, res, next) => {
         }
         itemsByCategory[category].push(item);
       });
+
       // Render the index template with the grouped data
       if (isLoggedIn) {
         res.render("index", { isLoggedIn: true, itemsByCategory });
