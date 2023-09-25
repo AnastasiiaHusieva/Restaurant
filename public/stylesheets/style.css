@@ -35,6 +35,8 @@ blablah
 */
 
 /* IMPORT FONT-FAMILY */
+
+
 @font-face {
   font-family: "Ubuntu";
   src: url("/fonts/Ubuntu/Ubuntu-Bold.ttf") format("truetype"),
@@ -278,7 +280,7 @@ ul {
 
 .description-text {
   font-family: "Ubuntu-Light", sans-serif;
-  font-weight: light; /* You can also use '300' as the font-weight value */
+  font-weight: light; 
 }
 .description {
   width: 45%;
@@ -313,8 +315,8 @@ header {
 }
 
 .icons img {
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
   padding: 5px 5px;
 }
 
@@ -454,6 +456,7 @@ header {
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 .cartSideBar {
   position: fixed;
   top: 0;
@@ -525,6 +528,7 @@ h3 {
 .banner {
   display: flex;
 }
+
 .banner img {
   height: 60vh;
 }
@@ -532,7 +536,7 @@ h3 {
 #get-started-btn {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 10rem;
   margin-left: 50px;
 }
 
@@ -544,6 +548,12 @@ h3 {
   margin-top: 0;
   padding: 1.5rem 3rem;
   border-radius: 3rem;
+  margin-top: 3rem;
+}
+
+.get-started-btn:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: #229b85;
 }
 
 .get-started-btn a {
@@ -560,7 +570,7 @@ h3 {
   background: #fff;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   width: 8rem;
-  height: 50rem;
+  height: 45rem;
   overflow: hidden;
   border-radius: 10px;
   z-index: 1000;
@@ -579,7 +589,7 @@ h3 {
 #category-menu li {
   align-items: center;
   padding: 10px;
-  height: 55px;
+  height: 70px;
   transition: all 0.3s ease;
   background-color: #fff;
 }
@@ -610,119 +620,94 @@ h3 {
 }
 
 .food-icons img {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   padding: 5px 5px;
   margin-right: 16px;
 }
 
 /* HOME PAGE */
+.menu-title {
+  font-size: 5rem;
+}
+
 main {
   text-align: center;
 }
 
 .category-title {
-  font-size: 3rem;
-  margin-bottom: 3rem;
+  font-size: 4rem;
+  margin: 3rem 0;
 }
 
-.card-img-top {
-  height: 120px;
-  width: 180px;
+.food-section {
+ gap: 10px;
+ margin: auto 3rem;
 }
 
-/*.carousel-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-*/
-
-.category-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-  transition: transform 0.5s ease-in-out;
-  margin-right: 100px;
-}
-
-.item {
-  flex-basis: calc(25% - 20px);
-  width: calc(25% - 20px);
-  padding: 20px;
-  text-align: center;
+.food-card {
   border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-sizing: content-box;
+  border-radius: 15px;
 }
 
-.item:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.food-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.item:hover h3 {
+
+.food-card:hover h5 {
   color: #ffa31a;
 }
 
-.item img {
-  max-width: 25%;
-  height: auto;
+.card-img-top {
+  width: 80%;
+  height: 40%;
 }
 
-.item h3 {
-  color: #646464;
-  font-size: 2rem;
-  text-decoration: underline;
-}
-
-.item p {
-  color: #646464;
-  font-size: 1.5rem;
-}
-
-.add-to-cart-button {
-  background-color: #29b298;
-  color: #fff;
+.add-to-cart-btn{
   border: none;
-  padding: 10px 15px;
+  color: white;
+  background-color: #29B298;
+  padding: 1.3rem 3rem;
+  border-radius: 3rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  border-radius: 20px;
-}
-/*  For the carousel buttons
-.arrow-btn img {
-  width: 40px;
-  height: 40px;
 }
 
-.arrow-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.add-to-cart-btn:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: #229b85;
 }
 
-.prev-btn {
-  left: 0;
+.card-text {
+  color: #7d7d7d;
+  font-family: "Ubuntu-Light", sans-serif;
+  font-weight: light;
+  overflow:visible;
+  height: 4rem;
 }
 
-.next-btn {
-  right: 0;
+.card-title {
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  color: #4a4a4a;
+  font-family: "Ubuntu-Regular", sans-serif;
+  font-weight: normal;
+  margin-top: 8%;
+  height: 4rem;
 }
-*/
+
+.sushi {
+  padding-bottom: 50px;
+}
 
 svg {
   margin-top: 14rem;
   width: 100%;
 }
 
-.menu-title {
-  font-size: 4rem;
-}
+
 
 /* ////FOOTER /// */
 
@@ -828,9 +813,6 @@ footer .logo {
   color: #646464;
   font-size: 2rem;
 }
-
-.my-cart-h1 {
-}
 /* /////  CHECKOUT PAGE//// */
 #checkout {
   margin-top: 12rem;
@@ -887,8 +869,8 @@ footer .logo {
   height: 200px;
   display: none;
 }
-/* // set it back ///////////////// ////// */
-/* .card input, */
+
+.card input, 
 .paypal input {
   width: 100%;
   padding: 8px;
@@ -903,17 +885,3 @@ footer .logo {
   margin-bottom: 50px;
 }
 
-.food-cat {
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-}
-.food-card {
-  display: flex;
-  flex-direction: column;
-}
-.row-item {
-  display: flex;
-}
