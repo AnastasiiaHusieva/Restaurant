@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User.model");
 const Item = require("../models/ItemsAdmin.model");
-
-router.get("/", (req, res) => {
+const isLoggedIn = require("../middleware/isLoggedIn");
+router.get("/", isLoggedIn, (req, res) => {
   const userId = req.session.currentUser._id;
-  console.log("************* ", userId);
+  // console.log("************* ", userId);
   User.findById(userId)
     .populate("cart")
     .then((userObject) => {

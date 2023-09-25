@@ -36,7 +36,6 @@ blablah
 
 /* IMPORT FONT-FAMILY */
 
-
 @font-face {
   font-family: "Ubuntu";
   src: url("/fonts/Ubuntu/Ubuntu-Bold.ttf") format("truetype"),
@@ -280,7 +279,7 @@ ul {
 
 .description-text {
   font-family: "Ubuntu-Light", sans-serif;
-  font-weight: light; 
+  font-weight: light;
 }
 .description {
   width: 45%;
@@ -641,8 +640,8 @@ main {
 }
 
 .food-section {
- gap: 10px;
- margin: auto 3rem;
+  gap: 10px;
+  margin: auto 3rem;
 }
 
 .food-card {
@@ -665,10 +664,10 @@ main {
   height: 40%;
 }
 
-.add-to-cart-btn{
+.add-to-cart-btn {
   border: none;
   color: white;
-  background-color: #29B298;
+  background-color: #29b298;
   padding: 1.3rem 3rem;
   border-radius: 3rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -684,7 +683,7 @@ main {
   color: #7d7d7d;
   font-family: "Ubuntu-Light", sans-serif;
   font-weight: light;
-  overflow:visible;
+  overflow: visible;
   height: 4rem;
 }
 
@@ -698,6 +697,10 @@ main {
   height: 4rem;
 }
 
+.prev-btn {
+  left: 0;
+}
+
 .sushi {
   padding-bottom: 50px;
 }
@@ -706,8 +709,6 @@ svg {
   margin-top: 14rem;
   width: 100%;
 }
-
-
 
 /* ////FOOTER /// */
 
@@ -870,7 +871,7 @@ footer .logo {
   display: none;
 }
 
-.card input, 
+.card input,
 .paypal input {
   width: 100%;
   padding: 8px;
@@ -884,4 +885,3 @@ footer .logo {
   margin-top: 120px;
   margin-bottom: 50px;
 }
-
