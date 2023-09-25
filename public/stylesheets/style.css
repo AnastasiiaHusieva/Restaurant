@@ -315,8 +315,8 @@ header {
 }
 
 .icons img {
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
   padding: 5px 5px;
 }
 
@@ -456,6 +456,7 @@ header {
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 .cartSideBar {
   position: fixed;
   top: 0;
@@ -527,6 +528,7 @@ h3 {
 .banner {
   display: flex;
 }
+
 .banner img {
   height: 60vh;
 }
@@ -534,7 +536,7 @@ h3 {
 #get-started-btn {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 10rem;
   margin-left: 50px;
 }
 
@@ -546,6 +548,7 @@ h3 {
   margin-top: 0;
   padding: 1.5rem 3rem;
   border-radius: 3rem;
+  margin-top: 3rem;
 }
 
 .get-started-btn:hover {
@@ -567,7 +570,7 @@ h3 {
   background: #fff;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   width: 8rem;
-  height: 50rem;
+  height: 45rem;
   overflow: hidden;
   border-radius: 10px;
   z-index: 1000;
@@ -586,7 +589,7 @@ h3 {
 #category-menu li {
   align-items: center;
   padding: 10px;
-  height: 55px;
+  height: 70px;
   transition: all 0.3s ease;
   background-color: #fff;
 }
@@ -617,8 +620,8 @@ h3 {
 }
 
 .food-icons img {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   padding: 5px 5px;
   margin-right: 16px;
 }
@@ -638,15 +641,14 @@ main {
 }
 
 .food-section {
-  gap: 20px; 
- 
+ gap: 10px;
+ margin: auto 3rem;
 }
 
 .food-card {
-  
   border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
+  box-sizing: content-box;
   border-radius: 15px;
 }
 
@@ -664,7 +666,6 @@ main {
 }
 
 .add-to-cart-btn{
-  margin-top: 5%;
   border: none;
   color: white;
   background-color: #29B298;
@@ -683,6 +684,8 @@ main {
   color: #7d7d7d;
   font-family: "Ubuntu-Light", sans-serif;
   font-weight: light;
+  overflow:visible;
+  height: 4rem;
 }
 
 .card-title {
@@ -692,6 +695,11 @@ main {
   font-family: "Ubuntu-Regular", sans-serif;
   font-weight: normal;
   margin-top: 8%;
+  height: 4rem;
+}
+
+.sushi {
+  padding-bottom: 50px;
 }
 
 svg {
