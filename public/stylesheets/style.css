@@ -691,6 +691,38 @@ main {
   cursor: pointer;
   border-radius: 20px;
 }
+
+/* this is the cart probably should be deleted before pusshing */
+#carting {
+  font-size: 1.5rem;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#carting div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+}
+.total {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+.cartBTN {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 2rem;
+  display: block;
+}
+/* ///////////////////////////////////// */
 /*  For the carousel buttons
 .arrow-btn img {
   width: 40px;

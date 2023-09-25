@@ -1,5 +1,3 @@
-// https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
-
 document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function () {
     if (
@@ -16,23 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   };
-});
+  const open = document.getElementById("open");
+  const closeBtn = document.getElementById("closeBtn");
+  const profileBar = document.getElementById("profileBar");
 
-const open = document.getElementById("open");
-const closeBtn = document.getElementById("closeBtn");
-const profileBar = document.getElementById("profileBar");
+  document.addEventListener("click", (event) => {
+    if (open) {
+      if (open.contains(event.target)) {
+        profileBar.style.display = "block";
+      } else if (!profileBar.contains(event.target)) {
+        profileBar.style.display = "none";
+      }
+    }
+  });
 
-document.addEventListener("click", (event) => {
-  if (open) {
-  if (open.contains(event.target)) {
-    profileBar.style.display = "block";
-  } else if (!profileBar.contains(event.target)) {
+  closeBtn.addEventListener("click", () => {
     profileBar.style.display = "none";
-  }}
-});
-
-closeBtn.addEventListener("click", () => {
-  profileBar.style.display = "none";
+  });
 });
 
 // To display bonuses

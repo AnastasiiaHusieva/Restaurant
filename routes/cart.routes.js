@@ -4,13 +4,10 @@ const Item = require("../models/ItemsAdmin.model");
 const User = require("../models/User.model");
 
 router.post("/", async (req, res) => {
-  if (!req.session.currentUser){
+  if (!req.session.currentUser) {
     res.redirect("/auth/signup");
-    return ;
+    return;
   }
-
-
-
 
   const userId = req.session.currentUser._id;
   const { itemId, target } = req.body; // Assuming you have an itemId from the form
@@ -33,30 +30,51 @@ router.post("/", async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 });
-router.get("/", (req, res) => {
+
+router.get("/json", (req, res) => {
   const userId = req.session.currentUser._id;
-  console.log("************* ", userId);
+  // console.log("************* ", userId);
   User.findById(userId)
     .populate("cart")
     .then((userObject) => {
       console.log(`@@@@@@`, userObject);
-      res.render("cart", { userObject });
+      res.json({ userObject });
+    });
+});
+router.get("/", (req, res) => {
+  const userId = req.session.currentUser._id;
+  // console.log("************* ", userId);
+  User.findById(userId)
+    .populate("cart")
+    .then((userObject) => {
+      // console.log(`@@@@@@`, userObject);
+      res.render("cart");
     });
 });
 
 router.get("/:itemId", (req, res, next) => {
   const userId = req.session.currentUser._id;
   const itemId = req.params.itemId;
-
-  User.findByIdAndUpdate(userId, { $pull: { cart: itemId } }, { new: true })
-    .then((updatedUser) => {
-      if (updatedUser) {
-        console.log("Item removed from cart:", updatedUser);
-        res.redirect("/cart"); // Redirect back to the cart page
-      } else {
+  User.findById(userId)
+    .then((user) => {
+      if (!user) {
         console.log("User not found.");
-        res.status(404).json({ message: "User not found" });
+        return res.status(404).json({ message: "User not found" });
       }
+      // Find the index of the item with the specified itemId in the user’s cart
+      const itemIndex = user.cart.indexOf(itemId);
+      if (itemIndex === -1) {
+        console.log("Item not found in the users cart.");
+        return res.status(404).json({ message: "Item not found in the cart" });
+      }
+
+      user.cart.splice(itemIndex, 1);
+
+      return user.save();
+    })
+    .then((updatedUser) => {
+      console.log("Item removed from cart:", updatedUser);
+      res.redirect("/cart"); // Redirect back to the cart page
     })
     .catch((error) => {
       console.error("Error removing item from cart:", error);

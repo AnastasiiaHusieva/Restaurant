@@ -1,0 +1,74 @@
+<div id="admin-page">
+
+  <div>
+    <div id="add-meals-form">
+      <h2 class="addfood-title">User Orders</h2>
+
+      <form action="/adminorderstatus" method="POST" class="form-style">
+        <label class="form-fields">
+          Username:
+          <input
+            class="form-fields"
+            type="text"
+            name="username"
+            placeholder="Enter the meal"
+            required
+          />
+        </label>
+
+        <label class="form-fields">
+          Email:
+          <input
+            class="form-fields"
+            type="text"
+            name="email"
+            placeholder="Enter the description"
+            required
+          />
+        </label>
+        <label class="form-fields">
+          Password:
+          <input
+            class="form-fields"
+            type="password"
+            name="password"
+            placeholder="Enter a password"
+            required
+          />
+        </label>
+
+        <label class="form-fields">
+          Acount type:
+          <select class="form-fields" type="text" name="acountType">
+            <option value="sushi">end-user</option>
+            <option value="pizza">admin</option>
+
+          </select>
+        </label>
+
+        <button class="admin-btn" type="submit">add</button>
+
+        {{#if errorMessage}}
+          <p class="error">{{errorMessage}}</p>
+        {{/if}}
+      </form>
+
+    </div>
+  </div>
+  <div id="data-display">
+    <table border="3">
+      <tr class="table-header">
+        <th class="strong-style stickyName">USERNAME:</th>
+        <th class="strong-style stickyDescription">EMAIL:</th>
+        <th class="strong-style">PASSWORD:</th>
+        <th class="strong-style edit-column">UPDATE</th>
+
+      </tr>
+      {{#each userOrders}}
+        {{this}}
+      {{/each}}
+    </table>
+
+  </div>
+  <script src="script.js"></script>
+</div>

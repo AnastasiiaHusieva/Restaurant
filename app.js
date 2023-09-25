@@ -48,6 +48,9 @@ app.use("/cart", cartRoutes);
 const checkOutRoutes = require("./routes/checkOut.routes.js");
 app.use("/checkout", checkOutRoutes);
 
+const adminOrderStatusRoutes = require("./routes/adminOrderStatus.routes.js");
+app.use("/adminorderstatus", adminOrderStatusRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
