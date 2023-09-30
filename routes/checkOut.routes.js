@@ -5,11 +5,11 @@ const Item = require("../models/ItemsAdmin.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 router.get("/", isLoggedIn, (req, res) => {
   const userId = req.session.currentUser._id;
-  // console.log("************* ", userId);
+
   User.findById(userId)
     .populate("cart")
     .then((userObject) => {
-      console.log(`@@@@@@`, userObject);
+      console.log(`@@@@@@!!!!!!!!!!`, userObject._id);
       res.render("checkout", { userObject });
     });
 });

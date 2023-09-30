@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Item = require("../models/ItemsAdmin.model");
 const User = require("../models/User.model");
-
+const isLoggedIn = require("../middleware/isLoggedIn");
 router.post("/", async (req, res) => {
   if (!req.session.currentUser) {
     res.redirect("/auth/signup");
@@ -41,7 +41,7 @@ router.get("/json", (req, res) => {
       res.json({ userObject });
     });
 });
-router.get("/", (req, res) => {
+router.get("/", isLoggedIn, (req, res) => {
   const userId = req.session.currentUser._id;
   // console.log("************* ", userId);
   User.findById(userId)

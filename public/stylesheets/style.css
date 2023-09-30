@@ -299,35 +299,98 @@ header {
   right: 0;
   z-index: 1000;
 }
-#carting {
-  font-size: 1.5rem;
+/* CART PAGE */
+.section-cart {
+  margin: 20px auto;
   width: 80%;
-  margin: 0 auto;
-  display: flex;
-  /* flex-wrap: wrap; */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+.cart-icon {
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+}
+.cartItems {
+  font-size: 1.5rem;
+  width: 90%;
   text-align: center;
 }
+.cartItems {
+  width: 40px;
+  gap: 40px;
+  border-bottom: #229b85 solid 2px;
+  color: #646464;
+}
+.cart-itemname {
+  text-align: start;
+  font-size: 2.2rem;
+  color: #29b298;
+}
+.cartItems:last-child {
+  border-bottom: none;
+}
+.cartItemPrice {
+  font-size: 2rem;
+  color: #ffa31a;
+}
+#carting img {
+  width: 160px;
+}
+#carting {
+  /* width: 90%; */
+  margin: 60 auto;
+  border-radius: 8px;
+  border: #fd7e14 solid 2px;
+}
+.img-cart {
+  flex: 1;
+}
 #carting div {
+  width: 90%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap-reverse;
+}
+#icon-container {
+  width: 40px;
+  display: flex;
+  justify-content: flex-start;
+}
+.cart-item-description {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
 }
 .total {
   width: 80%;
-  margin: 0 auto;
   font-size: 2rem;
 }
 .cartBTN {
   width: 80%;
-  margin: 0 auto;
-  font-size: 2rem;
-  display: block;
+  text-decoration: none;
+  border: #229b85 solid 3px;
+  border-radius: 6px;
+  padding: 4px;
+  font-size: 1.7rem;
+  background-color: #ffa31a;
+  color: white;
+  transition: all 0.5s;
 }
+.cartBTN:hover {
+  color: #ffa31a;
+  background-color: white;
+  border: #ffa31a solid 3px;
+}
+.plus-icon {
+  color: #229b85;
+}
+.minus-icon {
+  color: #ffa31a;
+}
+
+/* CART PAGE LARGE VIEW END */
+/* CART PAGE SM VIEW */
+
+/* CART PAGE SM VIEW ENDS HERE  */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -910,6 +973,6 @@ footer .logo {
 
 .my-cart-h1 {
   font-size: 3rem;
-  margin-top: 120px;
+  margin-top: 160px;
   margin-bottom: 50px;
 }

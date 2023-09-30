@@ -1,4 +1,7 @@
 // Wrap your code in an event listener for the DOMContentLoaded event
+const cartDiv = document.getElementById("carting");
+const checkoutBtn = document.querySelector(".cartBTN");
+const orderPrice = document.querySelector(".total");
 document.addEventListener("DOMContentLoaded", function () {
   fetch("http://localhost:3000/cart/json")
     .then((res) => {
@@ -9,27 +12,36 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
     .then((data) => {
-      if (data && data.userObject && data.userObject.cart) {
-        const cartDiv = document.getElementById("carting");
+      console.log("lalalalallaal", data.userObject.cart);
+      if (data.userObject.cart.length > 0) {
         const cartItems = data.userObject.cart;
         let totalPrice = 0;
-        const orderPrice = document.querySelector(".total");
+
         const createdP = document.createElement("p");
+        // createdP.classList.add("hello123");
 
         cartDiv.innerHTML = "";
         cartItems.forEach((item) => {
-          // console.log(item.itemPrice);
+          console.log("HEEERRRREEEEEEEEE ARREE THE ITEEMMMSSS", item.itemPrice);
           totalPrice += item.itemPrice;
 
           const div = document.createElement("div");
-
+          div.classList.add("cartItems", "col-lg-2", "col-md-4", "col-sm-6");
           div.innerHTML = `
+          <div class="cart-item-description"><p class='cart-itemname'>${item.itemName}</p>
+          
                   
-                  <p>${item.itemName}</p>
-                  <p>$${item.itemDescription}</p>
+                  <p class=""cartItems ">${item.itemDescription}</p>
                   <p>${item.itemCategory}</p>
-                  <p>${item.itemPrice}</p>
-                  <div><img src="${item.itemImageURL}" alt="food images" class="card-img-top" /></div>
+                  <p class='cartItemPrice'>$${item.itemPrice}</p>
+                  </div>
+                  <div class="img-cart"><img src="${item.itemImageURL}" alt="food images" class="card-img-top" /></div><span id='icon-container'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="cart-icon plus-icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="cart-icon minus-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+              </svg>
+              </span>
                  
                 
               `;
@@ -38,8 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         createdP.textContent = totalPrice;
         console.log("the total", createdP);
-        orderPrice.appendChild(createdP);
-      } else {
+        const amt = document.querySelector(".amt");
+        amt.innerHTML = "Total : $" + totalPrice;
+      } else if (data.userObject.cart.length === 0) {
+        checkoutBtn.style.display = "none";
+        cartDiv.innerHTML = "Your cart is empty";
+        checkoutBtn.console.log("ahhh the length is 0");
         throw new Error("Invalid data received from the server");
       }
     })

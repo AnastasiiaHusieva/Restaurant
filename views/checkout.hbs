@@ -44,8 +44,13 @@
       /></p>
     <p> {{this.itemPrice}}</p>
 
+    {{! <a href="/order">Pay</a> }}
   {{/each}}
-  <a href="/order">Pay</a>
+  <form method="post" action="/order/">
+    <!-- Other form fields here -->
+    <input type="hidden" name="userId" value="{{userObject._id}}" />
+    <button type="submit">Pay</button>
+  </form>
 </div>
 
 <script src="/js/checkout.js"></script>
