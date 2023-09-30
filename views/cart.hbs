@@ -1,35 +1,18 @@
-<h1 class="my-cart-h1">My cart</h1>
+<section class="section-cart">
 
-<h1>Shopping Cart</h1>
+  <h1 class="my-cart-h1">My cart</h1>
 
-<div id="carting">
+  <div id="carting" class="column d-flex flex-wrap justify-content-center">
 
-</div>
-<dv>
-  <div class="total"><p>TOTAL : $</p> </div>
-  <a class="cartBTN" href="/checkout">Checkout</a>
+  </div>
+  <br />
+  <div class="cart-sumContainer">
+    <div class="total">
+      <p class="amt"></p>
+    </div>
 
-</dv>
-{{!-- {{#each userObject.cart}} --}}
-{{!-- <tr>
-      <td>
-        <img
-          src="{{this.itemImageURL}}"
-          alt="food images"
-          class="card-img-top"
-        />
-      </td>
-      <td>{{this.itemName}}</td>
-      <td>${{this.itemPrice}}</td>
-      <td>{{quantity}}</td>
-      <td>${{totalPrice}}</td>
-    </tr> --}}
-{{!-- <form action="/cart" method="post">
-        <input type="hidden" name="itemId" value="{{_id}}" />
-        <button>Delete</button>
-      </form> --}}
-{{!-- <a href="/cart/{{this._id}}">Delete</a> --}}
-{{!-- {{/each}} --}}
+    <a class="cartBTN" href="/checkout">Checkout</a>
+  </div>
+</section>
 
-{{!-- <p>Total: ${{totalCartPrice}}</p> --}}
 <script src="/js/home.js"></script>
