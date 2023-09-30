@@ -51,26 +51,11 @@
 
     </div>
   </div>
-  <div class="pay-btn"> <a href="/order">Proceed</a></div>
-</section>
-
-<div>
-
-  {{#each userObject.cart}}
-    <p><img
-        src="{{this.itemImageURL}}"
-        alt="food img"
-        class="card-img-top"
-      /></p>
-    <p> {{this.itemPrice}}</p>
-
-    {{! <a href="/order">Pay</a> }}
-  {{/each}}
   <form method="post" action="/order/">
     <!-- Other form fields here -->
     <input type="hidden" name="userId" value="{{userObject._id}}" />
-    <button type="submit">Pay</button>
+    <button class="pay-btn" type="submit">Pay</button>
   </form>
-</div>
+</section>
 
 <script src="/js/checkout.js"></script>
