@@ -1,15 +1,20 @@
 <section id="checkout">
   <h2 class="checkout-title">Your Choice:</h2>
   <div class="col-lg-2 col-md-3 col-sm-4 checkout-items">
-    {{#each userObject.cart}}
-      <div class="checkout-item">
-        <img src="{{this.itemImageURL}}" alt="food img" class="checkout-img" />
-      </div>
-    {{/each}}
+ {{#each uniqueCartItems}}
+  <!-- Display each unique item in the cart -->
+  <div class="checkout-item">
+    <img src="{{this.itemImageURL}}" alt="food img" class="checkout-img" />
+    {{this.itemPrice}}
+  </div>
+{{/each}}
+
+  </div>
   </div>
 
   <div class="total">
-    <h3>Total:</h3>
+    <h3>Total: ${{totalAmount}}</h3>
+
   </div>
 
   <div class="address-box">

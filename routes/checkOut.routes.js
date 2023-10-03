@@ -9,8 +9,15 @@ router.get("/", isLoggedIn, (req, res) => {
   User.findById(userId)
     .populate("cart")
     .then((userObject) => {
+      const totalAmount = userObject.cart.reduce(
+        (total, item) => total + item.itemPrice,
+        0
+      );
+      const uniqueCartItems = userObject.cart.filter((item, index, arr) => {
+        return index === arr.findIndex((i) => i._id === item._id);
+      }); // i need to study this code
       console.log(`@@@@@@!!!!!!!!!!`, userObject._id);
-      res.render("checkout", { userObject });
+      res.render("checkout", { userObject, totalAmount, uniqueCartItems });
     });
 });
 
