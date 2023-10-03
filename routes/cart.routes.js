@@ -30,6 +30,20 @@ router.post("/", async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 });
+router.post("/add", (req, res) => {
+  const userId = req.session.currentUser._id;
+  const itemId = req.body.itemId;
+  console.log("fetchhhhhhh", itemId, userId);
+
+  User.findByIdAndUpdate(
+    userId,
+    { $push: { cart: itemId } },
+    { new: true }
+  ).then((user) => {
+    console.log("the usersssss", user);
+    res.redirect("/cart");
+  });
+});
 
 router.get("/json", (req, res) => {
   const userId = req.session.currentUser._id;
@@ -37,10 +51,11 @@ router.get("/json", (req, res) => {
   User.findById(userId)
     .populate("cart")
     .then((userObject) => {
-      console.log(`@@@@@@`, userObject);
+      // console.log(`@@@@@@`, userObject);
       res.json({ userObject });
     });
 });
+
 router.get("/", isLoggedIn, (req, res) => {
   const userId = req.session.currentUser._id;
   // console.log("************* ", userId);
@@ -49,36 +64,6 @@ router.get("/", isLoggedIn, (req, res) => {
     .then((userObject) => {
       // console.log(`@@@@@@`, userObject);
       res.render("cart");
-    });
-});
-
-router.get("/:itemId", (req, res, next) => {
-  const userId = req.session.currentUser._id;
-  const itemId = req.params.itemId;
-  User.findById(userId)
-    .then((user) => {
-      if (!user) {
-        console.log("User not found.");
-        return res.status(404).json({ message: "User not found" });
-      }
-      // Find the index of the item with the specified itemId in the user’s cart
-      const itemIndex = user.cart.indexOf(itemId);
-      if (itemIndex === -1) {
-        console.log("Item not found in the users cart.");
-        return res.status(404).json({ message: "Item not found in the cart" });
-      }
-
-      user.cart.splice(itemIndex, 1);
-
-      return user.save();
-    })
-    .then((updatedUser) => {
-      console.log("Item removed from cart:", updatedUser);
-      res.redirect("/cart"); // Redirect back to the cart page
-    })
-    .catch((error) => {
-      console.error("Error removing item from cart:", error);
-      res.status(500).json({ message: "Internal Server Error" });
     });
 });
 
