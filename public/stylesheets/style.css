@@ -77,14 +77,11 @@ ul {
 }
 
 /*LOGO box*/
-.logo {
-  width: 100px;
-  height: 100px;
-}
 
 .logo img {
-  width: 24em;
-  height: 7em;
+  width: 18em;
+  height: 7.5em;
+  margin-left: 3rem;
 }
 
 /* //////////////////////ADMIN PAGE//////////////// */
