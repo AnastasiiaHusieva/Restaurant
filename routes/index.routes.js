@@ -7,6 +7,7 @@ const UserDB = require("../models/User.model");
 
 router.get("/", (req, res, next) => {
   let isLoggedIn = req.session.currentUser;
+
   Item.find()
     .then((items) => {
       // Group items by category
@@ -21,7 +22,11 @@ router.get("/", (req, res, next) => {
 
       // Render the index template with the grouped data
       if (isLoggedIn) {
-        res.render("index", { isLoggedIn: true, itemsByCategory });
+        res.render("index", {
+          isLoggedIn: true,
+          itemsByCategory,
+          user: req.session.currentUser,
+        });
       } else {
         res.render("index", { isLoggedIn: false, itemsByCategory });
       }
