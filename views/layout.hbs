@@ -25,6 +25,11 @@
                 alt="logo"
               /></a>
           </div>
+          {{#if isAdmin}}
+          <div>
+            <button><a href="/admin/add-meals-form">Add meals to the list</a></button>
+          </div>
+          {{/if}}
 
           <div class="icons">
             <div class="icon"><a href="/cart"><img
@@ -40,6 +45,9 @@
                 <button id="closeBtn">&times;</button>
                 <div class="links">
                   <h2>My Account</h2>
+                  <p>Welcome, {{username}}</p>
+                  
+                  
                   <h3>Bonuses: <span id="bonuses"></span> </h3>
                   <a href="/order"><img
                       src="/images/icons/map.png"

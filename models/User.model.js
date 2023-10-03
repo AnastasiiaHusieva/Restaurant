@@ -29,6 +29,11 @@ const userSchema = new Schema(
       type: [mongoose.Schema.Types.ObjectId],
       ref: "Item",
     },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+    
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

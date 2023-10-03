@@ -1,9 +1,10 @@
 const express = require("express");
-
 const router = express.Router();
 const ItemsAdmin = require("../models/ItemsAdmin.model");
+const isAdmin = require("../middleware/isAdmin");
 
-router.get("/add-meals-form", (req, res, next) => {
+
+router.get("/add-meals-form",isAdmin, (req, res, next) => {
   console.log("***************");
   ItemsAdmin.find().then((dataFood) => {
     console.log("this are all the items", dataFood);
@@ -11,7 +12,7 @@ router.get("/add-meals-form", (req, res, next) => {
   });
 });
 
-router.post("/add-meals-form", (req, res, next) => {
+router.post("/add-meals-form",isAdmin, (req, res, next) => {
   const {
     itemName,
     itemDescription,
@@ -39,7 +40,7 @@ router.post("/add-meals-form", (req, res, next) => {
     });
 });
 
-router.get("/add-meals-form/:id", (req, res, next) => {
+router.get("/add-meals-form/:id",isAdmin, (req, res, next) => {
   const id = req.params.id;
   ItemsAdmin.findByIdAndDelete(id)
     .then((data) => {
@@ -50,7 +51,7 @@ router.get("/add-meals-form/:id", (req, res, next) => {
       next(err);
     });
 });
-router.get("/add-meals-form/edit/:id", (req, res, next) => {
+router.get("/add-meals-form/edit/:id",isAdmin, (req, res, next) => {
   const id = req.params.id;
 
   ItemsAdmin.findById(id).then((datatoUpdate) => {
@@ -58,7 +59,7 @@ router.get("/add-meals-form/edit/:id", (req, res, next) => {
     res.render("admin/mealupdate", { datatoUpdate });
   });
 });
-router.post("/add-meals-form/edit/:id", (req, res, next) => {
+router.post("/add-meals-form/edit/:id",isAdmin, (req, res, next) => {
   const {
     itemName,
     itemDescription,

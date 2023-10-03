@@ -21,7 +21,7 @@ router.get("/", (req, res, next) => {
 
       // Render the index template with the grouped data
       if (isLoggedIn) {
-        res.render("index", { isLoggedIn: true, itemsByCategory });
+        res.render("index", { isLoggedIn: true, itemsByCategory ,isAdmin: req.session.currentUser.isAdmin,username: req.session.currentUser.username});
       } else {
         res.render("index", { isLoggedIn: false, itemsByCategory });
       }
