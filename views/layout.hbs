@@ -39,30 +39,21 @@
 
             </div>
             {{#if isLoggedIn}}
-              <p>{{user.cart.length}}</p>
+              <p class="floating-number">{{user.cart.length}}</p>
 
               <div id="open" class="icon"><img
                   src="/images/icons/user (4).png"
                   alt="signupicon"
                 /></div>
               <div id="profileBar" class="sidebar">
-                <button id="closeBtn">&times;</button>
                 <div class="links">
-                  <h2>My Account</h2>
-                  <p>Welcome, {{username}}</p>
+                  <h3>Welcome, {{username}}!</h3>
                   
-                  
-                  <h3>Bonuses: <span id="bonuses"></span> </h3>
                   <a href="/order"><img
                       src="/images/icons/map.png"
                       alt="track-icon"
                     />
-                    Track Order</a>
-                  <a href="/favorites"><img
-                      src="/images/icons/lover.png"
-                      alt="track-icon"
-                    />
-                    My favorites</a>
+                    My Orders</a>
                   <a href="/auth/logout" class="logout-link"><img
                       src="/images/icons/logout.png"
                       alt="logout"

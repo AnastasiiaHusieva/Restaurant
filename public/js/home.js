@@ -44,29 +44,21 @@ document
               const itemId = `item-${nameHolder.length}`;
               div.innerHTML = `
             <div class="cart-item-description">
-            <p>Quantity <span class="quantity" data-item-id="${itemId}">${
-                quantity[item.itemName]
-              }</span> X ${item.itemPrice} = </p>
             <p class="cart-itemName"><strong>${item.itemName}</strong></p>
-            
-                    
-                    <p>${item.itemDescription}</p>
-                    <p>${item.itemCategory}</p>
                     <p class='cartItemPrice'>$${item.itemPrice}</p>
+                    <p>
+                    <span class="quantity" data-item-id="${itemId}">${quantity[item.itemName]}</span> 
+                    X $${item.itemPrice} = </p>
                     
                     </div>
-                    <div class="img-cart"><img src="${
-                      item.itemImageURL
-                    }" alt="food images" class="card-img-top" /></div><span id='icon-container'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="cart-icon plus-icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="cart-icon minus-icon">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
-                </svg>
-                </span>
-                   
-                  
-                `;
+
+                    <div class="img-cart"><img src="${item.itemImageURL}" alt="food images" class="card-img-top" />
+                    </div>
+                    <span id='icon-container'>
+                    <button class="cart-icon plus-icon">+</button>
+                    <div><span class="quantity" data-item-id="${itemId}">${quantity[item.itemName]}</span></div>
+                    <button class="cart-icon minus-icon">-</button>
+                    </span>`;
 
               cartDiv.appendChild(div);
             } else {
