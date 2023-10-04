@@ -9,7 +9,7 @@
         /></div>
       <div id="get-started-btn">
         
-        <h1>Where Bytes Meet Bites</h1>
+        <h1>Where Gastronomy Meets Technology</h1>
         {{#if isLoggedIn}}
         <div class="get-started-btn"><a href="/#menu">GET STARTED</a></div>
         {{else}}
@@ -84,8 +84,9 @@
 <h3 id="menu" class="menu-title ">MENU</h3>
 
 {{#each itemsByCategory as |categoryValue categoryKey|}}
-  <h2 class='category-title'>{{@key}}</h2>
+  
   <section  id="{{categoryKey}}"  class="food-section row d-flex flex-wrap justify-content-center">
+  <h2 class='category-title'>{{@key}}</h2>  
   {{#each this}}
      <div class="{{categoryKey}} food-card col-lg-2 col-md-4 col-sm-6">
        <img src="{{itemImageURL}}" class="card-img-top" alt="pic">
@@ -122,7 +123,6 @@
 
 <footer>
 
-  <div class="logo"><img src="/images/Screenshot 2023-10-04 at 03.01.43.png" alt="LOGO" /></div>
   <div class="footer-container">
     <ul>
       <h3>FOLLOW US</h3>

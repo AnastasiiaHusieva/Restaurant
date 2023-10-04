@@ -25,11 +25,7 @@
                 alt="logo"
               /></a>
           </div>
-          {{#if isAdmin}}
-          <div>
-            <button><a href="/admin/add-meals-form">Add meals to the list</a></button>
-          </div>
-          {{/if}}
+         
 
           <div class="icons">
             <div class="icon"><a href="/cart"><img
@@ -54,6 +50,17 @@
                       alt="track-icon"
                     />
                     My Orders</a>
+                    {{#if isAdmin}}
+                       <div>
+                         <a href="/admin/add-meals-form"><img src="/images/icons/foods.png" alt="track-icon"/>Edit Meals</a>
+                       </div>
+                       <div>
+                         <a href="/adminusers"><img src="/images/icons/add-user.png" alt="track-icon"/>Edit Users</a>
+                       </div>
+                       <div>
+                         <a href="/adminorderstatus"><img src="/images/delivery.png" alt="track-icon"/>Orders' status</a>
+                       </div>
+                       {{/if}}
                   <a href="/auth/logout" class="logout-link"><img
                       src="/images/icons/logout.png"
                       alt="logout"
