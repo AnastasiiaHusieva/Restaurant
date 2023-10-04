@@ -32,11 +32,3 @@ document.addEventListener("DOMContentLoaded", function () {
     profileBar.style.display = "none";
   });
 });
-
-// To display bonuses
-
-// const bonuses = document.getElementById("bonuses");
-
-// profileButton.addEventListener("click", () => {
-//   bonuses.textContent = userData.bonuses;
-// });

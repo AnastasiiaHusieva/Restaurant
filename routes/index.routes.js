@@ -39,7 +39,6 @@ router.get("/", (req, res, next) => {
     });
 });
 
-// this is a test comment to see if I can push to github
 
 // cart routes
 // router.get("/cart", (req, res) => {

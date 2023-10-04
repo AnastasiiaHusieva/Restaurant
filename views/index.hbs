@@ -3,31 +3,23 @@
 <main>
   <section id="banner">
     <div class="banner">
-      <div><img
+      <div class="float-container"><img
           src="/images/Floating-burger-transparent-background-PNG.png"
-          alt="Floating-burger"
+          alt="Floating-burger" class="float"
         /></div>
       <div id="get-started-btn">
         
         <h1>Where Bytes Meet Bites</h1>
-        <div class="get-started-btn"><a href="/auth/signup">GET STARTED</a></div>
+        {{#if isLoggedIn}}
+        <div class="get-started-btn"><a href="/#menu">GET STARTED</a></div>
+        {{else}}
+         <div class="get-started-btn"><a href="/auth/signup">GET STARTED</a></div>
+        {{/if}}
       </div>
     </div>
     <div id="category-menu">
       <ul>
-        <li>
-          <a class="food-icons" href="#Pizzas">
-            <img src="/images/food-icons/pizza.png" alt="pizza-icon" />
-            <span class="category-name">Pizza</span>
-          </a>
-        </li>
-        <li>
-          <a class="food-icons" href="#Salads">
-            <img src="/images/food-icons/salad.png" alt="salad-icon" />
-            <span class="category-name">Salads</span>
-          </a>
-        </li>
-        <li>
+         <li>
           <a class="food-icons" href="#Burgers">
             <img src="/images/food-icons/burger.png" alt="burger-icon" />
             <span class="category-name">Burgers</span>
@@ -37,6 +29,18 @@
           <a class="food-icons" href="#Sushi">
             <img src="/images/food-icons/nigiri.png" alt="sushi-icon" />
             <span class="category-name">Sushi</span>
+          </a>
+        </li>
+        <li>
+          <a class="food-icons" href="#Pizzas">
+            <img src="/images/food-icons/pizza.png" alt="pizza-icon" />
+            <span class="category-name">Pizza</span>
+          </a>
+        </li>
+       <li>
+          <a class="food-icons" href="#Salads">
+            <img src="/images/food-icons/salad.png" alt="salad-icon" />
+            <span class="category-name">Salads</span>
           </a>
         </li>
         <li>
@@ -77,7 +81,7 @@
    
 
 --}}
-<h3 class="menu-title ">MENU</h3>
+<h3 id="menu" class="menu-title ">MENU</h3>
 
 {{#each itemsByCategory as |categoryValue categoryKey|}}
   <h2 class='category-title'>{{@key}}</h2>
@@ -88,7 +92,7 @@
        <div class="card-body">
          <h5 class="card-title">{{itemName}}</h5>
          <p class="card-text">{{itemDescription}}</p>
-         <p class="card-title">{{itemPrice}}$</p>
+         <p class="card-title">${{itemPrice}}</p>
        </div>
          <form method='post' action='/cart' class="addToCartbtn">
            <input type='hidden' name='itemId' value='{{_id}}' >

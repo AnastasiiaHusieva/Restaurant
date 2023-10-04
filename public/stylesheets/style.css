@@ -297,8 +297,6 @@ header {
   z-index: 1000;
 }
 
-
-
 .floating-number{
   color: white;
   background-color: #29B298;
@@ -420,9 +418,6 @@ header {
 
 /* CART PAGE SM VIEW ENDS HERE  */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 10px 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -683,6 +678,28 @@ header {
   margin-top: 3rem;
 }
 
+.float-container {
+  overflow: hidden;
+}
+
+.float {
+  width: 100%;
+  height: auto;
+  animation: stretch 2s alternate infinite; 
+}
+
+@keyframes stretch {
+  0% {
+    transform: scaleY(0.6);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.9); 
+  }
+}
+
 .get-started-btn:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   background-color: #229b85;
@@ -783,6 +800,10 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   box-sizing: content-box;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .food-card:hover {
@@ -806,6 +827,7 @@ main {
   border-radius: 3rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  margin-top: auto;
 }
 
 .add-to-cart-btn:hover {
@@ -823,11 +845,11 @@ main {
 
 .card-title {
   font-size: 2.4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: #4a4a4a;
   font-family: "Ubuntu-Regular", sans-serif;
   font-weight: normal;
-  margin-top: 8%;
+  margin-top: 20%;
   height: 4rem;
 }
 
@@ -884,8 +906,9 @@ footer a {
 
 footer .logo {
   position: absolute;
-  left: 12rem;
+  left: 8rem;
   margin-bottom: 2rem;
+  
 }
 
 /* ///// ORDER PAGE ////*/
