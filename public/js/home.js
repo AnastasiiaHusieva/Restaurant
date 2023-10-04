@@ -31,7 +31,9 @@ document
               quantity[item.itemName] = 1;
               // console.log(nameHolder);
 
-              totalPrice += item.itemPrice;
+              const subtotal = item.itemPrice * quantity[item.itemName];
+
+              totalPrice += subtotal;
 
               const div = document.createElement("div");
               div.classList.add(
@@ -43,14 +45,11 @@ document
               div.setAttribute("data-items-id", item._id);
               const itemId = `item-${nameHolder.length}`;
               div.innerHTML = `
-            <div class="cart-item-description">
-            <p class="cart-itemName"><strong>${item.itemName}</strong></p>
-                    <p class='cartItemPrice'>$${item.itemPrice}</p>
-                    <p>
-                    <span class="quantity" data-item-id="${itemId}">${quantity[item.itemName]}</span> 
-                    X $${item.itemPrice} = </p>
-                    
-                    </div>
+                  <div class="cart-item-description">
+                     <p class="cart-itemName"><strong>${item.itemName}</strong></p>
+                     <p class='cartItemPrice'>$${item.itemPrice}</p>
+                     <p data-subtotal-id="${itemId}">${subtotal}</p>
+                  </div>
 
                     <div class="img-cart"><img src="${item.itemImageURL}" alt="food images" class="card-img-top" />
                     </div>
@@ -66,6 +65,8 @@ document
               // console.log("siiiiiiiiiiiii", nameHolder, quantity);
               const itemId = `item-${nameHolder.indexOf(item.itemName) + 1}`;
               quantity[item.itemName]++;
+
+              const subtotal = item.itemPrice * quantity[item.itemName];
               // console.log("noooooooooooo", quantity);
               const quantityElement = document.querySelector(
                 `[data-item-id="${itemId}"]`
@@ -73,7 +74,11 @@ document
               if (quantityElement) {
                 quantityElement.textContent = quantity[item.itemName];
               }
-              totalPrice += item.itemPrice;
+              totalPrice = totalPrice - (item.itemPrice * (quantity[item.itemName] - 1)) + subtotal;
+              const subtotalElement = document.querySelector(`[data-subtotal-id="${itemId}"]`);
+              if (subtotalElement) {
+                subtotalElement.textContent = `Sum: $${subtotal}`;
+              }
             }
           });
           createdP.textContent = totalPrice;
