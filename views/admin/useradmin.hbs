@@ -38,10 +38,10 @@
         </label>
 
         <label class="form-fields">
-          Acount type:
-          <select class="form-fields" type="text" name="acountType">
-            <option value="sushi">end-user</option>
-            <option value="pizza">admin</option>
+          Acount
+          <select class="form-fields" type="text" name="isAdmin">
+            <option value="false">End-user</option>
+            <option value="true">Admin</option>
 
           </select>
         </label>
@@ -69,6 +69,7 @@
           <td>{{this.username}}</td>
           <td><p class="description-text">{{this.email}}</p></td>
           <td>{{this.password}}</td>
+          <td>{{this.isAdmin}}</td>
 
           <td class="crud-btn"><a
               class="edit"

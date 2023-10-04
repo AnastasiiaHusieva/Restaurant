@@ -49,12 +49,13 @@ router.get("/edit/:id", (req, res, next) => {
   });
 });
 router.post("/edit/:id", (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, isAdmin } = req.body;
   const id = req.params.id;
   const update = {
     username,
     email,
     password,
+    isAdmin,
   };
   // const filter = { _id: id };
 
