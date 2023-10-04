@@ -47,16 +47,22 @@ document
             <p class="cart-itemName"><strong>${item.itemName}</strong></p>
                     <p class='cartItemPrice'>$${item.itemPrice}</p>
                     <p>
-                    <span class="quantity" data-item-id="${itemId}">${quantity[item.itemName]}</span> 
+                    <span class="quantity" data-item-id="${itemId}">${
+                quantity[item.itemName]
+              }</span> 
                     X $${item.itemPrice} = </p>
                     
                     </div>
 
-                    <div class="img-cart"><img src="${item.itemImageURL}" alt="food images" class="card-img-top" />
+                    <div class="img-cart"><img src="${
+                      item.itemImageURL
+                    }" alt="food images" class="card-img-top" />
                     </div>
                     <span id='icon-container'>
                     <button class="cart-icon plus-icon">+</button>
-                    <div><span class="quantity" data-item-id="${itemId}">${quantity[item.itemName]}</span></div>
+                    <div><span class="quantity" data-item-id="${itemId}">${
+                quantity[item.itemName]
+              }</span></div>
                     <button class="cart-icon minus-icon">-</button>
                     </span>`;
 
@@ -119,7 +125,7 @@ document
           .querySelectorAll(".minus-icon")
           .forEach((minusIcon) => {
             minusIcon.addEventListener("click", (event) => {
-              // location.reload();
+              location.reload();
               const itemId = event.target
                 .closest(".cartItems")
                 .getAttribute("data-items-id");
