@@ -1,74 +1,43 @@
-<div id="admin-page">
-
+<section class="admin-order-section">
   <div>
-    <div id="add-meals-form">
-      <h2 class="addfood-title">User Orders</h2>
 
-      <form action="/adminorderstatus" method="POST" class="form-style">
-        <label class="form-fields">
-          Username:
-          <input
-            class="form-fields"
-            type="text"
-            name="username"
-            placeholder="Enter the meal"
-            required
-          />
-        </label>
+  <h2 class="addfood-title">Orders Database</h2>
+  </div>
 
-        <label class="form-fields">
-          Email:
-          <input
-            class="form-fields"
-            type="text"
-            name="email"
-            placeholder="Enter the description"
-            required
-          />
-        </label>
-        <label class="form-fields">
-          Password:
-          <input
-            class="form-fields"
-            type="password"
-            name="password"
-            placeholder="Enter a password"
-            required
-          />
-        </label>
-
-        <label class="form-fields">
-          Acount type:
-          <select class="form-fields" type="text" name="acountType">
-            <option value="sushi">end-user</option>
-            <option value="pizza">admin</option>
-
+ <div id="data-display">
+  <table border="3" class="table-container">
+    <tr class="table-header">
+      <th class="strong-style stickyName">OrderID:</th>
+      <th class="strong-style stickyDescription"></th>
+      <th class="strong-style">ITEMS</th>
+      <th class="strong-style">STATUS</th> <!-- Add a new column for status -->
+    </tr>
+    
+    {{#each userOrders}}
+      <tr class="eachOrder">
+        <td>{{this._id}}</td>
+        <td>{{this.email}}</td>
+        <td>
+          <ul>
+            {{#each this.items}}
+              <li>{{this.itemName}}</li>
+            {{/each}}
+          </ul>
+        </td>
+        <td>
+          <select class="order-option">
+            <option value="Accepted">Accepted</option>
+            <option value="In Process">In Process</option>
+            <option value="Out for Delivery">Out for Delivery</option>
+            <option value="Delivered">Delivered</option>
           </select>
-        </label>
-
-        <button class="admin-btn" type="submit">add</button>
-
-        {{#if errorMessage}}
-          <p class="error">{{errorMessage}}</p>
-        {{/if}}
-      </form>
-
-    </div>
-  </div>
-  <div id="data-display">
-    <table border="3">
-      <tr class="table-header">
-        <th class="strong-style stickyName">USERNAME:</th>
-        <th class="strong-style stickyDescription">EMAIL:</th>
-        <th class="strong-style">PASSWORD:</th>
-        <th class="strong-style edit-column">UPDATE</th>
-
+        </td>
       </tr>
-      {{#each userOrders}}
-        {{this}}
-      {{/each}}
-    </table>
-
-  </div>
-  <script src="script.js"></script>
+    {{/each}}
+  </table>
 </div>
+<script src="script.js"></script>
+</div>
+</section>
+
+   

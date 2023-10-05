@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <title>DataDine</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -25,7 +26,6 @@
                 alt="logo"
               /></a>
           </div>
-         
 
           <div class="icons">
             <div class="icon"><a href="/cart"><img
@@ -44,23 +44,32 @@
               <div id="profileBar" class="sidebar">
                 <div class="links">
                   <h3>Welcome, {{username}}!</h3>
-                  
+
                   <a href="/order"><img
                       src="/images/icons/map.png"
                       alt="track-icon"
                     />
                     My Orders</a>
-                    {{#if isAdmin}}
-                       <div>
-                         <a href="/admin/add-meals-form"><img src="/images/icons/foods.png" alt="track-icon"/>Edit Meals</a>
-                       </div>
-                       <div>
-                         <a href="/adminusers"><img src="/images/icons/add-user.png" alt="track-icon"/>Edit Users</a>
-                       </div>
-                       <div>
-                         <a href="/adminorderstatus"><img src="/images/delivery.png" alt="track-icon"/>Orders' status</a>
-                       </div>
-                       {{/if}}
+                  {{#if isAdmin}}
+                    <div>
+                      <a href="/admin/add-meals-form"><img
+                          src="/images/icons/foods.png"
+                          alt="track-icon"
+                        />Edit Meals</a>
+                    </div>
+                    <div>
+                      <a href="/adminusers"><img
+                          src="/images/icons/add-user.png"
+                          alt="track-icon"
+                        />Edit Users</a>
+                    </div>
+                    <div>
+                      <a href="/adminorderstatus"><img
+                          src="/images/delivery.png"
+                          alt="track-icon"
+                        />Orders' status</a>
+                    </div>
+                  {{/if}}
                   <a href="/auth/logout" class="logout-link"><img
                       src="/images/icons/logout.png"
                       alt="logout"
