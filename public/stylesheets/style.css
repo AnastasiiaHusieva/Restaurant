@@ -401,6 +401,7 @@ header {
   color: white;
   transition: all 0.5s;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border: none;
 }
 .cartBTN:hover {
   color: #ffa31a;
@@ -976,7 +977,10 @@ footer .logo {
 }
 /* /////  CHECKOUT PAGE//// */
 #checkout {
-  margin-top: 120px;
+  margin-top: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .checkout-title {
@@ -990,7 +994,7 @@ footer .logo {
   margin: 2rem auto;
   border-radius: 15px;
   width: 50%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border: #fd7e14 solid 2px;
 }
 
 .checkout-items h3 {
@@ -1006,14 +1010,13 @@ footer .logo {
 }
 
 .checkout-img {
-  width: 11rem;
+  width: 10rem;
 } 
 
 .total {
   margin: 2rem auto;
-  border-radius: 15px;
   width: 50%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-bottom: #34baa3 2px solid;
 }
 
 .total h3 {
@@ -1022,11 +1025,11 @@ footer .logo {
 }
 
 .address-box {
-  margin: auto;
-  width: 50%;
   border-radius: 15px;
-  padding: 1rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border: #fd7e14 solid 2px;
+  width: 50rem;
+  margin: 2rem auto;
+  padding: 14px;
 }
 
 .address-box h3 {
@@ -1035,10 +1038,11 @@ footer .logo {
   margin-bottom: 2rem;
 }
 
-
 .address-box form {
     display: flex;
     flex-direction: column;
+    margin: auto;
+    width: 80%;
 }
 
 .address-box label {
@@ -1048,7 +1052,8 @@ footer .logo {
 }
 
 .address-box input, select {
-  border: 1px #cbcbcb solid;
+  border: none;
+  border-bottom: 1px #cbcbcb solid;
   height: 3rem;
   font-size: 1.5rem;
   color: #646464;
@@ -1070,7 +1075,7 @@ footer .logo {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border: #fd7e14 solid 2px;
   background-color: #fff;
   transition: transform 0.2s;
   width: 400px;
@@ -1079,6 +1084,8 @@ footer .logo {
 .payment-paypal:hover,
 .payment-card:hover {
   transform: scale(1.05);
+  border: #34baa3 solid 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .paypal-header,
@@ -1123,19 +1130,12 @@ footer .logo {
   justify-content: center;
 }
 
-.pay-btn a{
-  border: none;
+.pay-btn button{
   color: white;
-  text-decoration: none;
   font-size: 2rem;
-  background-color: #29b298;
   padding: 1.3rem 7rem;
-  border-radius: 3rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
-.pay-btn a:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-  background-color: #229b85;
-}
+
