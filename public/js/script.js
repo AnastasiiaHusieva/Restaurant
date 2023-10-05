@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function () {
     if (
-      window.location.href === "http://localhost:3000/admin/add-meals-form" ||
-      window.location.href === "http://localhost:3000/adminusers"
+      window.location.href === `${process.env.BASEURL}/admin/add-meals-form` ||
+      window.location.href === `${process.env.BASEURL}/adminusers`
     ) {
       const formFields = document.querySelector(".form-style");
       const scrollPosition = window.scrollY || window.pageYOffset;

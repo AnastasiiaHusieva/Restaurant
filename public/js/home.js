@@ -3,9 +3,11 @@ const cartDiv = document.getElementById("carting");
 const checkoutBtn = document.querySelector(".cartBTN");
 const orderPrice = document.querySelector(".total");
 
+
+
 document
   .addEventListener("DOMContentLoaded", function () {
-    fetch("http://localhost:3000/cart/json")
+    fetch(`${process.env.BASEURL}/cart/json`)
       .then((res) => {
         if (res.status === 200) {
           return res.json();
@@ -106,7 +108,7 @@ document
 
             const createItemClicked = { itemId };
 
-            fetch("http://localhost:3000/cart/add", {
+            fetch(`${process.env.BASEURL}/cart/add`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -137,7 +139,7 @@ document
 
               const subtractedItemClicked = { itemId };
 
-              fetch("http://localhost:3000/cart/pull", {
+              fetch(`${process.env.BASEURL}/cart/pull`, {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
