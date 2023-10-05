@@ -15,6 +15,9 @@ const hbs = require("hbs");
 
 const app = express();
 
+const isAdmin = require("./middleware/isAdmin");
+
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 app.use(express.json());
@@ -37,10 +40,10 @@ const usersRoutes = require("./routes/users.routes");
 app.use("/profile", usersRoutes);
 
 const adminRoutes = require("./routes/admin.routes");
-app.use("/admin", adminRoutes);
+app.use("/admin", isAdmin, adminRoutes);
 
 const userAdminRoutes = require("./routes/useradmin.routes");
-app.use("/adminusers", userAdminRoutes);
+app.use("/adminusers", isAdmin, userAdminRoutes);
 
 const cartRoutes = require("./routes/cart.routes.js");
 app.use("/cart", cartRoutes);
@@ -49,7 +52,7 @@ const checkOutRoutes = require("./routes/checkOut.routes.js");
 app.use("/checkout", checkOutRoutes);
 
 const adminOrderStatusRoutes = require("./routes/adminOrderStatus.routes.js");
-app.use("/adminorderstatus", adminOrderStatusRoutes);
+app.use("/adminorderstatus", isAdmin, adminOrderStatusRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
