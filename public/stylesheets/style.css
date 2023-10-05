@@ -344,7 +344,7 @@ header {
 .cartItems:last-child {
   border-bottom: none;
 }
-.cartItemPrice {
+.cartItemSubtotal {
   font-size: 2rem;
   color: #ffa31a;
 }
@@ -377,6 +377,7 @@ header {
 .cart-item-description {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 40px;
 }
 

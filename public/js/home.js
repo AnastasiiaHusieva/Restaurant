@@ -46,9 +46,9 @@ document
               const itemId = `item-${nameHolder.length}`;
               div.innerHTML = `
                   <div class="cart-item-description">
-                     <p class="cart-itemName"><strong>${item.itemName}</strong></p>
-                     <p class='cartItemPrice'>$${item.itemPrice}</p>
-                     <p data-subtotal-id="${itemId}">${subtotal}</p>
+                     <p class="cart-itemName text-center"><strong>${item.itemName}</strong></p>
+                     <p>$${item.itemPrice}</p>
+                     <p class= "cartItemSubtotal" data-subtotal-id="${itemId}">Sum: $${subtotal}</p>
                   </div>
 
                     <div class="img-cart"><img src="${
