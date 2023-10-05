@@ -88,7 +88,32 @@ ul {
   font-size: 4rem;
   margin-bottom: 120px;
 }
-
+/* ORDER ADMIN */
+.admin-order-section {
+  background-color: #d0f1e7;
+}
+.table-container {
+  margin: 60px;
+}
+.eachOrder {
+  border-bottom: #1d1d1d solid 2px;
+  margin: 10px;
+}
+.eachOrder:nth-child(odd) {
+  padding: 15px;
+  background-color: #12b886;
+}
+.eachOrder:nth-child(even) {
+  padding: 15px;
+  background-color: #fed8b9;
+}
+.order-option {
+  border-radius: 6px;
+}
+.form-style col-lg-4 {
+  width: auto;
+}
+/* ITEMS ADMIN */
 #admin-page {
   padding: 5%;
   background-color: #d0f1e7;
@@ -297,9 +322,9 @@ header {
   z-index: 1000;
 }
 
-.floating-number{
+.floating-number {
   color: white;
-  background-color: #29B298;
+  background-color: #29b298;
   padding: 2px 5px;
   border-radius: 10px;
   position: absolute;
@@ -352,7 +377,7 @@ header {
   width: 10rem;
 }
 #carting {
-  width: 50%; 
+  width: 50%;
   margin: 60 auto;
   border-radius: 8px;
   border: #fd7e14 solid 2px;
@@ -396,7 +421,7 @@ header {
   border-radius: 30px;
   padding: 15px 20px;
   font-size: 1.7rem;
-  background-color:#29B298;
+  background-color: #29b298;
   color: white;
   transition: all 0.5s;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -443,9 +468,8 @@ header {
   padding: 10px 15px;
 }
 
-
-
 /* LOGIN FORM */
+
 #login-form {
   position: fixed;
   top: 50%;
@@ -597,7 +621,7 @@ header {
   bottom: 0.5rem;
 }*/
 .links h3 {
-  color:  #646464;
+  color: #646464;
 }
 
 .links a {
@@ -666,7 +690,6 @@ header {
   margin-left: 50px;
 }
 
-
 .get-started-btn {
   margin: auto;
   background-color: #29b298;
@@ -685,7 +708,7 @@ header {
 .float {
   width: 100%;
   height: auto;
-  animation: stretch 2s alternate infinite; 
+  animation: stretch 2s alternate infinite;
 }
 
 @keyframes stretch {
@@ -696,7 +719,7 @@ header {
     transform: scaleY(1);
   }
   100% {
-    transform: scaleY(0.9); 
+    transform: scaleY(0.9);
   }
 }
 
@@ -908,7 +931,6 @@ footer .logo {
   position: absolute;
   left: 8rem;
   margin-bottom: 2rem;
-  
 }
 
 /* ///// ORDER PAGE ////*/
@@ -982,7 +1004,7 @@ footer .logo {
   font-size: 3rem;
 }
 
-.checkout-items{
+.checkout-items {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -1006,7 +1028,7 @@ footer .logo {
 
 .checkout-img {
   width: 11rem;
-} 
+}
 
 .total {
   margin: 2rem auto;
@@ -1034,10 +1056,9 @@ footer .logo {
   margin-bottom: 2rem;
 }
 
-
 .address-box form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .address-box label {
@@ -1046,13 +1067,14 @@ footer .logo {
   margin: 5px auto;
 }
 
-.address-box input, select {
+.address-box input,
+select {
   border: 1px #cbcbcb solid;
   height: 3rem;
   font-size: 1.5rem;
   color: #646464;
   cursor: pointer;
-} 
+}
 
 .payment-box {
   display: flex;
@@ -1117,12 +1139,12 @@ footer .logo {
   margin-bottom: 50px;
 }
 
-.pay-btn{
+.pay-btn {
   display: flex;
   justify-content: center;
 }
 
-.pay-btn a{
+.pay-btn a {
   border: none;
   color: white;
   text-decoration: none;
