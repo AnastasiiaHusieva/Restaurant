@@ -1,0 +1,8 @@
+@media screen and (max-width: 767px) {
+    .navbar {
+        padding: 0px;
+      }
+    .floating-number {
+        right: 8rem;
+    }
+}
