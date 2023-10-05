@@ -680,7 +680,7 @@ header {
   margin-top: 3rem;
 }
 
-.float-container {
+/*.float-container {
   overflow: hidden;
 }
 
@@ -701,6 +701,7 @@ header {
     transform: scaleY(0.9); 
   }
 }
+*/
 
 .get-started-btn:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
