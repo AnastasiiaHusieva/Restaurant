@@ -3,11 +3,12 @@ const cartDiv = document.getElementById("carting");
 const checkoutBtn = document.querySelector(".cartBTN");
 const orderPrice = document.querySelector(".total");
 
-
-
+const baseUrl = "https://expensive-ruby-hospital-gown.cyclic.app"
+//const baseUrl = process.env.BASEURL
+//console.log(process.env.BASEURL)
 document
   .addEventListener("DOMContentLoaded", function () {
-    fetch(`${process.env.BASEURL}/cart/json`)
+    fetch(`${baseUrl}/cart/json`)
       .then((res) => {
         if (res.status === 200) {
           return res.json();
@@ -108,7 +109,7 @@ document
 
             const createItemClicked = { itemId };
 
-            fetch(`${process.env.BASEURL}/cart/add`, {
+            fetch(`${baseUrl}/cart/add`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -139,7 +140,7 @@ document
 
               const subtractedItemClicked = { itemId };
 
-              fetch(`${process.env.BASEURL}/cart/pull`, {
+              fetch(`${baseUrl}/cart/pull`, {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -169,6 +170,7 @@ document
             });
           })
           .catch((error) => console.error(error));
-      });
+      })
+       .catch((error) => console.error(error));
   })
-  .catch((error) => console.error(error));
+ 

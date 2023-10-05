@@ -1,8 +1,10 @@
+const baseUrl = 'https://expensive-ruby-hospital-gown.cyclic.app'
+
 document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function () {
     if (
-      window.location.href === `${process.env.BASEURL}/admin/add-meals-form` ||
-      window.location.href === `${process.env.BASEURL}/adminusers`
+      window.location.href === `${baseUrl}/admin/add-meals-form` ||
+      window.location.href === `${baseUrl}/adminusers`
     ) {
       const formFields = document.querySelector(".form-style");
       const scrollPosition = window.scrollY || window.pageYOffset;
