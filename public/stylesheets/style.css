@@ -26,12 +26,12 @@ Footer :
 TYPE SCALE EXAMPLES
 blablah
 
-3.052rem/36.62px	A Visual Type Scale
-2.441rem/29.30px	A Visual Type Scale
-1.953rem/23.44px	A Visual Type Scale
-1.563rem/18.75px	A Visual Type Scale
-1.25rem/15.00px	A Visual Type Scale
-1rem/12.00px	A Visual Type Scale
+3.052rem/36.62px  A Visual Type Scale
+2.441rem/29.30px  A Visual Type Scale
+1.953rem/23.44px  A Visual Type Scale
+1.563rem/18.75px  A Visual Type Scale
+1.25rem/15.00px A Visual Type Scale
+1rem/12.00px  A Visual Type Scale
 */
 
 /* IMPORT FONT-FAMILY */
@@ -129,10 +129,8 @@ ul {
   font-size: 1.3rem;
   padding-right: 1px;
   border-radius: 8px;
-
   position: sticky;
   top: 80px;
-
   z-index: 100;
 }
 .titlestick {
@@ -923,57 +921,79 @@ footer .logo {
 #order-tracking-container h1 {
   font-size: 4rem;
 }
-.img-tracking {
+#order-tracking-container hr {
+  width: 80rem;
+  align-items: center;
+  color: #29b298;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tracking {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
 }
-.img-tracking img {
-  width: 20rem;
-  height: 20rem;
+.tracking img {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+.tracking p {
+  color: #646464;
+  font-size: 1rem;
+  text-align: center;
 }
 .progress-bar {
-  width: 100%;
+  width: 46rem;
+  height: 5px;/* Adjust the height as needed */
   background-color: #e9f7f5;
-  height: 5px;
   position: relative;
-  margin-top: 10px;
+  margin-left: 10px;
 }
+
 .progress-round {
-  width: 25px;
-  height: 25px;
+  width: 5px;
+  height: 5px;
   background-color: #29b298;
   border-radius: 50%;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  transform: translate(-50%, 0);
   position: absolute;
-  animation: moveRound 4s linear infinite;
 }
-@keyframes moveRound {
-  0% {
-    left: 0;
-  }
-  25% {
-    left: 25%;
-  }
-  50% {
-    left: 50%;
-  }
-  75% {
-    left: 75%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-.text-tracking {
+
+.order-items {
   display: flex;
-  justify-content: space-between;
-  margin: 1rem 5rem;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  border-radius: 15px;
+  padding: 2rem 3rem;
+  border: #fd7e14 solid 2px;
+  width: 25rem;
 }
-.text-tracking p {
-  color: #646464;
-  font-size: 2rem;
+
+.order-items p {
+  text-align: center;
+}
+
+.highlight-receipt {
+  color: #fd7e14;
 }
 /* /////  CHECKOUT PAGE//// */
 #checkout {
@@ -1137,5 +1157,6 @@ footer .logo {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+
 
 

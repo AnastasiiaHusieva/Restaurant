@@ -1,54 +1,47 @@
-{{!-- {{#each orderItems}} --}}
-
-    <section id="order-tracking-container">
-<div class="order">
-  <h1>Your order/s</h1>
-  <!-- Add any other order-level properties you want to display -->
-
-  {{#each orderItems}}
-    <h2>Order ID: {{this._id}}</h2>
-      <div class="img-tracking">
-
-        <div class="confirmed">
-          <img
-            src="/images//order-page/restaurant.png"
-            alt="restaurant color"
-          />
-        </div>
-        <div class="preparation">
-          <img
-            src="/images//order-page/cooking (1).png"
-            alt="preparation color"
-          />
-        </div>
-        <div class="on-the-way">
-          <img src="/images/order-page/fast-delivery.png" alt="car color" />
-        </div>
-        <div class="delivered">
-          <img src="/images/order-page/verify.png" alt="delivered color" />
-        </div>
-      </div>
-      <div class="progress-bar">
+ <section id="order-tracking-container">
+     <h1>Your orders</h1>
+   
+  
+   {{#each orderItems}}
+   <div class="order">
+     <div class="track">
+      
+       <div class="tracking">
+         <div class="confirmed ">
+           <img src="/images//order-page/restaurant.png" alt="restaurant color"/>
+           <p>Accepted</p>
+         </div>
+         <div class="preparation ">
+           <img src="/images//order-page/cooking (1).png" alt="preparation color"/>
+            <p>In Process</p>
+         </div>
+         <div class="on-the-way ">
+           <img src="/images/order-page/fast-delivery.png" alt="car color" />
+          <p>Out for Delivery</p>
+         </div>
+         <div class="delivered ">
+           <img src="/images/order-page/verify.png" alt="delivered color" />
+            <p>Delivered</p>
+         </div>
+       </div>
+      <div class="progress-bar ">
         <div class="progress-round"></div>
       </div>
-      <div class="text-tracking">
-        <p>Confirmed</p>
-        <p>Preparation</p>
-        <p>On the way</p>
-        <p>Delivered</p>
+   </div>
+
+     <div class="col-lg-2 col-md-3 col-sm-4 order-items">
+        <h2>Your Receipt</h2>
+        <p class="highlight-receipt">Order Number: {{this._id}}</p>
+          <div>
+             {{#each items}}
+                  <p>{{this.itemName}} ${{this.itemPrice}}</p>
+             {{/each}}
+          </div>
+          <p class="highlight-receipt">Total: ${{this.totalPrice}}</p>
       </div>
-    </section>
-    {{#each items}}
-      <ul>
-        <li>
-          {{!-- <p>Created At: {{this.createdAt}}</p> --}}
-          <p>Item Name: {{this.itemName}}</p>
-          <p>Item Price: {{this.itemPrice}}</p>
-          <!-- Add any other item-level properties you want to display -->
-        </li>
-      </ul>
-    {{/each}}
-    <p>Total Price: ${{this.totalPrice}}</p>
-  {{/each}}
-</div>
-{{!-- {{/each}} --}}
+      <hr>
+  </div>
+     
+   {{/each}}
+  
+</section>
