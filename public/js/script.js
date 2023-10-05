@@ -1,4 +1,4 @@
-const baseUrl = 'https://expensive-ruby-hospital-gown.cyclic.app'
+const baseUrl = 'https://datadine.cyclic.app'
 
 document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function () {
@@ -19,8 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const open = document.getElementById("open");
   const closeBtn = document.getElementById("closeBtn");
   const profileBar = document.getElementById("profileBar");
-
+ console.log(open)
   document.addEventListener("click", (event) => {
+   
     if (open) {
       if (open.contains(event.target)) {
         profileBar.style.display = "block";

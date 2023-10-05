@@ -1,11 +1,8 @@
 // Wrap your code in an event listener for the DOMContentLoaded event
-const cartDiv = document.getElementById("carting");
+const cartDiv = document.querySelector("#carting");
 const checkoutBtn = document.querySelector(".cartBTN");
 const orderPrice = document.querySelector(".total");
 
-const baseUrl = "https://expensive-ruby-hospital-gown.cyclic.app"
-//const baseUrl = process.env.BASEURL
-//console.log(process.env.BASEURL)
 document
   .addEventListener("DOMContentLoaded", function () {
     fetch(`${baseUrl}/cart/json`)
@@ -26,8 +23,8 @@ document
           let nameHolder = [];
           let nameRepeated = [];
           let quantity = {};
-
-          cartDiv.innerHTML = "";
+          if(cartDiv) { cartDiv.innerHTML = ""}
+         
           cartItems.forEach((item) => {
             if (!nameHolder.includes(item.itemName)) {
               nameHolder.push(item.itemName);
@@ -66,7 +63,8 @@ document
                     <button class="cart-icon minus-icon">-</button>
                     </span>`;
 
-              cartDiv.appendChild(div);
+                    if(cartDiv) { cartDiv.appendChild(div)}
+              
             } else {
               // Find the specific quantity element within the current item's div and update it
               // console.log("siiiiiiiiiiiii", nameHolder, quantity);
@@ -91,7 +89,8 @@ document
           createdP.textContent = totalPrice;
           // console.log("the total", createdP);
           const amt = document.querySelector(".amt");
-          amt.innerHTML = "Total : $" + totalPrice;
+          if(amt) {amt.innerHTML = "Total : $" + totalPrice}
+          
         } else if (data.userObject.cart.length === 0) {
           checkoutBtn.style.display = "none";
           cartDiv.innerHTML = "Your cart is empty";
@@ -169,8 +168,8 @@ document
               });
             });
           })
-          .catch((error) => console.error(error));
+          //.catch((error) => console.error(error));
       })
-       .catch((error) => console.error(error));
+       //.catch((error) => console.error(error));
   })
  
