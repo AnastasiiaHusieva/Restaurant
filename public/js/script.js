@@ -39,19 +39,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// adminCheck.js
 
 // JavaScript code to determine if the user is an admin or not
-let isAdmin = true; // Replace {{isAdmin}} with the actual value (true or false) from your backend
+
+const isAdmin = true; 
 
 // Select the profileBar element
 const profileBar = document.getElementById("profileBar");
 
 // Check if the user is an admin
 if (isAdmin) {
-  // Set a red background for the profile bar if the user is an admin
-  profileBar.style.height = "28rem";
+  // Set a height of 28rem for the profile bar if the user is an admin
+  profileBar.style.height = "28rem"; // This is where you set the height for admin users
 } else {
-  // Set a green background for the profile bar if the user is not an admin
-  profileBar.style.height = "18rem";
+  // Set a height of 18rem for the profile bar if the user is not an admin
+  profileBar.style.height = "18rem"; // This is where you set the height for non-admin users
 }
+
+ 
