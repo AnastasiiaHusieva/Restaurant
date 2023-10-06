@@ -141,5 +141,19 @@
     flex-direction: column;
   }
 
-  /* ////// CART ////// */
+  .sidebar {
+    position: fixed;
+    top: 4.5rem;
+    right: 0.5rem;
+    width: 18rem;
+    height: 30rem;
+    background-color: #ffffff;
+    margin-top: 120px;
+    display: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ////// CART  ////// */
+  
 }
