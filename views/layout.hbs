@@ -123,7 +123,21 @@
     <script src="/js/home.js"></script>
 
   <script>
-  
+    // JavaScript code to determine if the user is an admin or not
+    const isAdmin = {{isAdmin}}; // Replace {{isAdmin}} with the actual value (true or false) from your backend
+
+    // Select the profileBar element
+    const profileBar = document.getElementById("profileBar");
+
+    // Check if the user is an admin
+    if (isAdmin) {
+      // Set a red background for the profile bar if the user is an admin
+      profileBar.style.height = "28rem";
+
+    } else {
+      // Set a green background for the profile bar if the user is not an admin
+      profileBar.style.height = "18rem";
+    }
   </script>
   </body>
 </html>
