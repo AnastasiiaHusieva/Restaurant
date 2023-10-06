@@ -354,13 +354,10 @@ header {
 }
 .cartItems {
   width: 40px;
-  gap: 40px;
   color: #646464;
+  border-bottom: #229b85 solid 2px;
 }
-.cartItems hr {
-  color: #229b85;
 
-}
 .cart-itemname {
   text-align: start;
   font-size: 2.2rem;
