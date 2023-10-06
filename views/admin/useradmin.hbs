@@ -2,83 +2,80 @@
 
   <h2 class="addfood-title">User Profiles</h2>
   <div id="add-meals-form">
-    <div>
 
-      <form action="/adminusers" method="POST" class="form-style">
-        <label class="form-fields">
-          Username:
-          <input
-            class="form-fields"
-            type="text"
-            name="username"
-            placeholder="Enter the meal"
-            required
-          />
-        </label>
+    <form action="/adminusers" method="POST" class="form-style">
+      <label class="form-fields">
+        Username:
+        <input
+          class="form-fields"
+          type="text"
+          name="username"
+          placeholder="Enter the meal"
+          required
+        />
+      </label>
 
-        <label class="form-fields">
-          Email:
-          <input
-            class="form-fields"
-            type="text"
-            name="email"
-            placeholder="Enter the description"
-            required
-          />
-        </label>
-        <label class="form-fields">
-          Password:
-          <input
-            class="form-fields"
-            type="password"
-            name="password"
-            placeholder="Enter a password"
-            required
-          />
-        </label>
+      <label class="form-fields">
+        Email:
+        <input
+          class="form-fields"
+          type="text"
+          name="email"
+          placeholder="Enter the description"
+          required
+        />
+      </label>
+      <label class="form-fields">
+        Password:
+        <input
+          class="form-fields"
+          type="password"
+          name="password"
+          placeholder="Enter a password"
+          required
+        />
+      </label>
 
-        <label class="form-fields">
-          Account
-          <select class="form-fields" type="text" name="isAdmin">
-            <option value="false">End-user</option>
-            <option value="true">Admin</option>
+      <label class="form-fields">
+        Account
+        <select class="form-fields" type="text" name="isAdmin">
+          <option value="false">End-user</option>
+          <option value="true">Admin</option>
 
-          </select>
-        </label>
+        </select>
+      </label>
 
-        <button class="admin-btn" type="submit">add</button>
+      <button class="admin-btn" type="submit">add</button>
 
-        {{#if errorMessage}}
-          <p class="error">{{errorMessage}}</p>
-        {{/if}}
-      </form>
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
 
-    </div>
-  </div>
-  <div id="data-display">
-    <table border="3">
-      <tr class="table-header">
-        <th class="strong-style stickyName">USERNAME:</th>
-        <th class="strong-style stickyDescription">EMAIL:</th>
-        <th class="strong-style">PASSWORD:</th>
-        <th class="strong-style edit-column">UPDATE</th>
-
-      </tr>
-      {{#each dataUser}}
-        <tr class="list-created-meal">
-          <td>{{this.username}}</td>
-          <td><p class="description-text">{{this.email}}</p></td>
-          <td>{{this.password}}</td>
-          <td>{{this.isAdmin}}</td>
-
-          <td class="crud-btn"><a
-              class="edit"
-              href="/adminusers/edit/{{this.id}}"
-            >Edit</a>
-            <a class="delete" href="/adminusers/{{this.id}}">Delete</a></td>
+    <div id="data-display">
+      <table border="3">
+        <tr class="table-header">
+          <th class="strong-style stickyName">USERNAME:</th>
+          <th class="strong-style stickyDescription">EMAIL:</th>
+          {{! <th class="strong-style">PASSWORD:</th> }}
+          <th class="strong-style edit-column">ACCOUNT</th>
+          <th class="strong-style edit-column">UPDATE</th>
         </tr>
-      {{/each}}
-    </table>
+        {{#each dataUser}}
+          <tr class="list-created-meal">
+            <td>{{this.username}}</td>
+            <td><p class="description-text">{{this.email}}</p></td>
+            {{!-- <td>{{this.password}}</td> --}}
+            <td>{{this.isAdmin}}</td>
+            <td class="crud-btn"><a
+                class="edit"
+                href="/adminusers/edit/{{this.id}}"
+              >Edit</a>
+              <a class="delete" href="/adminusers/{{this.id}}">Delete</a></td>
+          </tr>
+        {{/each}}
+      </table>
+    </div>
 
   </div>
   <script src="script.js"></script>

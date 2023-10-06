@@ -1,21 +1,31 @@
 @media (min-width: 768px) and (max-width: 1440px) {
-    body {
-        margin-top: 100px;
-    }
-    /*////Side Bar //////*/
-    #category-menu {
-        display: none;
-    }
+  body {
+    margin-top: 100px;
+  }
+  /*////Side Bar //////*/
+  #category-menu {
+    display: none;
+  }
 
-    .float {
-        width: 23rem;
-    }
+  .float {
+    width: 23rem;
+  }
 
-    .banner img{
-      height: 50vh;
-    }
+  .banner img {
+    height: 50vh;
+  }
 
-    .banner {
-        padding: 80px;
-    }
+  .banner {
+    padding: 80px;
+  }
+
+  .form-style {
+    flex-direction: column;
+    width: max-content;
+  }
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
 }
