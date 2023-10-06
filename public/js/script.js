@@ -1,4 +1,4 @@
-const baseUrl = 'https://datadine.cyclic.app'
+const baseUrl = 'https://ill-tan-wildebeest-wig.cyclic.app'
 
 document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function () {
