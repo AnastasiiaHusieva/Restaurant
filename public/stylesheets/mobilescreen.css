@@ -46,4 +46,13 @@
     padding: 2rem 3.7rem;
     margin-top: 2.3rem;
   }
+  .form-style {
+    flex-direction: column;
+    width: max-content;
+  }
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
 }
