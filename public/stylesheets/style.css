@@ -46,9 +46,6 @@ blablah
 }
 
 html {
-  font-size: 12px;
-  margin: 0;
-  padding: 0;
   scroll-behavior: smooth;
 }
 
@@ -956,8 +953,6 @@ footer .logo {
 
 #order-tracking-container {
   margin-top: 12rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
 }
 #order-tracking-container h1 {
   font-size: 4rem;

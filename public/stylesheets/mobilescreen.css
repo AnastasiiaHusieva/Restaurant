@@ -146,4 +146,16 @@
   .checkout-cont {
     margin: 1rem;
   }
+
+  .tracking img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .progress-bar {
+    width: 24rem;
+  }
+
+  .order-items {
+    width: 90%;
+  }
 }
