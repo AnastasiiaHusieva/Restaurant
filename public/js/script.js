@@ -1,4 +1,4 @@
-const baseUrl = 'https://ill-tan-wildebeest-wig.cyclic.app';
+const baseUrl = 'http://localhost:3000';
 
 document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function () {

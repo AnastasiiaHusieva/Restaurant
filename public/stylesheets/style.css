@@ -355,10 +355,9 @@ header {
 .cartItems {
   width: 40px;
   gap: 40px;
-  border-bottom: #229b85 solid 2px;
   color: #646464;
 }
-.cart-itemname {
+.cart-itemName {
   text-align: start;
   font-size: 2.2rem;
   color: #29b298;
@@ -375,9 +374,8 @@ header {
 }
 #carting {
   width: 50%;
-  margin: 60 auto;
+  margin: auto;
   border-radius: 8px;
-  border: #fd7e14 solid 2px;
 }
 .img-cart {
   flex: 1;

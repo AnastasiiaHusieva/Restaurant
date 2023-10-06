@@ -38,14 +38,15 @@ document
               const div = document.createElement("div");
               div.classList.add(
                 "cartItems",
-                "col-lg-2",
-                "col-md-4",
-                "col-sm-6"
+                "d-flex",
+                "col-lg-12",
+                "col-md-12",
+                "col-sm-12"
               );
               div.setAttribute("data-items-id", item._id);
               const itemId = `item-${nameHolder.length}`;
               div.innerHTML = `
-                  <div class="cart-item-description">
+                  <div class="cart-item-description d-flex flex-direction-column">
                      <p class="cart-itemName text-center"><strong>${item.itemName}</strong></p>
                      <p>$${item.itemPrice}</p>
                      <p class= "cartItemSubtotal" data-subtotal-id="${itemId}">Sum: $${subtotal}</p>
