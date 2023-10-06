@@ -47,6 +47,10 @@ blablah
 
 html {
   scroll-behavior: smooth;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
