@@ -92,13 +92,13 @@
          <h5 class="card-title">{{itemName}}</h5>
          <p class="card-text">{{itemDescription}}</p>
          <p class="card-title">${{itemPrice}}</p>
-       </div>
+      
          <form method='post' action='/cart' class="addToCartbtn">
            <input type='hidden' name='itemId' value='{{_id}}' >
            <input type='hidden' name='target' value='{{itemCategory}}' >
            <button class ="add-to-cart-btn">Add to cart</button>
          </form>
-       
+        </div>
       </div>
   {{/each}}
   </div>

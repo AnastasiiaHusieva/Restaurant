@@ -760,8 +760,8 @@ h3 {
   height: 45rem;
   overflow: hidden;
   border-radius: 10px;
-  z-index: 1000;
   transition: all 0.2s;
+  z-index: 100;
 }
 
 #category-menu:hover {
@@ -855,6 +855,10 @@ main {
 .card-img-top {
   width: 80%;
   height: 40%;
+}
+
+.card-body {
+  margin-bottom: 2rem;
 }
 
 .add-to-cart-btn {
