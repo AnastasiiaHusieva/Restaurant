@@ -34,4 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
   closeBtn.addEventListener("click", () => {
     profileBar.style.display = "none";
   });
+
+
+    const isAdmin = {{isAdmin}}; 
+    const profileBar = document.getElementById("profileBar");
+    if (isAdmin) {
+      profileBar.style.height = "28rem";
+    } else {
+      profileBar.style.height = "18rem";
+    }
 });
