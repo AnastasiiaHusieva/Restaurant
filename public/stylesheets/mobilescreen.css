@@ -1,8 +1,44 @@
 @media screen and (max-width: 767px) {
+    body {
+        margin-top: 110px;
+    }
+    /*////Nav Bar //////*/
     .navbar {
         padding: 0px;
+        margin: 0;
       }
+
+    .logo img {
+      width: 13em;
+    }
     .floating-number {
         right: 8rem;
     }
+    /*////Side Bar //////*/
+    #category-menu {
+        display: none;
+    }
+
+    .float {
+      width: 17rem;
+      margin-bottom: 3rem;
+    }
+
+    #banner {
+      height: 60vh;
+    }
+
+    .banner img{
+      height: 29vh;
+    }
+
+    .banner {
+      flex-direction: column;
+    }
+
+    #get-started-btn {
+      margin-top: 0;
+      margin-left: 0;
+    }
+
 }

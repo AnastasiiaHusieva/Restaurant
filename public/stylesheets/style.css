@@ -688,7 +688,6 @@ h3 {
   justify-content: center;
   align-items: center;
   height: 70vh;
-  margin-top: 120px;
 }
 
 #banner h1 {
@@ -723,9 +722,6 @@ h3 {
   margin-top: 3rem;
 }
 
-.float-container {
-  overflow: hidden;
-}
 
 .float {
   width: 100%;
