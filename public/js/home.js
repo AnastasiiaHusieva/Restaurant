@@ -49,7 +49,7 @@ document
                   <div class="cart-item-description d-flex flex-direction-column">
                      <p class="cart-itemName text-center"><strong>${item.itemName}</strong></p>
                      <p>$${item.itemPrice}</p>
-                     <p class= "cartItemSubtotal" data-subtotal-id="${itemId}">Sum: $${subtotal}</p>
+                     <p class= "cartItemSubtotal" data-subtotal-id="${itemId}">$${subtotal}</p>
                   </div>
 
                     <div class="img-cart"><img src="${
