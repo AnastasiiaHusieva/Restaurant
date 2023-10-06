@@ -2,6 +2,10 @@
   body {
     margin-top: 100px;
   }
+
+  main {
+    margin-top: 170px;
+  }
   /*////Nav Bar //////*/
   .navbar {
     padding: 0px;
@@ -16,7 +20,51 @@
   }
   /*////Side Bar //////*/
   #category-menu {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    background: #ffa31a;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 6rem;
+    overflow: hidden;
+    border-radius: 0px;
+    z-index: 1000;
+  }
+
+  #category-menu ul {
+    background: #ffa31a;
+    display: flex;
+    padding: 0px;
+    margin: 0 5px;
+  }
+
+  #category-menu li {
+    background-color: #ffa31a;
+    margin: 0px;
+  }
+
+  .food-icons img {
+    width: 2.8rem;
+    height: 3.3rem;
+    padding: 0;
+    margin-right: 0px;
+    background-color: #ffa31a;
+  }
+
+  #category-menu span.category-name {
     display: none;
+  }
+
+  #category-menu li:hover {
+    background: #ffa31a;
+    height: 7rem;
+  }
+
+  #category-menu:hover {
+    width: 100%;
   }
 
   /*/// BANNER ////*/
@@ -54,5 +102,19 @@
     display: flex;
     flex-direction: column;
     width: fit-content;
+  }
+
+  .menu-title {
+    font-size: 4rem;
+    margin-top: 7rem;
+  }
+
+  .category-title {
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
+  /* ////// ADMIN USERS ////// */
+  .footer-container {
+    flex-direction: column;
   }
 }
