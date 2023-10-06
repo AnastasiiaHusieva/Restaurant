@@ -61,7 +61,8 @@ document
                 quantity[item.itemName]
               }</span></div>
                     <button class="cart-icon minus-icon">-</button>
-                    </span>`;
+                    </span>
+                    <hr>`;
 
                     if(cartDiv) { cartDiv.appendChild(div)}
               

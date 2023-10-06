@@ -355,8 +355,11 @@ header {
 .cartItems {
   width: 40px;
   gap: 40px;
-  border-bottom: #229b85 solid 2px;
   color: #646464;
+}
+.cartItems hr {
+  color: #229b85;
+
 }
 .cart-itemname {
   text-align: start;
