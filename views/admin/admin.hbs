@@ -38,7 +38,7 @@
             <option value="Soups">Soups</option>
             <option value="Desserts">Desserts</option>
             <option value="Cocktails">Cocktails</option>
-           
+
           </select>
         </label>
         <label class="form-fields">
@@ -83,7 +83,7 @@
         <th class="strong-style stickyDescription">DESCRIPTION:</th>
         <th class="strong-style">CATEGORY:</th>
         <th class="strong-style stickyPrice">PRICE:</th>
-        <th class="strong-style">ID: </th>
+        <th class="strong-style itemNumber">ID: </th>
         <th class="strong-style edit-column">UPDATE</th>
       </tr>
       {{#each dataFood}}
@@ -92,7 +92,7 @@
           <td><p class="description-text">{{this.itemDescription}}</p></td>
           <td>{{this.itemCategory}}</td>
           <td>${{this.itemPrice}}</td>
-          <td>
+          <td class="itemNumber">
             #{{this.itemNumber}}</td>
           <td class="crud-btn"><a
               class="edit"

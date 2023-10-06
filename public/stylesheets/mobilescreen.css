@@ -113,11 +113,33 @@
     font-size: 3rem;
     margin: 2rem 0;
   }
+  .strong-style {
+    padding: 10px;
+  }
+  .itemNumber {
+    display: none;
+  }
+  #admin-page {
+    padding: 1%;
+  }
+  .admin-btn {
+    padding-left: 0;
+    display: block;
+  }
+  .table-container {
+    margin: 20px auto;
+    width: 50%;
+  }
+  .data-display {
+    overflow-x: auto;
+  }
+  .admin-order-section {
+    background-color: white;
+  }
   /* ////// ADMIN USERS ////// */
   .footer-container {
     flex-direction: column;
   }
 
   /* ////// CART ////// */
-  
 }
