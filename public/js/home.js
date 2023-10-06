@@ -2,7 +2,7 @@
 const cartDiv = document.querySelector("#carting");
 const checkoutBtn = document.querySelector(".cartBTN");
 const orderPrice = document.querySelector(".total");
-
+//comment
 document
   .addEventListener("DOMContentLoaded", function () {
     fetch(`${baseUrl}/cart/json`)
