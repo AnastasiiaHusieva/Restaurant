@@ -1,9 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="ie=edge"
+    />
 
     <title>DataDine</title>
     <link
@@ -12,87 +18,98 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-      
+
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="/stylesheets/mobilescreen.css" />
     <link rel="stylesheet" href="/stylesheets/mediumscreen.css" />
     <link rel="stylesheet" href="/stylesheets/desktopscreen.css" />
-  
   </head>
 
   <body>
     <header>
       <nav>
         <div class="navbar d-flex justify-content-between align-items-center">
-
           <div class="logo">
-            <a href="/" class="data"><img
+            <a href="/" class="data"
+              ><img
                 src="/images/Screenshot 2023-10-04 at 01.41.04.png"
                 alt="logo"
-              /></a>
+            /></a>
           </div>
 
           <div class="icons">
-            <div class="icon"><a href="/cart"><img
+            <div class="icon">
+              <a href="/cart"
+                ><img
                   src="/images/icons/add-to-cart (2).png"
                   alt="cartimage"
-                /></a>
-
+              /></a>
             </div>
             {{#if isLoggedIn}}
-              <p class="floating-number">{{user.cart.length}}</p>
+            <p class="floating-number">{{user.cart.length}}</p>
 
-              <div id="open" class="icon"><img
+            <div id="open" class="icon"
+              ><img
+                src="/images/icons/user (4).png"
+                alt="signupicon"
+            /></div>
+            <div id="profileBar" class="sidebar">
+              <div class="links">
+                <h3>Welcome, {{username}}!</h3>
+
+                <a href="/order"
+                  ><img
+                    src="/images/icons/map.png"
+                    alt="track-icon"
+                />
+                  My Orders</a
+                >
+                {{#if isAdmin}}
+                <div class="admin-links">
+                  <a href="/admin/add-meals-form"
+                    ><img
+                      src="/images/icons/foods.png"
+                      alt="track-icon"
+                  />
+                    Edit Meals</a
+                  >
+                  <a href="/adminusers"
+                    ><img
+                      src="/images/icons/add-user.png"
+                      alt="track-icon"
+                  />
+                    Edit Users</a
+                  >
+                  <a href="/adminorderstatus"
+                    ><img
+                      src="/images/delivery.png"
+                      alt="track-icon"
+                  />
+                    Orders' status</a
+                  >
+                </div>
+                {{/if}}
+                <a href="/auth/logout" class="logout-link"
+                  ><img
+                    src="/images/icons/logout.png"
+                    alt="logout"
+                />
+                  Log Out</a
+                >
+              </div>
+            </div>
+            {{else}}
+            <div class="icon">
+              <a href="/auth/signup"
+                ><img
                   src="/images/icons/user (4).png"
                   alt="signupicon"
-                /></div>
-              <div id="profileBar" class="sidebar">
-                <div class="links">
-                  <h3>Welcome, {{username}}!</h3>
-
-                  <a href="/order"><img
-                      src="/images/icons/map.png"
-                      alt="track-icon"
-                    />
-                    My Orders</a>
-                  {{#if isAdmin}}
-                    <div>
-                      <a href="/admin/add-meals-form"><img
-                          src="/images/icons/foods.png"
-                          alt="track-icon"
-                        />Edit Meals</a>
-                    </div>
-                    <div>
-                      <a href="/adminusers"><img
-                          src="/images/icons/add-user.png"
-                          alt="track-icon"
-                        />Edit Users</a>
-                    </div>
-                    <div>
-                      <a href="/adminorderstatus"><img
-                          src="/images/delivery.png"
-                          alt="track-icon"
-                        />Orders' status</a>
-                    </div>
-                  {{/if}}
-                  <a href="/auth/logout" class="logout-link"><img
-                      src="/images/icons/logout.png"
-                      alt="logout"
-                    />
-                    Log Out</a>
-                </div>
-              </div>
-            {{else}}
-              <div class="icon"><a href="/auth/signup"><img
-                    src="/images/icons/user (4).png"
-                    alt="signupicon"
-                  /></a></div>
+              /></a>
+            </div>
             {{/if}}
           </div>
-
         </div>
       </nav>
-
     </header>
 
     {{{body}}}
@@ -105,6 +122,22 @@
     <script src="/js/script.js"></script>
     <script src="/js/home.js"></script>
 
-  </body>
+    <script>
+      // JavaScript code to determine if the user is an admin or not
+      const isAdmin = {{isAdmin}}; // Replace {{isAdmin}} with the actual value (true or false) from your backend
 
+      // Select the profileBar element
+      const profileBar = document.getElementById("profileBar");
+
+      // Check if the user is an admin
+      if (isAdmin) {
+        // Set a red background for the profile bar if the user is an admin
+        profileBar.style.height = "28rem";
+
+      } else {
+        // Set a green background for the profile bar if the user is not an admin
+        profileBar.style.height = "18rem";
+      }
+    </script>
+  </body>
 </html>
