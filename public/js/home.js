@@ -83,7 +83,7 @@ document
               totalPrice = totalPrice - (item.itemPrice * (quantity[item.itemName] - 1)) + subtotal;
               const subtotalElement = document.querySelector(`[data-subtotal-id="${itemId}"]`);
               if (subtotalElement) {
-                subtotalElement.textContent = `Sum: $${subtotal}`;
+                subtotalElement.textContent = `$${subtotal}`;
               }
             }
           });
