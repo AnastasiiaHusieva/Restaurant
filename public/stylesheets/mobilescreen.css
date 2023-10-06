@@ -161,4 +161,13 @@
   .address-box {
     width: 80%;
   }
+  /* ////// Order  ////// */
+  .tracking img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .progress-bar {
+    width: 26rem;
+  }
 }
