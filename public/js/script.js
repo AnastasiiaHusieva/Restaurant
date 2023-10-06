@@ -1,4 +1,4 @@
-const baseUrl = 'https://ill-tan-wildebeest-wig.cyclic.app'
+const baseUrl = 'https://ill-tan-wildebeest-wig.cyclic.app';
 
 document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function () {
@@ -16,22 +16,42 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   };
+
   const open = document.getElementById("open");
-  const closeBtn = document.getElementById("closeBtn");
   const profileBar = document.getElementById("profileBar");
- console.log(open)
-  document.addEventListener("click", (event) => {
-   
-    if (open) {
-      if (open.contains(event.target)) {
-        profileBar.style.display = "block";
-      } else if (!profileBar.contains(event.target)) {
-        profileBar.style.display = "none";
-      }
+
+  // Add a click event listener to toggle the popup when the button is clicked.
+  open.addEventListener("click", (event) => {
+    event.stopPropagation(); // Prevent the click from propagating
+    if (profileBar.style.display === "block") {
+      profileBar.style.display = "none"; // Close the popup if it's open
+    } else {
+      profileBar.style.display = "block"; // Open the popup if it's closed
     }
   });
 
-  closeBtn.addEventListener("click", () => {
-    profileBar.style.display = "none";
+  // Add a global click event listener to close the popup when clicking anywhere on the screen while it's open.
+  document.addEventListener("click", (event) => {
+    if (profileBar.style.display === "block" && event.target !== open && !profileBar.contains(event.target)) {
+      profileBar.style.display = "none";
+    }
   });
 });
+
+
+// adminCheck.js
+
+// JavaScript code to determine if the user is an admin or not
+let isAdmin = true; // Replace {{isAdmin}} with the actual value (true or false) from your backend
+
+// Select the profileBar element
+const profileBar = document.getElementById("profileBar");
+
+// Check if the user is an admin
+if (isAdmin) {
+  // Set a red background for the profile bar if the user is an admin
+  profileBar.style.height = "28rem";
+} else {
+  // Set a green background for the profile bar if the user is not an admin
+  profileBar.style.height = "18rem";
+}
