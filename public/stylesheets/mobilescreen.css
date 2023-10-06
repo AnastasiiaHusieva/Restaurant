@@ -113,49 +113,33 @@
     font-size: 3rem;
     margin: 2rem 0;
   }
+  .strong-style {
+    padding: 10px;
+  }
+  .itemNumber {
+    display: none;
+  }
+  #admin-page {
+    padding: 1%;
+  }
+  .admin-btn {
+    padding-left: 0;
+    display: block;
+  }
+  .table-container {
+    margin: 20px auto;
+    width: 50%;
+  }
+  .data-display {
+    overflow-x: auto;
+  }
+  .admin-order-section {
+    background-color: white;
+  }
   /* ////// ADMIN USERS ////// */
   .footer-container {
     flex-direction: column;
   }
 
-  .sidebar {
-    position: fixed;
-    top: 4.5rem;
-    right: 0.5rem;
-    width: 18rem;
-    height: 30rem;
-    background-color: #ffffff;
-    margin-top: 120px;
-    display: none;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  /* //////   CHECKOUT  ////// */
-  #checkout {
-    flex-direction: column;
-  }
-  .address-box {
-    width: 100%;
-  }
-
-  .checkout-items {
-    width: 100%;
-  }
-
-  .checkout-cont {
-    margin: 1rem;
-  }
-
-  .tracking img {
-    width: 4rem;
-    height: 4rem;
-  }
-  .progress-bar {
-    width: 24rem;
-  }
-
-  .order-items {
-    width: 90%;
-  }
+  /* ////// CART ////// */
 }
