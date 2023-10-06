@@ -131,6 +131,19 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
-  /* ////// CART ////// */
-  
+  /* //////   CHECKOUT  ////// */
+  #checkout {
+    flex-direction: column;
+  }
+  .address-box {
+    width: 100%;
+  }
+
+  .checkout-items {
+    width: 100%;
+  }
+
+  .checkout-cont {
+    margin: 1rem;
+  }
 }

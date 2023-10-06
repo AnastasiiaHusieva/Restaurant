@@ -36,4 +36,8 @@
     flex-direction: column;
     width: fit-content;
   }
+/* //////   CHECKOUT  ////// */
+  #checkout {
+    flex-direction: column;
+  }
 }
