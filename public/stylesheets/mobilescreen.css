@@ -19,6 +19,7 @@
         display: none;
     }
 
+    /*/// BANNER ////*/
     .float {
       width: 15rem;
       margin-bottom: 3rem;
@@ -41,4 +42,8 @@
       margin-left: 0;
     }
 
+    .get-started-btn {
+        padding: 2rem 3.7rem;
+        margin-top: 2.3rem;
+    }
 }
