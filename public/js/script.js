@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'https://adorable-frog-teddy.cyclic.app/';
 
 document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function () {
