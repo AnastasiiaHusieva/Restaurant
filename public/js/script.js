@@ -1,4 +1,4 @@
-const baseUrl = 'https://adorable-frog-teddy.cyclic.app/';
+const baseUrl = 'https://encouraging-calf-top-hat.cyclic.app';
 
 document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function () {
